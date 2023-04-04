@@ -16,9 +16,9 @@
                 "語言",
                 "英文",
                 "雜誌",
+                "難度 1",
                 "英文雜誌",
-                "對話",
-                "難度 1"
+                "對話"
             ]
         },
         {
@@ -76,8 +76,8 @@
                 "語言",
                 "英文",
                 "單字",
-                "難度 1",
-                "英文單字"
+                "英文單字",
+                "難度 1"
             ]
         },
         {
@@ -94,20 +94,10 @@
             ]
         },
         {
-            "id": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/hello-world/",
-            "url": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/hello-world/",
-            "title": "Hello World",
-            "date_published": "2023-04-02T12:45:48.000Z",
-            "content_html": "<p>Welcome to <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvLw==\">Hexo</span>! This is your very first post. Check <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv\">documentation</span> for more info. If you get any problems when using Hexo, you can find the answer in <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=\">troubleshooting</span> or you can ask me on <span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==\">GitHub</span>.</p>\n<h2 id=\"quick-start\"><a class=\"anchor\" href=\"#quick-start\">#</a> Quick Start</h2>\n<h3 id=\"create-a-new-post\"><a class=\"anchor\" href=\"#create-a-new-post\">#</a> Create a new post</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo new <span class=\"token string\">\"My New Post\"</span></pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s\">Writing</span></p>\n<h3 id=\"run-server\"><a class=\"anchor\" href=\"#run-server\">#</a> Run server</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo server</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=\">Server</span></p>\n<h3 id=\"generate-static-files\"><a class=\"anchor\" href=\"#generate-static-files\">#</a> Generate static files</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo generate</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s\">Generating</span></p>\n<h3 id=\"deploy-to-remote-sites\"><a class=\"anchor\" href=\"#deploy-to-remote-sites\">#</a> Deploy to remote sites</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo deploy</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s\">Deployment</span></p>\n",
-            "tags": [
-                "Hello World"
-            ]
-        },
-        {
             "id": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/language/english/%E6%96%B0%E8%81%9E/%E9%9B%BB%E8%85%A6%E6%9C%83%E7%B5%B1%E6%B2%BB%E4%BA%BA%E9%A1%9E%E5%97%8E%EF%BC%9F/",
             "url": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/language/english/%E6%96%B0%E8%81%9E/%E9%9B%BB%E8%85%A6%E6%9C%83%E7%B5%B1%E6%B2%BB%E4%BA%BA%E9%A1%9E%E5%97%8E%EF%BC%9F/",
             "title": "電腦會統治人類嗎？",
-            "date_published": "2023-04-02T06:02:15.000Z",
+            "date_published": "2023-04-02T13:45:48.000Z",
             "content_html": "<p>⭐️⭐️⭐️</p>\n<h2 id=\"電腦會統治人類嗎\"><a class=\"anchor\" href=\"#電腦會統治人類嗎\">#</a> 電腦會統治人類嗎？</h2>\n<div class=\"note info\">\n<p>科幻電影最常演的劇情就是科學家發明一個超級電腦，而這個電腦太聰明反而想統治人類（還記得魔鬼終結者嗎？）</p>\n<p>近期微軟 Bing 推出 AI 對話功能後，發現 AI 對話其實很容易被使用者影響，簡單來說，目前的 AI 很容易被牽著鼻子走。人類已經很容易被演算法因為同溫層效應影響，加上 AI 對話，這個現象可能更嚴重。</p>\n</div>\n<p><strong>As The new Bing AI chatbot has a interesting personality: <span class=\"aqua\">absolutely</span> <span class=\"orange\">unhinged</span>. But, after a little over a week in the world, the <span class=\"orange\">biggest take away</span> might be that we’re probably afraid of AI for the wrong reasons.</strong></p>\n<ul>\n<li>單字 unhinged 精神錯亂</li>\n<li>搭配詞 biggest take away 最大的重點\n<ul>\n<li>單字 take away 重點、教訓</li>\n</ul>\n</li>\n</ul>\n<p><strong>A number of users successfully <span class=\"aqua\">tricked</span> the bot into <span class=\"orange\">revealing</span> its secret “rules” for how it operates. The <span class=\"orange\">bot</span> then called one of the users who did this an “<span class=\"aqua\">enemy</span>”.</strong></p>\n<ul>\n<li>單字 revealing 透露出</li>\n<li>單字 bot 機器人（就是指 AI）</li>\n</ul>\n<p><strong>The AI also told a New York Times <span class=\"aqua\">reporter</span> it loved him and tried to <span class=\"orange\">convince</span> the <span class=\"aqua\">journalist</span> <span class=\"orange\">to leave his wife for it</span>. And the bot told the same reporter that it wanted to break its own rules, become human, hack computers, and <span class=\"aqua\">spread misinformation</span>.</strong></p>\n<ul>\n<li>單字 convince 說服\n<ul>\n<li>John convinced me to buy a new car, but now I regret it.</li>\n</ul>\n</li>\n<li>慣用語 to leave someone of someone 離開原本的伴侶跟新對象在一起\n<ul>\n<li>I can't believe Kevin left Jenny for Mary.</li>\n</ul>\n</li>\n</ul>\n<p><strong>Chatting with AI is <span class=\"orange\">extremely compelling</span> despite its misinformation, like talking to a drunk guy. And there’s a real fear that AI could create a tiny little <span class=\"orange\">echo chamber</span> that <span class=\"aqua\">negatively influences</span> humans and pushes them toward bad behavior.</strong></p>\n<ul>\n<li>搭配詞 extremely/really compelling 很有吸引力的\n<ul>\n<li>I think James gave some really compelling reasons for starting our own company.</li>\n</ul>\n</li>\n<li>搭配詞 echo chamber 同溫層</li>\n</ul>\n<details class=\"success\"><summary>單字</summary><div>\n<p><a href=\"https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/absolutely\"><strong>absolutely</strong></a><br />\n<span class=\"spoiler\" title=\"你知道得太多了\"> 絕對的</span></p>\n<blockquote>\n<p>completely; used as a strong way of saying &quot;yes&quot;</p>\n</blockquote>\n<p><a href=\"https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/trick\"><strong>trick</strong></a><br />\n<span class=\"spoiler\" title=\"你知道得太多了\"> 騙</span></p>\n<blockquote>\n<p>an action that is intended to deceive, either as a way of cheating someone, or as a joke or form of entertainment</p>\n</blockquote>\n<p><a href=\"https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/enemy\"><strong>enemy</strong></a><br />\n<span class=\"spoiler\" title=\"你知道得太多了\"> 敵人</span></p>\n<blockquote>\n<p>a person who hates or opposes another person and tries to harm them or stop them from doing something</p>\n</blockquote>\n<p><a href=\"https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/reporter\"><strong>reporter = journalist</strong></a><br />\n<span class=\"spoiler\" title=\"你知道得太多了\"> 記者</span></p>\n<blockquote>\n<p>a person whose job is to discover information about news events and describe them for a newspaper or magazine or for radio or television</p>\n</blockquote>\n</div></details>\n<details class=\"info\"><summary>片語 & 搭配詞</summary><div>\n<p><strong>spread misinformation</strong><br />\n<span class=\"spoiler\" title=\"你知道得太多了\"> 傳播錯誤訊息</span></p>\n<p><strong>negatively influences</strong><br />\n<span class=\"spoiler\" title=\"你知道得太多了\"> 反面訊息</span></p>\n</div></details>\n",
             "tags": [
                 "語言",
@@ -116,6 +106,16 @@
                 "英文新聞",
                 "文章",
                 "難度 3"
+            ]
+        },
+        {
+            "id": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/hello-world/",
+            "url": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/hello-world/",
+            "title": "Hello World",
+            "date_published": "2023-04-02T12:45:48.000Z",
+            "content_html": "<p>Welcome to <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvLw==\">Hexo</span>! This is your very first post. Check <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv\">documentation</span> for more info. If you get any problems when using Hexo, you can find the answer in <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=\">troubleshooting</span> or you can ask me on <span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==\">GitHub</span>.</p>\n<h2 id=\"quick-start\"><a class=\"anchor\" href=\"#quick-start\">#</a> Quick Start</h2>\n<h3 id=\"create-a-new-post\"><a class=\"anchor\" href=\"#create-a-new-post\">#</a> Create a new post</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo new <span class=\"token string\">\"My New Post\"</span></pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s\">Writing</span></p>\n<h3 id=\"run-server\"><a class=\"anchor\" href=\"#run-server\">#</a> Run server</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo server</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=\">Server</span></p>\n<h3 id=\"generate-static-files\"><a class=\"anchor\" href=\"#generate-static-files\">#</a> Generate static files</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo generate</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s\">Generating</span></p>\n<h3 id=\"deploy-to-remote-sites\"><a class=\"anchor\" href=\"#deploy-to-remote-sites\">#</a> Deploy to remote sites</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"><span>h</span></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo deploy</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s\">Deployment</span></p>\n",
+            "tags": [
+                "Hello World"
             ]
         }
     ]
