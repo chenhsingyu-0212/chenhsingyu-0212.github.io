@@ -212,7 +212,7 @@ It must be a blank line between two &lt;span class=&#34;orange&#34;&gt;consecuti
         <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/2405-Optimal-Partition-of-String/</id>
         <title>2405. Optimal Partition of String</title>
         <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/2405-Optimal-Partition-of-String/"/>
-        <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
+        <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/optimal-partition-of-string/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Given a string  &lt;code&gt;s&lt;/code&gt; , partition the string into one or more &lt;strong&gt;substrings&lt;/strong&gt; such that the characters in each substring are &lt;strong&gt;unique&lt;/strong&gt;. That is, no letter appears in a single substring more than &lt;strong&gt;once&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Return the &lt;em&gt;&lt;strong&gt;minimum&lt;/strong&gt;&lt;/em&gt; number of substrings in such a partition.&lt;/p&gt;
@@ -256,16 +256,16 @@ The only valid partition is (&amp;quot;s&amp;quot;,&amp;quot;s&amp;quot;,&amp;qu
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Medium/" />
-        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
         <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
         <updated>2023-04-04T04:02:30.000Z</updated>
     </entry>
     <entry>
         <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/881-Boats-to-Save-People/</id>
         <title>881. Boats to Save People</title>
         <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/881-Boats-to-Save-People/"/>
-        <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
+        <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/boats-to-save-people/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You are given an array  &lt;code&gt;people&lt;/code&gt;  where  &lt;code&gt;people[i]&lt;/code&gt;  is the weight of the  &lt;code&gt;ith&lt;/code&gt;  person, and an &lt;strong&gt;infinite number of boats&lt;/strong&gt; where each boat can carry a maximum weight of  &lt;code&gt;limit&lt;/code&gt; . Each boat carries at most two people at the same time, provided the sum of the weight of those people is at most  &lt;code&gt;limit&lt;/code&gt; .&lt;/p&gt;
 &lt;p&gt;Return the &lt;em&gt;minimum&lt;/em&gt; number of boats to carry every given person.&lt;/p&gt;
@@ -304,9 +304,9 @@ The only valid partition is (&amp;quot;s&amp;quot;,&amp;quot;s&amp;quot;,&amp;qu
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Medium/" />
+        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
         <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
-        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
         <updated>2023-04-03T08:26:41.000Z</updated>
     </entry>
@@ -345,8 +345,8 @@ The only valid partition is (&amp;quot;s&amp;quot;,&amp;quot;s&amp;quot;,&amp;qu
         <category term="語言" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/" />
         <category term="英文" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/" />
         <category term="單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/%E5%96%AE%E5%AD%97/" />
-        <category term="英文單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E5%96%AE%E5%AD%97/" />
         <category term="難度 1" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E9%9B%A3%E5%BA%A6-1/" />
+        <category term="英文單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E5%96%AE%E5%AD%97/" />
         <updated>2023-04-03T06:09:17.000Z</updated>
     </entry>
     <entry>
