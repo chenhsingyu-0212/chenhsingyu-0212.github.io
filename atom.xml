@@ -102,9 +102,9 @@ dinner 可替換成 breakfast/lunch 來表示「吃 (某物) 當早 / 午餐」�
         <category term="語言" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/" />
         <category term="英文" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/" />
         <category term="雜誌" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/%E9%9B%9C%E8%AA%8C/" />
-        <category term="難度 1" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E9%9B%A3%E5%BA%A6-1/" />
         <category term="英文雜誌" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E9%9B%9C%E8%AA%8C/" />
         <category term="對話" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E5%B0%8D%E8%A9%B1/" />
+        <category term="難度 1" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E9%9B%A3%E5%BA%A6-1/" />
         <updated>2023-04-04T08:10:58.000Z</updated>
     </entry>
     <entry>
@@ -345,8 +345,8 @@ The only valid partition is (&amp;quot;s&amp;quot;,&amp;quot;s&amp;quot;,&amp;qu
         <category term="語言" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/" />
         <category term="英文" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/" />
         <category term="單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/%E5%96%AE%E5%AD%97/" />
-        <category term="英文單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E5%96%AE%E5%AD%97/" />
         <category term="難度 1" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E9%9B%A3%E5%BA%A6-1/" />
+        <category term="英文單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E5%96%AE%E5%AD%97/" />
         <updated>2023-04-03T06:09:17.000Z</updated>
     </entry>
     <entry>
