@@ -817,14 +817,14 @@ Windows 子系統 Linux 版 (WSL) 可讓開發人員直接在 Windows 上安裝 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h1 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h1&gt;
-&lt;div class=&#34;note warning&#34;&gt;
-&lt;p&gt;&lt;mark&gt;Docker 是一種工具，可用來建立、部署及執行使用容器的應用程式。&lt;/mark&gt; 容器可讓開發人員封裝含有其所需全部元件 (程式庫、架構、相依性等) 的應用程式，且全部&lt;mark&gt;以一個套件的形式出貨&lt;/mark&gt;。&lt;/p&gt;
+&lt;div class=&#34;note warning no-icon&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Docker 是一種工具，可用來建立、部署及執行使用容器的應用程式。&lt;/strong&gt; 容器可讓開發人員封裝含有其所需全部元件 (程式庫、架構、相依性等) 的應用程式，且全部&lt;strong&gt;以一個套件的形式出貨&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;使用容器可確保應用程式會以相同的方式執行，而不管任何自訂的設定或先前在執行該應用程式的電腦 (可能與用來撰寫和測試應用程式程式碼的電腦不同) 上安裝的程式庫。&lt;/p&gt;
 &lt;p&gt;這可讓開發人員專注於撰寫程式碼，而不需擔心程式碼將在其上執行的系統。&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/fXopYNz.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;docker-三元素&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker-三元素&#34;&gt;#&lt;/a&gt; Docker 三元素&lt;/h2&gt;
-&lt;div class=&#34;note info&#34;&gt;
+&lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;要使用 Docker 時最重要的三個元素：&lt;br /&gt;
 映像檔 (Image)、 容器 (Container)、 倉庫 (Repository)。&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -843,14 +843,14 @@ Windows 子系統 Linux 版 (WSL) 可讓開發人員直接在 Windows 上安裝 
 &lt;blockquote&gt;
 &lt;p&gt;舉例來說，如果我今天想要一個 node.js 的執行環境跑我寫好的程式，我可以直接到上 Docker Hub 找到相對應的 node.js 映像檔 ，而不需要自己想辦法打包一個執行環境。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;note info&#34;&gt;
+&lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;它是 Docker 的映像檔主要是一個唯讀的檔案， 是啟動 Docker container 要使用到的檔案。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;另外 Docker 的 image 可以像是堆積木一樣， 一層一層的把 Docker image 堆起來。&lt;/p&gt;
-&lt;p&gt;如右圖：![](&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLmltZ3VyLmNvbS9nM1dYYlduLnBuZw==&#34;&gt;https://i.imgur.com/g3WXbWn.png&lt;/span&gt; =200x)&lt;/p&gt;
+&lt;p&gt;如右圖：&lt;img data-src=&#34;https://i.imgur.com/g3WXbWn.png&#34; alt=&#34;&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -864,7 +864,7 @@ Windows 子系統 Linux 版 (WSL) 可讓開發人員直接在 Windows 上安裝 
 &lt;blockquote&gt;
 &lt;p&gt;可以把容器看做是一個執行的應用程式加上執行它的簡易版 Linux 環境（包括 root 使用者權限、程式空間、使用者空間和網路空間等）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;note info&#34;&gt;
+&lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Docker Container 是透過 Docker image 執行起來的 Process，同一個 Docker image 可以啟動多個 Docker Container。&lt;/p&gt;
@@ -1418,8 +1418,8 @@ We cannot draw 3 uncrossed lines, because the line from nums1[1] = 4 to nums2[2]
         <category term="語言" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/" />
         <category term="英文" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/" />
         <category term="單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/%E5%96%AE%E5%AD%97/" />
-        <category term="難度 1" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E9%9B%A3%E5%BA%A6-1/" />
         <category term="英文單字" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E5%96%AE%E5%AD%97/" />
+        <category term="難度 1" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E9%9B%A3%E5%BA%A6-1/" />
         <updated>2023-05-10T06:50:14.000Z</updated>
     </entry>
     <entry>
