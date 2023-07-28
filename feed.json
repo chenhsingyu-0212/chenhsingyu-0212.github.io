@@ -40,9 +40,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
+                "Tree",
                 "Depth-First Search",
                 "Breadth-First Search",
-                "Tree",
                 "Binary Tree"
             ]
         },
@@ -56,9 +56,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Binary Search",
                 "Prefix Sum",
                 "String",
+                "Binary Search",
                 "Sliding Window"
             ]
         },
@@ -109,8 +109,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Hash Table",
-                "String"
+                "String",
+                "Hash Table"
             ]
         },
         {
@@ -176,8 +176,8 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Graph",
                 "Heap (Priority Queue)",
+                "Graph",
                 "Shortest Path"
             ]
         },
@@ -218,8 +218,8 @@
                 "Medium",
                 "Array",
                 "Heap (Priority Queue)",
-                "Two Pointers",
-                "Simulation"
+                "Simulation",
+                "Two Pointers"
             ]
         },
         {
@@ -248,8 +248,8 @@
                 "Medium",
                 "Array",
                 "Hash Table",
-                "Dynamic Programming",
-                "Binary Search"
+                "Binary Search",
+                "Dynamic Programming"
             ]
         },
         {
@@ -278,9 +278,9 @@
                 "Leetcode",
                 "Hard",
                 "Array",
+                "Prefix Sum",
                 "Sorting",
                 "Binary Search",
-                "Prefix Sum",
                 "Greedy"
             ]
         }
