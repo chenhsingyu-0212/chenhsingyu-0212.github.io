@@ -106,9 +106,9 @@
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-            <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
             <category term="Depth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Depth-First-Search/" />
             <category term="Breadth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Breadth-First-Search/" />
+            <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
             <category term="Binary Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Tree/" />
             <pubDate>Mon, 10 Jul 2023 09:36:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
@@ -157,9 +157,9 @@
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
+            <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
             <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
             <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
-            <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
             <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
             <pubDate>Fri, 07 Jul 2023 09:40:57 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
@@ -286,14 +286,6 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
 &lt;li&gt;16:00 ~ 19:00 吃晚餐&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;支出&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支出&#34;&gt;#&lt;/a&gt; 支出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;地鐵 * 2 次 = 3 + 2 = 5&lt;/li&gt;
-&lt;li&gt;公交車 * 1 次 = 2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;總支出 7 元&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;紀錄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#紀錄&#34;&gt;#&lt;/a&gt; 紀錄&lt;/h2&gt;
 &lt;details class=&#34;info&#34;&gt;&lt;summary&gt;日記&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;第一天抵達上海，沒想到天氣還蠻熱的，今天還沒開始實習，下午由上海市科協的老師帶我們去申辦電話卡，因為我們人蠻多的，所以了一些時間，不過其實整個辦理的流程很快，接下來就是吃完餐了，但因為今天一大早就搭飛機，5:00 就到松山機場，前一天基本上也沒睡，所以我吃飯到後面的時候基本都在打嗑睡，吃的差不多的時候發現外面下大雷雨，本來想說等雨小一點再去搭地鐵，但是依舊很大，我們就分別叫車回去，不過下雨天的滴滴真的不好叫，最後我坐上海市科協老師的車回酒店的，回酒店一洗完澡直接開始睡覺，本來想做一些事情，但是完全抵擋不住睡意。&lt;/p&gt;
@@ -314,18 +306,6 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
 &lt;li&gt;18:30 ~ 19:30 吃晚餐&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;支出-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支出-2&#34;&gt;#&lt;/a&gt; 支出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;地鐵 * 2 次 = 3 * 2 = 6&lt;/li&gt;
-&lt;li&gt;公交車 * 1 次 = 1 * 1 = 1&lt;/li&gt;
-&lt;li&gt;午餐 = 15&lt;/li&gt;
-&lt;li&gt;晚餐 = 12&lt;/li&gt;
-&lt;li&gt;飲料 = 6&lt;/li&gt;
-&lt;li&gt;點心 = 3.5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;總支出 43.5 元&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;紀錄-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#紀錄-2&#34;&gt;#&lt;/a&gt; 紀錄&lt;/h2&gt;
 &lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;學習項目&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;今天主要做的事為需求分析培訓，講解了基本的需求分析流程，從概念、目標、非功能性的需求、產出進行闡述，並詳細說明功能性需求與非功能性需求兩個的差異，接著了解需求分析的項目實踐，包含項目介紹、需求分析過程 (需求調研、梳理功能、需求規格說明書)。&lt;/p&gt;
@@ -355,17 +335,6 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
 &lt;li&gt;20:00 ~ 21:00 洗澡 + 休息&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;支出-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支出-3&#34;&gt;#&lt;/a&gt; 支出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;地鐵 * 2 次 = 3 + 2 = 5&lt;/li&gt;
-&lt;li&gt;公交車 * 1 次 = 2 * 1 = 2&lt;/li&gt;
-&lt;li&gt;午餐 = 24.3&lt;/li&gt;
-&lt;li&gt;晚餐 = 11&lt;/li&gt;
-&lt;li&gt;飲料 = 4.9&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;總支出 47.2 元&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;紀錄-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#紀錄-3&#34;&gt;#&lt;/a&gt; 紀錄&lt;/h2&gt;
 &lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;學習項目&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;今天匯報了昨天完成的功能清單，第一次寫比較不確定，其實顧老師叫我說一下自己寫的內容的時候，我有點傻住了，還好我在報告上應該算是蠻擅長的，就開是報告了起來，但是因為只有我一個人報告，沒有比較的東西，所以我也不是很確定我這樣是不是還可以，不過老師沒有提出什麼問題，感覺應該還不錯，他建議我修改一些層級，把功能再區分成子功能，更方便釐清，確實這樣改我一下就更清楚所有功能。&lt;/p&gt;
@@ -396,16 +365,6 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
 &lt;li&gt;23:00 ~ 23:30 洗澡 + 休息&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;支出-4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支出-4&#34;&gt;#&lt;/a&gt; 支出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;地鐵 * 2 次 = 3 + 2 = 5&lt;/li&gt;
-&lt;li&gt;公交車 * 1 次 = 2&lt;/li&gt;
-&lt;li&gt;午餐 = 16&lt;/li&gt;
-&lt;li&gt;晚餐 = 17.89&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;總支出 40.89 元&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;紀錄-4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#紀錄-4&#34;&gt;#&lt;/a&gt; 紀錄&lt;/h2&gt;
 &lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;學習項目&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;今天早上把昨天的需求規格說明書整理一下後，畫了一些模組圖、流程圖，下午進行了匯報，雖然依舊無法進行比較，但顧老師提出了一些問題，包括詳細程度與文字排版的問題。&lt;/p&gt;
@@ -436,17 +395,6 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
 &lt;li&gt;00:00 ~ 00:50 洗澡&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;支出-5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支出-5&#34;&gt;#&lt;/a&gt; 支出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;地鐵 * 2 次 = 3 + 3 = 6&lt;/li&gt;
-&lt;li&gt;午餐 = 16.40&lt;/li&gt;
-&lt;li&gt;晚餐 = 31&lt;/li&gt;
-&lt;li&gt;飲料 = 14&lt;/li&gt;
-&lt;li&gt;點心 = 4.5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;總支出 71.9 元&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;紀錄-5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#紀錄-5&#34;&gt;#&lt;/a&gt; 紀錄&lt;/h2&gt;
 &lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;學習項目&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;今天繼續把昨天的需求規格說明書完善，從 14 頁直接暴增到 31 頁啊！兩倍啊啊啊啊！好多，總共 1 萬 4 千多字，還好我是用繁體打字，不然我大概要打一個禮拜吧，完全不會拼音的人，我直接用爛翻譯，繁體轉簡體，還被關注了一下我在做什麼，我快笑死。&lt;/p&gt;
@@ -474,18 +422,6 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
 &lt;li&gt;02:00 ~ 03:00 洗澡&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;支出-6&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支出-6&#34;&gt;#&lt;/a&gt; 支出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;地鐵 * 2 次 = 3 + 2 = 5&lt;/li&gt;
-&lt;li&gt;公交 * 1 次 = 2&lt;/li&gt;
-&lt;li&gt;午餐 = 14.90&lt;/li&gt;
-&lt;li&gt;晚餐 = 26&lt;/li&gt;
-&lt;li&gt;飲料 = 8.8&lt;/li&gt;
-&lt;li&gt;酒吧 = 317.60&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;總支出 374.3 元&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;紀錄-6&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#紀錄-6&#34;&gt;#&lt;/a&gt; 紀錄&lt;/h2&gt;
 &lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;學習項目&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;今天簡單的了解了一下 java spring boot 框架，但由於大家今天有很多會議，上科院的領導也來了，好像還有客戶，所以大家其實今天沒什麼時間管我，所以我今天確實沒有很忙。&lt;/p&gt;
@@ -552,8 +488,8 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-            <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
             <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
+            <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
             <pubDate>Mon, 03 Jul 2023 22:43:19 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/buddy-strings/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -952,8 +888,8 @@ Vue（發音為 /vjuː/，如 view）是一個用於構建用戶界面的 JavaSc
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-            <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
             <category term="Graph" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Graph/" />
+            <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
             <category term="Shortest Path" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Shortest-Path/" />
             <pubDate>Wed, 28 Jun 2023 13:02:53 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
@@ -1247,8 +1183,8 @@ to put a computer program onto a computer so that the computer can use it&lt;/p&
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
             <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-            <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
             <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
+            <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
             <pubDate>Fri, 23 Jun 2023 16:25:06 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/longest-arithmetic-subsequence/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -1371,9 +1307,9 @@ The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.&lt;/li&gt;
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Hard" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Hard/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-            <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
             <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
             <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
+            <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
             <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
             <pubDate>Thu, 22 Jun 2023 01:05:34 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️⭐️⭐️&lt;/p&gt;
