@@ -8,9 +8,326 @@
     <author>
       <name>Hsing Yu</name>
     </author>
-    <updated>2023-08-13T11:59:37.000Z</updated>
+    <updated>2023-08-16T07:29:08.000Z</updated>
     <category term="Note" />
     <category term=" Coding" />
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Hard/239-Sliding-Window-Maximum/</id>
+        <title>239. Sliding Window Maximum</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Hard/239-Sliding-Window-Maximum/"/>
+        <content type="html">&lt;p&gt;⭐️⭐️⭐️⭐️⭐️&lt;/p&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/sliding-window-maximum/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You are given an array of integers  &lt;code&gt;nums&lt;/code&gt; , there is a &lt;span class=&#34;orange&#34;&gt;sliding&lt;/span&gt; window of size  &lt;code&gt;k&lt;/code&gt;  which is moving from the very left of the array to the very right. You can only see the  &lt;code&gt;k&lt;/code&gt;  numbers in the window. Each time the sliding window moves right by one position.&lt;/p&gt;
+&lt;p&gt;Return &lt;em&gt;the max sliding window&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [1,3,-1,-3,5,3,6,7], k = 3&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: [3,3,5,5,6,7]&lt;br /&gt;
+&lt;strong&gt;Explanation&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Window position                Max
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [1], k = 1&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: [1]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Use &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucHJvZ3JhbWl6LmNvbS9qYXZhLXByb2dyYW1taW5nL2RlcXVl&#34;&gt;Deque&lt;/span&gt; name  &lt;code&gt;dq&lt;/code&gt; .&lt;/li&gt;
+&lt;li&gt;Map  &lt;code&gt;k&lt;/code&gt;  integer in the  &lt;code&gt;nums&lt;/code&gt; , and keep the high number in the  &lt;code&gt;dq&lt;/code&gt;  first value.&lt;/li&gt;
+&lt;li&gt;Adding  &lt;code&gt;dp&lt;/code&gt;  first value in  &lt;code&gt;List&lt;/code&gt;  name  &lt;code&gt;res&lt;/code&gt;  which will become the answer.&lt;/li&gt;
+&lt;li&gt;Making  &lt;code&gt;List&amp;lt;Integer&amp;gt;&lt;/code&gt;  into  &lt;code&gt;int[]&lt;/code&gt;  and return.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ArrayDeque&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ArrayList&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Deque&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;List&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;maxSlidingWindow&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; k&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;Deque&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; dq &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ArrayDeque&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;List&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; res &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; k&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;isEmpty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;peekLast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pollLast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;offerLast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;peekFirst&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; k&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;peekFirst&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; k&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pollFirst&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;isEmpty&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;peekLast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;pollLast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;offerLast&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;dq&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;peekFirst&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;mapToInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;intValue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toArray&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;a href=&#34;https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/slide&#34;&gt;&lt;strong&gt;slide&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt; 滑動&lt;/span&gt; v.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;to (cause to) move easily and without interruption over a surface&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;sliding doors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;make sth into sth&lt;/strong&gt;&lt;br /&gt;
+&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt; 把… 變成&lt;/span&gt; make + 受詞 (物) + into + 受詞 (物)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They’ve made the spare room into an office.&lt;br /&gt;
+ 他們已把空置的房間改成辦公室。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
+</content>
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
+        <category term="Hard" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Hard/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+        <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
+        <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
+        <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
+        <category term="Monotonic Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Monotonic-Queue/" />
+        <updated>2023-08-16T07:29:08.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/language/english/%E6%96%87%E6%B3%95/%E5%8B%95%E8%A9%9E%E7%9A%84%E7%8F%BE%E5%9C%A8%E7%B0%A1%E5%96%AE%E5%BC%8F/</id>
+        <title>動詞的現在簡單式</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/language/english/%E6%96%87%E6%B3%95/%E5%8B%95%E8%A9%9E%E7%9A%84%E7%8F%BE%E5%9C%A8%E7%B0%A1%E5%96%AE%E5%BC%8F/"/>
+        <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
+&lt;h2 id=&#34;文法摘要&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文法摘要&#34;&gt;#&lt;/a&gt; 文法摘要&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;主詞是第三人稱單數 (he, she, it) 且為現在式，使用的動詞字尾上必須加 &amp;quot;-s&amp;quot; 或 &amp;quot;-es&amp;quot;，規則如下:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;動詞規則改法&lt;/th&gt;
+&lt;th&gt;範例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;動詞字尾加上 s&lt;/td&gt;
+&lt;td&gt;hit - hits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;動詞結尾是 e，加上 s&lt;/td&gt;
+&lt;td&gt;hide - hides&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;動詞字尾是 s/o/x/z/ch/sh，加上 es&lt;/td&gt;
+&lt;td&gt;catch - catches&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;動詞字尾為 「母音 + y」，只要加 s&lt;/td&gt;
+&lt;td&gt;stay - stays&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;動詞字尾為 「子音 + y」，要去 y 加上 ies&lt;/td&gt;
+&lt;td&gt;study - studies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;表示&lt;span class=&#34;orange&#34;&gt;現在&lt;/span&gt;或&lt;span class=&#34;orange&#34;&gt;事實&lt;/span&gt;的動作與狀態：注意第三人稱單數的字尾 s/es/ies 變化:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例一: Mr. Smith lives in Taichung, but he works in Taipei.&lt;br /&gt;
+ 史密斯先生住在台中，但他在台北工作。&lt;/li&gt;
+&lt;li&gt;例二: You look tired. Stop working and take a break.&lt;br /&gt;
+ 你看起來很累，別工作了，休息一下吧。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表示不變的格言、真理和事實:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例一: The sun rises in the east and sets in the west.&lt;br /&gt;
+ 太陽從東邊升起，西邊落下。&lt;/li&gt;
+&lt;li&gt;例二: There is no royal road to learning.&lt;br /&gt;
+ 學習無坦途。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表示現在的&lt;span class=&#34;orange&#34;&gt;習慣&lt;/span&gt;或反覆的動作，常與以下&lt;span class=&#34;orange&#34;&gt;頻率副詞&lt;/span&gt;連用:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;always (總是) /frequently (頻繁地) /often (常常) /usually (通常) /sometime (有時) /seldom (不常) /never (絕不)&lt;/li&gt;
+&lt;li&gt;every + 時間&lt;/li&gt;
+&lt;li&gt;次數 + a/an + 單數時間&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;例一: On Halloween, houses and yards in the U.S.A. are often lit up by jack-o&#39;-lanterns.&lt;br /&gt;
+ 萬聖節時，美國的房子和庭院常點著南瓜燈。&lt;/li&gt;
+&lt;li&gt;例二: Cindy studies math and English every day.&lt;br /&gt;
+ 辛蒂每天讀數學和英文。&lt;/li&gt;
+&lt;li&gt;例三: He writes to his parents once a week.&lt;br /&gt;
+ 他每週寫一次信給父母。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表示&lt;span class=&#34;orange&#34;&gt;時間&lt;/span&gt;或&lt;span class=&#34;orange&#34;&gt;條件&lt;/span&gt;的副詞子句，用&lt;span class=&#34;orange&#34;&gt;現在式&lt;/span&gt;代替&lt;span class=&#34;orange&#34;&gt;未來式&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例一: If she comes here tomorrow, please give her this letter.&lt;br /&gt;
+ 若她明天來到這，請給她這封信。&lt;/li&gt;
+&lt;li&gt;例二: Even when you are very old, your fingerprints will still look very much the way they do now.&lt;br /&gt;
+ 即便當你非常老，你的指紋仍會看起來和現在非常像。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note danger no-icon&#34;&gt;
+&lt;p&gt;註：在&lt;span class=&#34;orange&#34;&gt;副詞子句&lt;/span&gt;和&lt;span class=&#34;orange&#34;&gt;名詞子句&lt;/span&gt;中，仍用&lt;span class=&#34;orange&#34;&gt;未來式&lt;/span&gt;表示&lt;span class=&#34;orange&#34;&gt;未來式&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例一: Tell me where she will go next month.&lt;br /&gt;
+ 告訴我她下個月會去那裡。&lt;/li&gt;
+&lt;li&gt;例二: I don&#39;t know the exact time when he will hand in the report.&lt;br /&gt;
+ 我不知道他會繳交報告的確切時間。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;a href=&#34;https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/royal&#34;&gt;&lt;strong&gt;royal&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt; 皇家的&lt;/span&gt; adj.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;belonging or connected to a king or queen or a member of their family&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;the royal family&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;精選試題&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#精選試題&#34;&gt;#&lt;/a&gt; 精選試題&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li class=&#34;quiz fill&#34;&gt;
+&lt;p&gt;Bill never carries a bag or a wallet when shopping. Every time he has to pay, he &lt;span class=&#34;gap&#34;&gt;takes&lt;/span&gt; out money from his pocket.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bill 買東西時從來不帶包包或皮夾。每次要付錢的時候，他就會從口袋裡拿出錢來。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li class=&#34;quiz fill&#34;&gt;
+&lt;p&gt;Although Annie &lt;span class=&#34;gap&#34;&gt;know&lt;/span&gt; fast food is not good for her health, she still &lt;span class=&#34;gap&#34;&gt;eats&lt;/span&gt; it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;雖然 Annie 知道速食對健康不好，她還是繼續吃。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li class=&#34;quiz fill&#34;&gt;
+&lt;p&gt;Somewhere along the road, there is a shop which &lt;span class=&#34;gap&#34;&gt;sells&lt;/span&gt; things from foreign countries.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這條路上的某處，有家賣異國商品的店。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="語言" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/" />
+        <category term="英文" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/" />
+        <category term="文法" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/%E6%96%87%E6%B3%95/" />
+        <category term="英文文法" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E6%96%87%E6%B3%95/" />
+        <updated>2023-08-15T17:09:11.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/86-Partition-List/</id>
+        <title>86. Partition List</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/86-Partition-List/"/>
+        <content type="html">&lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/partition-list/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Given the  &lt;code&gt;head&lt;/code&gt;  of a linked list and a value  &lt;code&gt;x&lt;/code&gt; , partition it such that all nodes &lt;strong&gt;less than&lt;/strong&gt;  &lt;code&gt;x&lt;/code&gt;  come before nodes &lt;strong&gt;greater than or equal&lt;/strong&gt; to  &lt;code&gt;x&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;You should &lt;span class=&#34;orange&#34;&gt;&lt;strong&gt;preserve&lt;/strong&gt;&lt;/span&gt; the original relative order of the nodes in each of the two partitions.&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://assets.leetcode.com/uploads/2021/01/04/partition.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: head = [1,4,3,2,5,2], x = 3&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: [1,2,2,4,3,5]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: head = [2,1], x = 2&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: [1,2]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Use two  &lt;code&gt;ListNode&lt;/code&gt; ,  &lt;code&gt;less&lt;/code&gt;  and  &lt;code&gt;greater&lt;/code&gt; , to hold nodes with values less than  &lt;code&gt;x&lt;/code&gt;  and which node greater than or equal to  &lt;code&gt;x&lt;/code&gt; .&lt;/li&gt;
+&lt;li&gt;Linking two  &lt;code&gt;ListNode&lt;/code&gt;  togother, attach the  &lt;code&gt;greater&lt;/code&gt;  to the end of the  &lt;code&gt;less&lt;/code&gt; .&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// Definition for singly-linked list.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; next&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;partition&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; head&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; less &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; lessTail &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; less&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; greater &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt; greaterTail &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; greater&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;head &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;head&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                lessTail&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;head&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                lessTail &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; lessTail&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                greaterTail&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ListNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;head&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                greaterTail &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; greaterTail&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            head &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; head&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        lessTail&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; greater&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; less&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;next&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;a href=&#34;https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/preserve&#34;&gt;&lt;strong&gt;preserve&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt; 保存&lt;/span&gt; v.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;to keep something as it is, especially in order to prevent it from decaying or being damaged or destroyed&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;to &lt;strong&gt;preserve&lt;/strong&gt; the environment&lt;/li&gt;
+&lt;li&gt;We want to &lt;strong&gt;preserve&lt;/strong&gt; the character of the town while improving the facilities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
+</content>
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
+        <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
+        <category term="Linked List" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Linked-List/" />
+        <updated>2023-08-15T15:59:54.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/215-Kth-Largest-Element-in-an-Array/</id>
+        <title>215. Kth Largest Element in an Array</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/215-Kth-Largest-Element-in-an-Array/"/>
+        <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/kth-largest-element-in-an-array/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Given an integer array  &lt;code&gt;nums&lt;/code&gt;  and an integer  &lt;code&gt;k&lt;/code&gt; , return &lt;em&gt;the  &lt;code&gt;kth&lt;/code&gt;  largest element in the array&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Note that it is the  &lt;code&gt;kth&lt;/code&gt;  largest element in the sorted order, not the  &lt;code&gt;kth&lt;/code&gt;  &lt;span class=&#34;orange&#34;&gt;distinct&lt;/span&gt; element.&lt;/p&gt;
+&lt;p&gt;Can you solve it without sorting?&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [3,2,1,5,6,4], k = 2&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: 5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [3,2,3,1,2,4,5,5,6], k = 4&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: 4&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
+&lt;p&gt;Use the &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucHJvZ3JhbWl6LmNvbS9qYXZhLXByb2dyYW1taW5nL3ByaW9yaXR5cXVldWU=&#34;&gt;PriorityQueue&lt;/span&gt; which is a data structure.&lt;/p&gt;
+&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Comparator&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;PriorityQueue&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;findKthLargest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; k&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;PQ&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;PriorityQueue&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;PQComparator&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token constant&#34;&gt;PQ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;num&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; k&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            ans &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;PQ&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;poll&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;PQComparator&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Comparator&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token annotation punctuation&#34;&gt;@Override&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;compare&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; number1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; number2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; value &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; number1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;compareTo&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;number2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// elements are sorted in reverse order&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;value &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;value &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;a href=&#34;https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/distinct&#34;&gt;&lt;strong&gt;distinct&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt; 清楚的&lt;/span&gt; adj.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There&#39;s a distinct smell of cigarettes in here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;clearly noticeable; that certainly exists&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;smell of + sth&lt;/strong&gt;&lt;br /&gt;
+&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;... 的香味&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+</content>
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+        <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
+        <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+        <category term="Divide and Conquer" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Divide-and-Conquer/" />
+        <category term="Quickselect" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Quickselect/" />
+        <updated>2023-08-14T13:56:51.000Z</updated>
+    </entry>
     <entry>
         <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/2369-Check-if-There-is-a-Valid-Partition-For-The-Array/</id>
         <title>2369. Check if There is a Valid Partition For The Array</title>
@@ -317,9 +634,9 @@ This partition is valid, so we return true.&lt;/p&gt;
         <updated>2023-08-13T09:46:23.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/C/C-Program-%E9%80%B2%E9%9A%8E/</id>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/C%20Programming%20Language/C-Program-%E9%80%B2%E9%9A%8E/</id>
         <title>C Program 進階</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/C/C-Program-%E9%80%B2%E9%9A%8E/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/C%20Programming%20Language/C-Program-%E9%80%B2%E9%9A%8E/"/>
         <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
@@ -547,14 +864,14 @@ Access data by an address&lt;/p&gt;
 &lt;/div&gt;
 </content>
         <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Note" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/" />
-        <category term="C" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/C/" />
+        <category term="program-language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
+        <category term="C Programming Language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/C-Programming-Language/" />
         <updated>2023-08-13T09:15:16.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/C/C-Program-%E5%9F%BA%E7%A4%8E/</id>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/C%20Programming%20Language/C-Program-%E5%9F%BA%E7%A4%8E/</id>
         <title>C Program 基礎</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/C/C-Program-%E5%9F%BA%E7%A4%8E/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/C%20Programming%20Language/C-Program-%E5%9F%BA%E7%A4%8E/"/>
         <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
@@ -569,7 +886,7 @@ Access data by an address&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Program language&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://chenhsingyu-0212.github.io/categories/computer-science/Note/C/C-Program-%E6%A6%82%E5%BF%B5/&#34;&gt;C&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://chenhsingyu-0212.github.io/computer-science/Note/C/C-Program-%E5%9F%BA%E7%A4%8E/&#34;&gt;C&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;C++&lt;/li&gt;
 &lt;li&gt;Java&lt;/li&gt;
 &lt;li&gt;JavaScript&lt;/li&gt;
@@ -587,7 +904,7 @@ Access data by an address&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Compiler&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/zNw9fcm.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/zNw9fcm.png&#34; alt=&#34;&#34; width=&#34;600px&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;introduction-介紹&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#introduction-介紹&#34;&gt;#&lt;/a&gt; Introduction 介紹&lt;/h1&gt;
@@ -619,7 +936,7 @@ Access data by an address&lt;/p&gt;
 &lt;p&gt;Standard Library Header File 標準函式庫標頭檔&lt;/p&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/code&gt;  : 內容大略為處理輸入和輸出對象  &lt;code&gt;scanf&lt;/code&gt; / &lt;code&gt;printf&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/4Cs2ltK.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/4Cs2ltK.png&#34; alt=&#34;&#34; width=&#34;400px&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;給電腦字典 (標頭檔) 查詢程式內容意思&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -703,7 +1020,7 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/Ke9TrzS.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/Ke9TrzS.png&#34; alt=&#34;&#34; width=&#34;650px&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;1byte == 8bits&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -743,7 +1060,7 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;p&gt;將變數輸出，顯示在螢幕上&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/Y2jF469.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/LkMNcEe.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/LkMNcEe.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;輸出變數於特定格式&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;將變數輸出成特定格式，顯示在螢幕上&lt;/p&gt;
@@ -771,7 +1088,7 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果輸入了兩個以上的字元，則 getchar 會取得第一個字元，並將第二個字元留在緩衝區中，直到再使用 getchar 或 scanf 取得輸入。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/hYCX8d6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/hYCX8d6.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;operator&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#operator&#34;&gt;#&lt;/a&gt; Operator&lt;/h1&gt;
 &lt;div class=&#34;note warning no-icon&#34;&gt;
 &lt;ul&gt;
@@ -817,15 +1134,15 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;  AND 且&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/93HxV8Y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/93HxV8Y.png&#34; alt=&#34;&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;||&lt;/code&gt;  OR 或&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/zNv0lzf.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/zNv0lzf.png&#34; alt=&#34;&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;!&lt;/code&gt;  NOT 相反&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/TEkoCZD.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/TEkoCZD.png&#34; alt=&#34;&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;unary-operators&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#unary-operators&#34;&gt;#&lt;/a&gt; Unary Operators&lt;/h2&gt;
@@ -834,7 +1151,7 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;li&gt;postfix-expression ++&lt;/li&gt;
 &lt;li&gt;++ unary-expression&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/Og4xvza.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/Og4xvza.png&#34; alt=&#34;&#34; width=&#34;450px&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;challenge&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#challenge&#34;&gt;#&lt;/a&gt; Challenge&lt;/h2&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/O2W6ACG.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -914,13 +1231,13 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;h2 id=&#34;if-else&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#if-else&#34;&gt;#&lt;/a&gt; If … else&lt;/h2&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;If _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/9ldXd0L.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/9ldXd0L.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/WvexZnW.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;If … else _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/xLLY0OL.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/xLLY0OL.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If … else _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/FwnCrZR.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Shorthand if … else _ Syntax&lt;/strong&gt;&lt;br /&gt;
@@ -928,26 +1245,26 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;If … else if … else _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/CafpHTt.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/CafpHTt.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If … else if … else _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/rS6qkP0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Nested if _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/w7uknoI.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/w7uknoI.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Nested if _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/VyzN3C0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;switch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#switch&#34;&gt;#&lt;/a&gt; Switch&lt;/h2&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Switch _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/0aAggHw.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/0aAggHw.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Switch _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/8MswgdY.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;thinking&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#thinking&#34;&gt;#&lt;/a&gt; Thinking&lt;/h2&gt;
 &lt;p&gt;請問右邊程式執行後會輸出什麼呢？&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/qkCp8wy.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/qkCp8wy.png&#34; alt=&#34;&#34; width=&#34;400px&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;note danger no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;中止條件:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -959,21 +1276,21 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;h2 id=&#34;while&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#while&#34;&gt;#&lt;/a&gt; While&lt;/h2&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;While _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/qjPswQX.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/qjPswQX.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;While _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/eExxMtJ.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;do-while&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#do-while&#34;&gt;#&lt;/a&gt; Do while&lt;/h2&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Do while _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/7EYj5Kd.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/7EYj5Kd.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Do while _ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/FHsjCV2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;for-loop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#for-loop&#34;&gt;#&lt;/a&gt; For loop&lt;/h2&gt;
 &lt;div class=&#34;note info no-icon&#34;&gt;
 &lt;p&gt;&lt;strong&gt;For loop _ Flow chart&lt;/strong&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/FHSxoEY.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;img data-src=&#34;https://i.imgur.com/FHSxoEY.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;For loop_ Syntax&lt;/strong&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.imgur.com/fvxYgY1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -984,20 +1301,20 @@ Class, Structure, Union, Enumeration, Typedef defined Datatype&lt;/p&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;nested-loop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nested-loop&#34;&gt;#&lt;/a&gt; Nested loop&lt;/h2&gt;
 &lt;p&gt;巢狀是指東西如同鳥巢一樣，一層一層的包下去，而程式中的巢狀迴圈是，  &lt;code&gt;while/for&lt;/code&gt;  迴圈內包著  &lt;code&gt;while/for&lt;/code&gt;  迴圈。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/xuj6KW4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/xuj6KW4.png&#34; alt=&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;midway-challenge&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#midway-challenge&#34;&gt;#&lt;/a&gt; Midway Challenge&lt;/h1&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/FMn0doW.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/tlEaovS.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Note" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/" />
-        <category term="C" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/C/" />
+        <category term="program-language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
+        <category term="C Programming Language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/C-Programming-Language/" />
         <updated>2023-08-13T08:44:47.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/PHP/PHP-%E4%B8%B2%E6%8E%A5%E8%B3%87%E6%96%99%E5%BA%AB/</id>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/PHP/PHP-%E4%B8%B2%E6%8E%A5%E8%B3%87%E6%96%99%E5%BA%AB/</id>
         <title>PHP 串接資料庫</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/PHP/PHP-%E4%B8%B2%E6%8E%A5%E8%B3%87%E6%96%99%E5%BA%AB/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/PHP/PHP-%E4%B8%B2%E6%8E%A5%E8%B3%87%E6%96%99%E5%BA%AB/"/>
         <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
@@ -1166,14 +1483,14 @@ PDO 即是一種類別，裡面包含了操作資料庫時會使用到的變數�
 &lt;/div&gt;
 </content>
         <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Note" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/" />
-        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/PHP/" />
+        <category term="program-language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
+        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/PHP/" />
         <updated>2023-08-13T08:10:47.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/PHP/PHP-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</id>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/PHP/PHP-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</id>
         <title>PHP 基本語法</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/PHP/PHP-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/PHP/PHP-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/"/>
         <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
@@ -1741,14 +2058,14 @@ PDO 即是一種類別，裡面包含了操作資料庫時會使用到的變數�
 &lt;/table&gt;
 </content>
         <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Note" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/" />
-        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/PHP/" />
+        <category term="program-language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
+        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/PHP/" />
         <updated>2023-08-13T06:49:13.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/PHP/PHP-infomation/</id>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/PHP/PHP-infomation/</id>
         <title>PHP infomation</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/PHP/PHP-infomation/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Program-Language/PHP/PHP-infomation/"/>
         <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
@@ -1865,14 +2182,14 @@ PDO 即是一種類別，裡面包含了操作資料庫時會使用到的變數�
 &lt;/div&gt;
 </content>
         <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Note" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/" />
-        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Note/PHP/" />
+        <category term="program-language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
+        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/PHP/" />
         <updated>2023-08-13T06:18:21.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/API/</id>
-        <title>API</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/API/"/>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/What-is-API/</id>
+        <title>What is API?</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Note/What-is-API/"/>
         <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
@@ -2193,9 +2510,9 @@ WebSocket API 是使用 JSON 物件傳遞資料的另一個現代 Web API 開發
         <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
+        <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
         <category term="Depth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Depth-First-Search/" />
         <category term="Breadth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Breadth-First-Search/" />
-        <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
         <category term="Binary Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Tree/" />
         <updated>2023-07-10T01:36:40.000Z</updated>
     </entry>
@@ -2259,10 +2576,10 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
         <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
         <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
+        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
         <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
         <updated>2023-07-07T01:40:57.000Z</updated>
     </entry>
     <entry>
@@ -2317,8 +2634,8 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
         <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
+        <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
         <updated>2023-07-05T04:09:53.000Z</updated>
     </entry>
     <entry>
@@ -2529,317 +2846,5 @@ In both cases, there are five consecutive &#39;T&#39;s.&lt;/p&gt;
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
         <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
         <updated>2023-07-04T02:26:24.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/859-Buddy-Strings/</id>
-        <title>859. Buddy Strings</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/859-Buddy-Strings/"/>
-        <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
-&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/buddy-strings/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Given two strings  &lt;code&gt;s&lt;/code&gt;  and  &lt;code&gt;goal&lt;/code&gt; , return &lt;em&gt;true if you can swap two letters in  &lt;code&gt;s&lt;/code&gt;  so the result is equal to  &lt;code&gt;goal&lt;/code&gt; , otherwise, return  &lt;code&gt;false&lt;/code&gt; &lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Swapping letters is defined as taking two indices  &lt;code&gt;i&lt;/code&gt;  and  &lt;code&gt;j&lt;/code&gt;  (0-indexed) such that  &lt;code&gt;i != j&lt;/code&gt;  and swapping the characters at  &lt;code&gt;s[i]&lt;/code&gt;  and  &lt;code&gt;s[j]&lt;/code&gt; .&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For example, swapping at indices  &lt;code&gt;0&lt;/code&gt;  and  &lt;code&gt;2&lt;/code&gt;  in  &lt;code&gt;&amp;quot;abcd&amp;quot;&lt;/code&gt;  results in  &lt;code&gt;&amp;quot;cbad&amp;quot;&lt;/code&gt; .&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: s = &amp;quot;ab&amp;quot;, goal = &amp;quot;ba&amp;quot;&lt;br /&gt;
-&lt;strong&gt;Output&lt;/strong&gt;: true&lt;br /&gt;
-&lt;strong&gt;Explanation&lt;/strong&gt;: You can swap s[0] = &#39;a&#39; and s[1] = &#39;b&#39; to get &amp;quot;ba&amp;quot;, which is equal to goal.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: s = &amp;quot;ab&amp;quot;, goal = &amp;quot;ab&amp;quot;&lt;br /&gt;
-&lt;strong&gt;Output&lt;/strong&gt;: false&lt;br /&gt;
-&lt;strong&gt;Explanation&lt;/strong&gt;: The only letters you can swap are s[0] = &#39;a&#39; and s[1] = &#39;b&#39;, which results in &amp;quot;ba&amp;quot; != goal.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;example-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-3&#34;&gt;#&lt;/a&gt; Example 3&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: s = &amp;quot;aa&amp;quot;, goal = &amp;quot;aa&amp;quot;&lt;br /&gt;
-&lt;strong&gt;Output&lt;/strong&gt;: true&lt;br /&gt;
-&lt;strong&gt;Explanation&lt;/strong&gt;: You can swap s[0] = &#39;a&#39; and s[1] = &#39;a&#39; to get &amp;quot;aa&amp;quot;, which is equal to goal.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
-&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;HashSet&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Set&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;buddyStrings&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; goal&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;goal&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token class-name&#34;&gt;Set&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; temp &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;HashSet&lt;/span&gt;&lt;span class=&#34;token generics&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; c &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toCharArray&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                temp&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;c&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; temp&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; goal&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// Swapping same characters&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// two string equal&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; j &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;charAt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; goal&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;charAt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j &lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;charAt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; goal&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;charAt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            j&lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; j&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; clone &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toCharArray&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; temp &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; clone&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            clone&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; clone&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            clone&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; temp&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;clone&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// Find two letter to swap, when two letter on deference string in same index isn&#39;t equal&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;goal&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
-!! !!&lt;/p&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
-&lt;hr /&gt;
-&lt;p&gt;!! !!&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-</content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
-        <updated>2023-07-03T14:43:19.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Framework/Vue/Vue-%E6%8C%87%E4%BB%A4/</id>
-        <title>Vue 指令</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Framework/Vue/Vue-%E6%8C%87%E4%BB%A4/"/>
-        <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;JHTNT&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34; data-background-image=&#34;https://i.imgur.com/cBOtjyB.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34;&gt;JHTNT&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;text-interpolation&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#text-interpolation&#34;&gt;#&lt;/a&gt; Text Interpolation&lt;/h1&gt;
-&lt;p&gt;Using the &lt;strong&gt;&amp;quot;Mustache&amp;quot;&lt;/strong&gt; syntax (double curly braces 兩個大括號  &lt;code&gt;&amp;#123;&amp;#123; &amp;#125;&amp;#125;&lt;/code&gt; )&lt;/p&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &amp;#123;&amp;#123; value &amp;#125;&amp;#125; &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;But &lt;strong&gt;Mustaches&lt;/strong&gt; &lt;span class=&#34;red&#34;&gt;cannot&lt;/span&gt; be used inside &lt;strong&gt;HTML attributes&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1 id=&#34;v-bind&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#v-bind&#34;&gt;#&lt;/a&gt;  &lt;code&gt;v-bind&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;用法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;v-bind:&lt;/span&gt;[attribute]&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;[Vue data]&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;v-if-v-else-if-v-else&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#v-if-v-else-if-v-else&#34;&gt;#&lt;/a&gt;  &lt;code&gt;v-if&lt;/code&gt; 、 &lt;code&gt;v-else-if&lt;/code&gt; 、 &lt;code&gt;v-else&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;用法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;v-if&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;score &gt;= 80&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Perfect&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;v-else-if&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;scroe &gt; 60&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Good&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;v-else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Poor&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;A condition, or &amp;quot;if-statement&amp;quot;, is something that is either  &lt;code&gt;true&lt;/code&gt;  or  &lt;code&gt;false&lt;/code&gt; .&lt;/li&gt;
-&lt;li&gt;A condition is often a comparison &lt;strong&gt;check between two values&lt;/strong&gt; like in the example above to see if one value is greater than the other.
-&lt;ul&gt;
-&lt;li&gt;We use comparison operators like  &lt;code&gt;&amp;lt;&lt;/code&gt; ,  &lt;code&gt;&amp;gt;=&lt;/code&gt;  or  &lt;code&gt;!==&lt;/code&gt;  to do such checks.&lt;/li&gt;
-&lt;li&gt;Comparison checks can also be combined with logical operators such as  &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;  or  &lt;code&gt;||&lt;/code&gt; .&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight ts&#34;&gt;&lt;figcaption data-lang=&#34;TypeScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            text&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;I like taco, pizza, Thai beef salad, pho soup and tagine.&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;p v&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;text.includes(&#39;pizza&#39;)&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;The text includes the word &lt;span class=&#34;token string&#34;&gt;&#39;pizza&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;p&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;p v&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;The word &lt;span class=&#34;token string&#34;&gt;&#39;pizza&#39;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;is&lt;/span&gt; not found &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; the text&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;p&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;v-show&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#v-show&#34;&gt;#&lt;/a&gt;  &lt;code&gt;v-show&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;當條件為  &lt;code&gt;false&lt;/code&gt;  時，該指令通過將 CSS  &lt;code&gt;display&lt;/code&gt;  屬性值設置為  &lt;code&gt;none&lt;/code&gt;  來隱藏元素。&lt;/p&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token literal-property property&#34;&gt;showDiv&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div v&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;show&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;showDiv&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;This div tag can be hidden&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;參考學習文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#參考學習文章&#34;&gt;#&lt;/a&gt; 參考 / 學習文章&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi52dWVqcy5vcmcvZ3VpZGUvaW50cm9kdWN0aW9uLmh0bWw=&#34;&gt;官方文件&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudzNzY2hvb2xzLmNvbS92dWUvaW5kZXgucGhw&#34;&gt;w3school&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLXR3L1Z1ZS5qcw==&#34;&gt;維基百科&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvemgtVFcvZG9jcy9MZWFybi9Ub29sc19hbmRfdGVzdGluZy9DbGllbnQtc2lkZV9KYXZhU2NyaXB0X2ZyYW1ld29ya3MvVnVlX2dldHRpbmdfc3RhcnRlZA==&#34;&gt;MDN web docs&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pdGhlbHAuaXRob21lLmNvbS50dy9hcnRpY2xlcy8xMDE5MjI2MA==&#34;&gt;Vue.js 30 天隨身包系列&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Framework" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Framework/" />
-        <category term="Vue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Framework/Vue/" />
-        <category term="前端框架" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" />
-        <updated>2023-06-29T17:45:03.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Framework/Vue/Vue-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/</id>
-        <title>Vue 基本介紹</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Framework/Vue/Vue-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/"/>
-        <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;JHTNT&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34; data-background-image=&#34;https://i.imgur.com/cBOtjyB.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34;&gt;JHTNT&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;專案結構&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#專案結構&#34;&gt;#&lt;/a&gt; 專案結構&lt;/h1&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td data-command=&#34;[root@localhost] $&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;tree /f &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; structure.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;有整理過的 structure.txt&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vue-project&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  .gitignore&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  env.d.ts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  index.html&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  output.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  package-lock.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  package.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  README.md&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  tsconfig.app.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  tsconfig.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  tsconfig.node.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  vite.config.ts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├─.vscode&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│      extensions.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│          &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├─public&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│      favicon.ico&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│      &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;└─src&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │  App.vue&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │  main.ts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    ├─assets&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │      base.css&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │      logo.svg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │      main.css&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    │      &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    └─components&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        │  HelloWorld.vue&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        │  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        └─icons&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                IconCommunity.vue&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;public&lt;/code&gt;  ：這個資料夾包含了所有發布的靜態檔案，這些檔案在建置過程不會經過 Webpack 加工。（但是有一個例外：  &lt;code&gt;index.html&lt;/code&gt;  會有一些處理）。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;favicon.ico&lt;/code&gt;  ：這是應用程式的 favicon。目前是 Vue 的標誌。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;index.html&lt;/code&gt;  ：這是應用程式的模板。你的 Vue 應用程式會透過這個 HTML 頁面來運行，你也可以使用 lodash 樣板語言在這個頁面穿插一些值。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;src&lt;/code&gt;  ：這個資料夾是 Vue 專案的核心。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;main.js&lt;/code&gt;  ：這是應用程式的進入點。目前，這個檔案會初始化你的 Vue 應用程式並定義要將應用掛載到 index.html 檔案中的哪個 HTML 元素。通常還會在這個檔案註冊全域性元件或載入其他 Vue 函式庫。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;App.vue&lt;/code&gt;  ：這是 Vue 應用程式的根節點元件。往下看可以了解更多關於 Vue 元件的說明。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;components&lt;/code&gt;  ：你可以把你的元件放在這個資料夾。目前它只有放一個範例元件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;assets&lt;/code&gt;  ：這個資料夾是用來放一些靜態檔案像是 CSS 和圖片。因為這些檔案在來源目錄下，它們可以透過 Webpack 加工處理。這表示你可以使用一些預處理器，像是 Sass / SCSS 或是 Stylus 。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;web元件化系統&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web元件化系統&#34;&gt;#&lt;/a&gt; Web 元件化系統&lt;/h1&gt;
-&lt;p&gt;Vue.js 嚮往的就是先建立好根實體 (Vue Instance)，再開發好底下每個小元件 (Components)，慢慢往上組合成一個完整頁面，最後全部搭建起來成為一個完整專案。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://vuejs.org/assets/components.7fbb3771.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;通常一個元件包含 html、css、js，而 Vue 會將其全部寫在一個  &lt;code&gt;.vue&lt;/code&gt;  為副檔名的檔案當中，vue-loader 會編譯這個  &lt;code&gt;.vue&lt;/code&gt;  的檔案，將結果顯示出來。&lt;/p&gt;
-&lt;h1 id=&#34;vue-instance&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vue-instance&#34;&gt;#&lt;/a&gt; Vue Instance&lt;/h1&gt;
-&lt;p&gt;根實體 (Vue Instance) 是樹狀結構中最上面的那個點。&lt;/p&gt;
-&lt;p&gt;每個 Vue App 都是從創建一個 vue instance 開始，Vue Instance 是透過 Vue Constructor (建構式) 所產生。&lt;br /&gt;
-在實體化時，可傳入一個&lt;strong&gt;選項物件 (Options)&lt;/strong&gt;，此物件包含這個 vue instance 需要用到的屬性，像是&lt;strong&gt;掛載點 (el)&lt;/strong&gt;、&lt;strong&gt;資料 (data)&lt;/strong&gt;、&lt;strong&gt;方法 (methods)&lt;/strong&gt;、&lt;strong&gt;模板 (template)&lt;/strong&gt;、** 生命週期鉤子 (hooks)** 等等。&lt;/p&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;// options&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;https://habrastorage.org/getpro/habr/post_images/028/0c8/0ba/0280c80baeff17fbcadd8f1c060c6070.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h1 id=&#34;vue-檔案單一檔案元件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vue-檔案單一檔案元件&#34;&gt;#&lt;/a&gt;  &lt;code&gt;.vue&lt;/code&gt;  檔案（單一檔案元件）&lt;/h1&gt;
-&lt;p&gt;Vue 讓你把模板、相關指令碼和 CSS 整合在一起放在以  &lt;code&gt;.vue&lt;/code&gt;  結尾的檔案裡。這些檔案會被 JS 的打包工具（像是 Webpack ）加以處理，這也代表你可以在你的專案裡使用一些建置工具，像是 Babel 、 TypeScript 、 SCSS 等工具來創造更複雜的元件。&lt;/p&gt;
-&lt;h2 id=&#34;appvue&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#appvue&#34;&gt;#&lt;/a&gt;  &lt;code&gt;App.vue&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;在創建專案時，你可以在  &lt;code&gt;src&lt;/code&gt;  資料夾中，看到第一個  &lt;code&gt;.vue&lt;/code&gt;  檔案。&lt;/p&gt;
-&lt;p&gt;由三個部分組成：  &lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;  、  &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  以及  &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;  ，分別包含了&lt;strong&gt;元件的模板&lt;/strong&gt;、&lt;strong&gt;指令碼&lt;/strong&gt;和&lt;strong&gt;樣式&lt;/strong&gt;資訊。&lt;br /&gt;
-所有的單一檔案元件都是使用這種基本架構。&lt;/p&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;span&gt;App.vue&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script setup lang&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;ts&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;/* javascript */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; HelloWorld &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;./components/HelloWorld.vue&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; TheWelcome &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;./components/TheWelcome.vue&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;/* html */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;header&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;img alt&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Vue logo&#34;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;logo&#34;&lt;/span&gt; src&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./assets/logo.svg&#34;&lt;/span&gt; width&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;125&#34;&lt;/span&gt; height&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;125&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;div &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;wrapper&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;HelloWorld msg&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;You did it!&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;div&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;header&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;main&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;TheWelcome &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;main&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;template&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;style scoped&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;/* css */&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;header &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  line&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;height&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1.5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;logo &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token literal-property property&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; block&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token literal-property property&#34;&gt;margin&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; auto 2rem&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;style&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt; &lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;  元件的模板&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;包含所有的標記結構以及元件的呈現邏輯。&lt;/li&gt;
-&lt;li&gt;模板可以包含任何有效的 HTML，以及一些 Vue 特定的語法。&lt;/li&gt;
-&lt;li&gt;在  &lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;  標籤上設定  &lt;code&gt;lang&lt;/code&gt;  屬性。例如設置  &lt;code&gt;&amp;lt;template lang=&amp;quot;pug&amp;quot;&amp;gt;&lt;/code&gt; ，你就可以使用 Pug 樣板語法來取代標準的 HTML 。在本教學中我們會使用標準 HTML ，但還是值得知道有這個方法。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt; &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  指令碼&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;包含元件中所有非顯示的邏輯。最重要的是， &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  標籤必須輸出一個 JS 物件。&lt;/li&gt;
-&lt;li&gt;這個物件是在本地端註冊的元件，包含&lt;strong&gt;定義屬性&lt;/strong&gt;、&lt;strong&gt;處理本地狀態&lt;/strong&gt;、&lt;strong&gt;定義方法&lt;/strong&gt;等等。&lt;/li&gt;
-&lt;li&gt;如果想要使用 TypeScript 語法，必須把  &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  標籤的  &lt;code&gt;lang&lt;/code&gt;  屬性設定成  &lt;code&gt;&amp;lt;script lang=&amp;quot;ts&amp;quot;&amp;gt;&lt;/code&gt;  來告訴編譯器你要使用 TypeScript 。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt; &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;  樣式&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;是撰寫元件的 CSS 的地方。&lt;/li&gt;
-&lt;li&gt;如果加上  &lt;code&gt;scoped&lt;/code&gt;  屬性，例如  &lt;code&gt;&amp;lt;style scoped&amp;gt;&lt;/code&gt;  ， Vue 會把樣式的範圍限制在這個單一檔案元件裡。這類似 CSS-in-JS 的解決方案，但是它允許你寫單純的 CSS 。&lt;/li&gt;
-&lt;li&gt;如果在使用 CLI 創建專案時有選擇 CSS 預處理器，就可以在  &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;  標籤上添加  &lt;code&gt;lang&lt;/code&gt;  屬性，這些內容在建置的時候將會被 Webpack 處理。舉例來說，  &lt;code&gt;&amp;lt;style lang=&amp;quot;scss&amp;quot;&amp;gt;&lt;/code&gt;  允許在樣式資訊中使用 SCSS 語法。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;lifecycle-hooks&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lifecycle-hooks&#34;&gt;#&lt;/a&gt; Lifecycle Hooks&lt;/h1&gt;
-&lt;p&gt;這 8 個 hook 的資料型態皆為 function:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;beforeCreate&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;在初始化 vue instance 並開啟整個 Lifecycle 後，資料綁定與事件配置之前。&lt;/li&gt;
-&lt;li&gt;目前階段還無法調用  &lt;code&gt;$data&lt;/code&gt; 。&lt;/li&gt;
-&lt;li&gt;應用場景：loading 進頁面的事件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;created&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;vue instance 創建完成&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$data&lt;/code&gt;  已可以取得，屬性與事件也已綁定好。&lt;/li&gt;
-&lt;li&gt;目前階段尚未掛載  &lt;code&gt;el&lt;/code&gt; ，DOM 也尚未生成。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;beforeMount&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;在掛載  &lt;code&gt;el&lt;/code&gt;  開始之前。&lt;/li&gt;
-&lt;li&gt;目前階段是相關 render 函式首次被調用，尚未被 DOM 給綁定。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;mounted&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;el&lt;/code&gt;  被剛創建好的  &lt;code&gt;vm.$el&lt;/code&gt;  替換取代，並且掛載到  &lt;code&gt;vm&lt;/code&gt;  上。&lt;/li&gt;
-&lt;li&gt;目前階段已被 DOM 綁定。&lt;/li&gt;
-&lt;li&gt;應用場景：對後端發出請求或讀取新資料&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;beforeUpdate&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;在資料更新時調用，Virtual DOM 重新 render 與 patch 之前，可以在這個階段變更資料狀態。&lt;/li&gt;
-&lt;li&gt;目前階段還不會繪製 view。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;updated&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;資料更新後會使 Virtual DOM 重新 render 頁面。&lt;/li&gt;
-&lt;li&gt;目前階段會繪製出正確的 view。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;beforeDestroy&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;在 vue instance 被銷毀前調用。&lt;/li&gt;
-&lt;li&gt;目前階段還可以完全使用這個 vue instance。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;destroyed&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;vue instance 銷毀後可以調用&lt;/li&gt;
-&lt;li&gt;調用後這個 vue instance 底下的資料與樣板會解除綁定，事件會取消監聽，所有子元件也會被銷毀。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://www.oreilly.com/api/v2/epubs/9781788299589/files/assets/9f308e86-bbbe-489c-9f93-06abe2675081.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;example&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt; Example&lt;/h2&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; vm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Vue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token literal-property property&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token literal-property property&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;Eva&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;beforeCreate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;//vue instance 尚未創建完成，還不能讀取到資料&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;beforeCreate: My name is &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;created&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;//vue instance 創建完成，資料已綁定&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;created: My name is &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;beforeMount&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 尚未掛載 el 與綁定 DOM&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;beforeMount: My name is &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;mounted&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 綁定 DOM 之後&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;mounted: My name is &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;beforeUpdate&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 資料更新時調用，尚未更新 DOM&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;beforeUpdate: My name is &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;updated&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 因為資料更新而更新 DOM&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;updated: My name is &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;beforeDestroy&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 銷毀整個 vue instance 之前&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;beforeDestroy&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function-variable function&#34;&gt;destroyed&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 銷毀整個 vue instance 之後&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;destroyed&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;第一階段beforecreate-created&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一階段beforecreate-created&#34;&gt;#&lt;/a&gt; 第一階段：beforeCreate /created&lt;/h2&gt;
-&lt;p&gt;在綁定 el 之前，beforeCreate 階段還不能讀取資料&lt;br /&gt;
-&lt;img data-src=&#34;https://ithelp.ithome.com.tw/upload/images/20180117/20107673rFYxeOVtNt.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第二階段beforemount-mounted&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二階段beforemount-mounted&#34;&gt;#&lt;/a&gt; 第二階段：beforeMount /mounted&lt;/h2&gt;
-&lt;p&gt;加入 el 屬性在物件裡&lt;br /&gt;
-&lt;img data-src=&#34;https://ithelp.ithome.com.tw/upload/images/20180117/20107673oHn4jrQtox.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第三階段beforeupdate-updated&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三階段beforeupdate-updated&#34;&gt;#&lt;/a&gt; 第三階段：beforeUpdate /updated&lt;/h2&gt;
-&lt;p&gt;因為要變更資料才會觸發這兩個 function，這邊我們使用強制變更資料&lt;br /&gt;
-&lt;img data-src=&#34;https://ithelp.ithome.com.tw/upload/images/20180117/20107673W4sssEXo0X.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第四階段beforedestroy-destroyed&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第四階段beforedestroy-destroyed&#34;&gt;#&lt;/a&gt; 第四階段：beforeDestroy /destroyed&lt;/h2&gt;
-&lt;p&gt;因為上面第三階段強制變更資料的方法會導致一直執行更新資料，所以先將剛剛新增的  &lt;code&gt;vm.$beforeUpdate();&lt;/code&gt;  刪掉，加入 destroy 的方法&lt;br /&gt;
-&lt;img data-src=&#34;https://ithelp.ithome.com.tw/upload/images/20180117/201076733noETElD7o.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;h1 id=&#34;參考學習文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#參考學習文章&#34;&gt;#&lt;/a&gt; 參考 / 學習文章&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi52dWVqcy5vcmcvZ3VpZGUvaW50cm9kdWN0aW9uLmh0bWw=&#34;&gt;官方文件&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudzNzY2hvb2xzLmNvbS92dWUvaW5kZXgucGhw&#34;&gt;w3school&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLXR3L1Z1ZS5qcw==&#34;&gt;維基百科&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvemgtVFcvZG9jcy9MZWFybi9Ub29sc19hbmRfdGVzdGluZy9DbGllbnQtc2lkZV9KYXZhU2NyaXB0X2ZyYW1ld29ya3MvVnVlX2dldHRpbmdfc3RhcnRlZA==&#34;&gt;MDN web docs&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pdGhlbHAuaXRob21lLmNvbS50dy9hcnRpY2xlcy8xMDE5MjI2MA==&#34;&gt;Vue.js 30 天隨身包系列&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Framework" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Framework/" />
-        <category term="Vue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Framework/Vue/" />
-        <category term="前端框架" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" />
-        <updated>2023-06-29T12:51:20.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Framework/Vue/%E5%89%B5%E5%BB%BA-Vue-js-Project/</id>
-        <title>創建 Vue.js Project</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Framework/Vue/%E5%89%B5%E5%BB%BA-Vue-js-Project/"/>
-        <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;JHTNT&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34; data-background-image=&#34;https://i.imgur.com/cBOtjyB.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34;&gt;JHTNT&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;創建的項目將使用基於 Vite 的構建設置，並允許我們使用 Vue 的單文件組件 (SFC)。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;note danger&#34;&gt;
-&lt;p&gt;請先確認是否安裝 Node.js，可運用以下指令測試  &lt;code&gt;node -v&lt;/code&gt; 。&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;創建-vue-project&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#創建-vue-project&#34;&gt;#&lt;/a&gt; 創建 Vue Project&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvdnVl&#34;&gt;npm vue 版本&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; init vue@latest&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;設定-vue-project&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#設定-vue-project&#34;&gt;#&lt;/a&gt; 設定 Vue Project&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/1GU82Pp.png&#34; alt=&#34;&#34; width=&#34;600px&#34; /&gt;&lt;/p&gt;
-&lt;h1 id=&#34;運行-vue-project&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#運行-vue-project&#34;&gt;#&lt;/a&gt; 運行 Vue Project&lt;/h1&gt;
-&lt;p&gt;在第一次創建或是更新 package 內容時，記得要輸入  &lt;code&gt;npm install&lt;/code&gt; ，安裝內容所需。&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; run dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;終端機會出現類似以下的訊息:&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; vue-project@0.0.0 dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; vite&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  VITE v4.3.9  ready &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;801&lt;/span&gt; ms&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ➜  Local:   http://localhost:5173/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ➜  Network: use &lt;span class=&#34;token parameter variable&#34;&gt;--host&lt;/span&gt; to expose&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ➜  press h to show &lt;span class=&#34;token builtin class-name&#34;&gt;help&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
-&lt;p&gt;可以在瀏覽器輸入 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2xvY2FsaG9zdDo1MTczLw==&#34;&gt;http://localhost:5173/&lt;/span&gt; 來查看專案樣式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;建構-vue-project&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#建構-vue-project&#34;&gt;#&lt;/a&gt; 建構 Vue Project&lt;/h1&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; run build&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
-&lt;p&gt;此命令會在  &lt;code&gt;./dist&lt;/code&gt;  文件夾中為你的應用創建一個生產環境的構建版本。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;參考學習文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#參考學習文章&#34;&gt;#&lt;/a&gt; 參考 / 學習文章&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbi52dWVqcy5vcmcvZ3VpZGUvaW50cm9kdWN0aW9uLmh0bWw=&#34;&gt;官方文件&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudzNzY2hvb2xzLmNvbS92dWUvaW5kZXgucGhw&#34;&gt;w3school&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3poLXR3L1Z1ZS5qcw==&#34;&gt;維基百科&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvemgtVFcvZG9jcy9MZWFybi9Ub29sc19hbmRfdGVzdGluZy9DbGllbnQtc2lkZV9KYXZhU2NyaXB0X2ZyYW1ld29ya3MvVnVlX2dldHRpbmdfc3RhcnRlZA==&#34;&gt;MDN web docs&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pdGhlbHAuaXRob21lLmNvbS50dy9hcnRpY2xlcy8xMDE5MjI2MA==&#34;&gt;Vue.js 30 天隨身包系列&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Framework" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Framework/" />
-        <category term="Vue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Framework/Vue/" />
-        <category term="前端框架" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" />
-        <updated>2023-06-28T18:06:32.000Z</updated>
     </entry>
 </feed>
