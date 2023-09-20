@@ -17,10 +17,10 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Hash Table",
                 "Binary Search",
-                "Sliding Window",
-                "Prefix Sum"
+                "Prefix Sum",
+                "Hash Table",
+                "Sliding Window"
             ]
         },
         {
@@ -76,10 +76,10 @@
                 "Leetcode",
                 "Easy",
                 "Array",
-                "Matrix",
+                "Heap (Priority Queue)",
                 "Binary Search",
                 "Sorting",
-                "Heap (Priority Queue)"
+                "Matrix"
             ]
         },
         {
@@ -266,8 +266,8 @@
                 "Medium",
                 "Dynamic Programming",
                 "Array",
-                "Breadth-First Search",
-                "Matrix"
+                "Matrix",
+                "Breadth-First Search"
             ]
         },
         {
@@ -281,9 +281,9 @@
                 "Leetcode",
                 "Hard",
                 "Array",
-                "Sliding Window",
                 "Heap (Priority Queue)",
                 "Queue",
+                "Sliding Window",
                 "Monotonic Queue"
             ]
         }
