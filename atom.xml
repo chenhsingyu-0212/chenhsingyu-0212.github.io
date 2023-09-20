@@ -8,9 +8,68 @@
     <author>
       <name>Hsing Yu</name>
     </author>
-    <updated>2023-09-19T12:47:27.000Z</updated>
+    <updated>2023-09-20T01:23:58.000Z</updated>
     <category term="Note" />
     <category term=" Coding" />
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1658-Minimum-Operations-to-Reduce-X-to-Zero/</id>
+        <title>1658. Minimum Operations to Reduce X to Zero</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1658-Minimum-Operations-to-Reduce-X-to-Zero/"/>
+        <content type="html">&lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/?envType=daily-question&amp;amp;envId=2023-09-20&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You are given an integer array  &lt;code&gt;nums&lt;/code&gt;  and an integer  &lt;code&gt;x&lt;/code&gt; . In one operation, you can either remove the leftmost or the rightmost element from the array  &lt;code&gt;nums&lt;/code&gt;  and subtract its value from  &lt;code&gt;x&lt;/code&gt; . Note that this &lt;strong&gt;modifies&lt;/strong&gt; the array for future operations.&lt;/p&gt;
+&lt;p&gt;Return &lt;em&gt;the &lt;strong&gt;minimum number&lt;/strong&gt; of operations to reduce  &lt;code&gt;x&lt;/code&gt;  to &lt;strong&gt;exactly&lt;/strong&gt;  &lt;code&gt;0&lt;/code&gt;  if it is possible, otherwise, return  &lt;code&gt;-1&lt;/code&gt; &lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [1,1,4,2,3], x = 5&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: 2&lt;br /&gt;
+&lt;strong&gt;Explanation&lt;/strong&gt;: The optimal solution is to remove the last two elements to reduce x to zero.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [5,6,7,8,9], x = 4&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: -1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-3&#34;&gt;#&lt;/a&gt; Example 3&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: nums = [3,2,20,1,1,3], x = 10&lt;br /&gt;
+&lt;strong&gt;Output&lt;/strong&gt;: 5&lt;br /&gt;
+&lt;strong&gt;Explanation&lt;/strong&gt;: The optimal solution is to remove the last three elements and the first two elements (5 operations in total) to reduce x to zero.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
+&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
+!! !!&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
+&lt;hr /&gt;
+&lt;p&gt;!! !!&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+</content>
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
+        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
+        <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
+        <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
+        <updated>2023-09-20T01:23:58.000Z</updated>
+    </entry>
     <entry>
         <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/cpe/One%20Star/263-Number-Chains/</id>
         <title>263 - Number Chains</title>
@@ -281,9 +340,9 @@ The number of soldiers in each row is:&lt;/p&gt;
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
         <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
+        <category term="Matrix" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Matrix/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
         <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
-        <category term="Matrix" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Matrix/" />
         <updated>2023-09-18T04:03:18.000Z</updated>
     </entry>
     <entry>
@@ -759,8 +818,8 @@ Notice that there is a unique path between every pair of points.&lt;/p&gt;
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Graph" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Graph/" />
         <category term="Union Find" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Union-Find/" />
+        <category term="Graph" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Graph/" />
         <category term="Minimum Spanning Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Minimum-Spanning-Tree/" />
         <updated>2023-09-15T01:28:00.000Z</updated>
     </entry>
@@ -1044,8 +1103,8 @@ Other possible solutions are [[2,1,6],[5],[0,4,3]] and [[5],[0,6,2],[4,3,1]].&lt
         <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Hard" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Hard/" />
-        <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+        <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
         <updated>2023-08-27T12:45:36.000Z</updated>
     </entry>
     <entry>
@@ -1084,10 +1143,10 @@ Other possible solutions are [[2,1,6],[5],[0,4,3]] and [[5],[0,6,2],[4,3,1]].&lt
         <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Matrix" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Matrix/" />
+        <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
         <category term="Breadth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Breadth-First-Search/" />
+        <category term="Matrix" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Matrix/" />
         <updated>2023-08-17T13:27:38.000Z</updated>
     </entry>
     <entry>
@@ -1159,141 +1218,10 @@ Other possible solutions are [[2,1,6],[5],[0,4,3]] and [[5],[0,6,2],[4,3,1]].&lt
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Hard" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Hard/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+        <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
         <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
         <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
-        <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
         <category term="Monotonic Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Monotonic-Queue/" />
         <updated>2023-08-16T07:29:08.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/language/english/%E6%96%87%E6%B3%95/%E5%8B%95%E8%A9%9E%E7%9A%84%E7%8F%BE%E5%9C%A8%E7%B0%A1%E5%96%AE%E5%BC%8F/</id>
-        <title>動詞的現在簡單式</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/language/english/%E6%96%87%E6%B3%95/%E5%8B%95%E8%A9%9E%E7%9A%84%E7%8F%BE%E5%9C%A8%E7%B0%A1%E5%96%AE%E5%BC%8F/"/>
-        <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
-&lt;h2 id=&#34;文法摘要&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文法摘要&#34;&gt;#&lt;/a&gt; 文法摘要&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;主詞是第三人稱單數 (he, she, it) 且為現在式，使用的動詞字尾上必須加 &amp;quot;-s&amp;quot; 或 &amp;quot;-es&amp;quot;，規則如下:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;動詞規則改法&lt;/th&gt;
-&lt;th&gt;範例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;動詞字尾加上 s&lt;/td&gt;
-&lt;td&gt;hit - hits&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;動詞結尾是 e，加上 s&lt;/td&gt;
-&lt;td&gt;hide - hides&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;動詞字尾是 s/o/x/z/ch/sh，加上 es&lt;/td&gt;
-&lt;td&gt;catch - catches&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;動詞字尾為 「母音 + y」，只要加 s&lt;/td&gt;
-&lt;td&gt;stay - stays&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;動詞字尾為 「子音 + y」，要去 y 加上 ies&lt;/td&gt;
-&lt;td&gt;study - studies&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;表示&lt;span class=&#34;orange&#34;&gt;現在&lt;/span&gt;或&lt;span class=&#34;orange&#34;&gt;事實&lt;/span&gt;的動作與狀態：注意第三人稱單數的字尾 s/es/ies 變化:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;例一: Mr. Smith lives in Taichung, but he works in Taipei.&lt;br /&gt;
- 史密斯先生住在台中，但他在台北工作。&lt;/li&gt;
-&lt;li&gt;例二: You look tired. Stop working and take a break.&lt;br /&gt;
- 你看起來很累，別工作了，休息一下吧。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;表示不變的格言、真理和事實:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;例一: The sun rises in the east and sets in the west.&lt;br /&gt;
- 太陽從東邊升起，西邊落下。&lt;/li&gt;
-&lt;li&gt;例二: There is no royal road to learning.&lt;br /&gt;
- 學習無坦途。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;表示現在的&lt;span class=&#34;orange&#34;&gt;習慣&lt;/span&gt;或反覆的動作，常與以下&lt;span class=&#34;orange&#34;&gt;頻率副詞&lt;/span&gt;連用:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;always (總是) /frequently (頻繁地) /often (常常) /usually (通常) /sometime (有時) /seldom (不常) /never (絕不)&lt;/li&gt;
-&lt;li&gt;every + 時間&lt;/li&gt;
-&lt;li&gt;次數 + a/an + 單數時間&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;例一: On Halloween, houses and yards in the U.S.A. are often lit up by jack-o&#39;-lanterns.&lt;br /&gt;
- 萬聖節時，美國的房子和庭院常點著南瓜燈。&lt;/li&gt;
-&lt;li&gt;例二: Cindy studies math and English every day.&lt;br /&gt;
- 辛蒂每天讀數學和英文。&lt;/li&gt;
-&lt;li&gt;例三: He writes to his parents once a week.&lt;br /&gt;
- 他每週寫一次信給父母。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;表示&lt;span class=&#34;orange&#34;&gt;時間&lt;/span&gt;或&lt;span class=&#34;orange&#34;&gt;條件&lt;/span&gt;的副詞子句，用&lt;span class=&#34;orange&#34;&gt;現在式&lt;/span&gt;代替&lt;span class=&#34;orange&#34;&gt;未來式&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;例一: If she comes here tomorrow, please give her this letter.&lt;br /&gt;
- 若她明天來到這，請給她這封信。&lt;/li&gt;
-&lt;li&gt;例二: Even when you are very old, your fingerprints will still look very much the way they do now.&lt;br /&gt;
- 即便當你非常老，你的指紋仍會看起來和現在非常像。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;note danger no-icon&#34;&gt;
-&lt;p&gt;註：在&lt;span class=&#34;orange&#34;&gt;副詞子句&lt;/span&gt;和&lt;span class=&#34;orange&#34;&gt;名詞子句&lt;/span&gt;中，仍用&lt;span class=&#34;orange&#34;&gt;未來式&lt;/span&gt;表示&lt;span class=&#34;orange&#34;&gt;未來式&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;例一: Tell me where she will go next month.&lt;br /&gt;
- 告訴我她下個月會去那裡。&lt;/li&gt;
-&lt;li&gt;例二: I don&#39;t know the exact time when he will hand in the report.&lt;br /&gt;
- 我不知道他會繳交報告的確切時間。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;a href=&#34;https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E/royal&#34;&gt;&lt;strong&gt;royal&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt; 皇家的&lt;/span&gt; adj.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;belonging or connected to a king or queen or a member of their family&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;the royal family&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;精選試題&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#精選試題&#34;&gt;#&lt;/a&gt; 精選試題&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li class=&#34;quiz fill&#34;&gt;
-&lt;p&gt;Bill never carries a bag or a wallet when shopping. Every time he has to pay, he &lt;span class=&#34;gap&#34;&gt;takes&lt;/span&gt; out money from his pocket.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Bill 買東西時從來不帶包包或皮夾。每次要付錢的時候，他就會從口袋裡拿出錢來。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li class=&#34;quiz fill&#34;&gt;
-&lt;p&gt;Although Annie &lt;span class=&#34;gap&#34;&gt;know&lt;/span&gt; fast food is not good for her health, she still &lt;span class=&#34;gap&#34;&gt;eats&lt;/span&gt; it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;雖然 Annie 知道速食對健康不好，她還是繼續吃。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li class=&#34;quiz fill&#34;&gt;
-&lt;p&gt;Somewhere along the road, there is a shop which &lt;span class=&#34;gap&#34;&gt;sells&lt;/span&gt; things from foreign countries.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;這條路上的某處，有家賣異國商品的店。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-        <category term="語言" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/" />
-        <category term="英文" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/" />
-        <category term="文法" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/language/english/%E6%96%87%E6%B3%95/" />
-        <category term="英文文法" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/%E8%8B%B1%E6%96%87%E6%96%87%E6%B3%95/" />
-        <updated>2023-08-15T17:09:11.000Z</updated>
     </entry>
 </feed>
