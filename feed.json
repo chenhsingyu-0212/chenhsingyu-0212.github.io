@@ -19,8 +19,8 @@
                 "Array",
                 "Binary Search",
                 "Prefix Sum",
-                "Hash Table",
-                "Sliding Window"
+                "Sliding Window",
+                "Hash Table"
             ]
         },
         {
@@ -77,8 +77,8 @@
                 "Easy",
                 "Array",
                 "Binary Search",
-                "Sorting",
                 "Heap (Priority Queue)",
+                "Sorting",
                 "Matrix"
             ]
         },
@@ -116,9 +116,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Hard",
+                "Graph",
                 "Dynamic Programming",
                 "Breadth-First Search",
-                "Graph",
                 "Bit Manipulation",
                 "Bitmask"
             ]
@@ -170,9 +170,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
                 "Union Find",
                 "Graph",
+                "Array",
                 "Minimum Spanning Tree"
             ]
         },
@@ -250,8 +250,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Hard",
-                "Dynamic Programming",
-                "Array"
+                "Array",
+                "Dynamic Programming"
             ]
         },
         {
@@ -264,9 +264,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
+                "Array",
                 "Dynamic Programming",
                 "Breadth-First Search",
-                "Array",
                 "Matrix"
             ]
         },
@@ -281,9 +281,9 @@
                 "Leetcode",
                 "Hard",
                 "Array",
-                "Heap (Priority Queue)",
                 "Queue",
                 "Sliding Window",
+                "Heap (Priority Queue)",
                 "Monotonic Queue"
             ]
         }
