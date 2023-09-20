@@ -11,16 +11,16 @@
             "url": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1658-Minimum-Operations-to-Reduce-X-to-Zero/",
             "title": "1658. Minimum Operations to Reduce X to Zero",
             "date_published": "2023-09-20T01:23:58.000Z",
-            "content_html": "<p>⭐️⭐️⭐️</p>\n<h2 id=\"\"><a class=\"anchor\" href=\"#\">#</a> <a href=\"https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/?envType=daily-question&amp;envId=2023-09-20\"><ins class=\"dot\">題目敘述</ins></a></h2>\n<p>You are given an integer array  <code>nums</code>  and an integer  <code>x</code> . In one operation, you can either remove the leftmost or the rightmost element from the array  <code>nums</code>  and subtract its value from  <code>x</code> . Note that this <strong>modifies</strong> the array for future operations.</p>\n<p>Return <em>the <strong>minimum number</strong> of operations to reduce  <code>x</code>  to <strong>exactly</strong>  <code>0</code>  if it is possible, otherwise, return  <code>-1</code> </em>.</p>\n<h3 id=\"example-1\"><a class=\"anchor\" href=\"#example-1\">#</a> Example 1</h3>\n<blockquote>\n<p><strong>Input</strong>: nums = [1,1,4,2,3], x = 5<br />\n<strong>Output</strong>: 2<br />\n<strong>Explanation</strong>: The optimal solution is to remove the last two elements to reduce x to zero.</p>\n</blockquote>\n<h3 id=\"example-2\"><a class=\"anchor\" href=\"#example-2\">#</a> Example 2</h3>\n<blockquote>\n<p><strong>Input</strong>: nums = [5,6,7,8,9], x = 4<br />\n<strong>Output</strong>: -1</p>\n</blockquote>\n<h3 id=\"example-3\"><a class=\"anchor\" href=\"#example-3\">#</a> Example 3</h3>\n<blockquote>\n<p><strong>Input</strong>: nums = [3,2,20,1,1,3], x = 10<br />\n<strong>Output</strong>: 5<br />\n<strong>Explanation</strong>: The optimal solution is to remove the last three elements and the first two elements (5 operations in total) to reduce x to zero.</p>\n</blockquote>\n<h2 id=\"解題思路\"><a class=\"anchor\" href=\"#解題思路\">#</a> 解題思路</h2>\n<h2 id=\"solution\"><a class=\"anchor\" href=\"#solution\">#</a> Solution</h2>\n<div class=\"tab\" data-id=\"id1\" data-title=\"Java\">\n<pre><code class=\"language-java\">\n</code></pre>\n</div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"C++\">\n<pre><code class=\"language-cpp\">\n</code></pre>\n</div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"Python\">\n<pre><code class=\"language-pyhton\">\n</code></pre>\n</div>\n<details class=\"success\"><summary>單字</summary><div>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv\">** **</span><br />\n!! !!</p>\n<blockquote></blockquote>\n</div></details>\n<details class=\"info\"><summary>片語 & 搭配詞</summary><div>\n<hr />\n<p>!! !!</p>\n</div></details>\n",
+            "content_html": "<p>⭐️⭐️⭐️</p>\n<h2 id=\"\"><a class=\"anchor\" href=\"#\">#</a> <a href=\"https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/?envType=daily-question&amp;envId=2023-09-20\"><ins class=\"dot\">題目敘述</ins></a></h2>\n<p>You are given an integer array  <code>nums</code>  and an integer  <code>x</code> . In one operation, you can either remove the leftmost or the rightmost element from the array  <code>nums</code>  and subtract its value from  <code>x</code> . Note that this <strong>modifies</strong> the array for future operations.</p>\n<p>Return <em>the <strong>minimum number</strong> of operations to reduce  <code>x</code>  to <strong>exactly</strong>  <code>0</code>  if it is possible, otherwise, return  <code>-1</code> </em>.</p>\n<h3 id=\"example-1\"><a class=\"anchor\" href=\"#example-1\">#</a> Example 1</h3>\n<blockquote>\n<p><strong>Input</strong>: nums = [1,1,4,2,3], x = 5<br />\n<strong>Output</strong>: 2<br />\n<strong>Explanation</strong>: The optimal solution is to remove the last two elements to reduce x to zero.</p>\n</blockquote>\n<h3 id=\"example-2\"><a class=\"anchor\" href=\"#example-2\">#</a> Example 2</h3>\n<blockquote>\n<p><strong>Input</strong>: nums = [5,6,7,8,9], x = 4<br />\n<strong>Output</strong>: -1</p>\n</blockquote>\n<h3 id=\"example-3\"><a class=\"anchor\" href=\"#example-3\">#</a> Example 3</h3>\n<blockquote>\n<p><strong>Input</strong>: nums = [3,2,20,1,1,3], x = 10<br />\n<strong>Output</strong>: 5<br />\n<strong>Explanation</strong>: The optimal solution is to remove the last three elements and the first two elements (5 operations in total) to reduce x to zero.</p>\n</blockquote>\n<h2 id=\"解題思路\"><a class=\"anchor\" href=\"#解題思路\">#</a> 解題思路</h2>\n<h2 id=\"solution\"><a class=\"anchor\" href=\"#solution\">#</a> Solution</h2>\n<div class=\"tab\" data-id=\"id1\" data-title=\"Java\">\n<figure class=\"highlight java\"><figcaption data-lang=\"java\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token keyword\">public</span> <span class=\"token keyword\">class</span> <span class=\"token class-name\">Solution</span> <span class=\"token punctuation\">&#123;</span></pre></td></tr><tr><td data-num=\"2\"></td><td><pre>    <span class=\"token keyword\">public</span> <span class=\"token keyword\">int</span> <span class=\"token function\">minOperations</span><span class=\"token punctuation\">(</span><span class=\"token keyword\">int</span><span class=\"token punctuation\">[</span><span class=\"token punctuation\">]</span> nums<span class=\"token punctuation\">,</span> <span class=\"token keyword\">int</span> x<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">&#123;</span></pre></td></tr><tr><td data-num=\"3\"></td><td><pre>        <span class=\"token keyword\">int</span> total <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"4\"></td><td><pre>        <span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">int</span> num <span class=\"token operator\">:</span> nums<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">&#123;</span></pre></td></tr><tr><td data-num=\"5\"></td><td><pre>            total <span class=\"token operator\">+=</span> num<span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"6\"></td><td><pre>        <span class=\"token punctuation\">&#125;</span></pre></td></tr><tr><td data-num=\"7\"></td><td><pre></pre></td></tr><tr><td data-num=\"8\"></td><td><pre>        <span class=\"token keyword\">int</span> target <span class=\"token operator\">=</span> total <span class=\"token operator\">-</span> x<span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"9\"></td><td><pre>        <span class=\"token keyword\">int</span> left <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"10\"></td><td><pre>        <span class=\"token keyword\">int</span> n <span class=\"token operator\">=</span> nums<span class=\"token punctuation\">.</span>length<span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"11\"></td><td><pre>        <span class=\"token keyword\">int</span> maxWindow <span class=\"token operator\">=</span> <span class=\"token operator\">-</span><span class=\"token number\">1</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"12\"></td><td><pre>        <span class=\"token keyword\">int</span> sum <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"13\"></td><td><pre></pre></td></tr><tr><td data-num=\"14\"></td><td><pre>        <span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">int</span> right <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> right <span class=\"token operator\">&lt;</span> n<span class=\"token punctuation\">;</span> right<span class=\"token operator\">++</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">&#123;</span></pre></td></tr><tr><td data-num=\"15\"></td><td><pre>            sum <span class=\"token operator\">+=</span> nums<span class=\"token punctuation\">[</span>right<span class=\"token punctuation\">]</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"16\"></td><td><pre></pre></td></tr><tr><td data-num=\"17\"></td><td><pre>            <span class=\"token keyword\">while</span> <span class=\"token punctuation\">(</span>sum <span class=\"token operator\">></span> target <span class=\"token operator\">&amp;&amp;</span> left <span class=\"token operator\">&lt;=</span> right<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">&#123;</span></pre></td></tr><tr><td data-num=\"18\"></td><td><pre>                sum <span class=\"token operator\">-=</span> nums<span class=\"token punctuation\">[</span>left<span class=\"token punctuation\">]</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"19\"></td><td><pre>                left<span class=\"token operator\">++</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"20\"></td><td><pre>            <span class=\"token punctuation\">&#125;</span></pre></td></tr><tr><td data-num=\"21\"></td><td><pre></pre></td></tr><tr><td data-num=\"22\"></td><td><pre>            <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>sum <span class=\"token operator\">==</span> target<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">&#123;</span></pre></td></tr><tr><td data-num=\"23\"></td><td><pre>                maxWindow <span class=\"token operator\">=</span> <span class=\"token class-name\">Math</span><span class=\"token punctuation\">.</span><span class=\"token function\">max</span><span class=\"token punctuation\">(</span>maxWindow<span class=\"token punctuation\">,</span> right <span class=\"token operator\">-</span> left <span class=\"token operator\">+</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"24\"></td><td><pre>            <span class=\"token punctuation\">&#125;</span></pre></td></tr><tr><td data-num=\"25\"></td><td><pre>        <span class=\"token punctuation\">&#125;</span></pre></td></tr><tr><td data-num=\"26\"></td><td><pre></pre></td></tr><tr><td data-num=\"27\"></td><td><pre>        <span class=\"token keyword\">return</span> maxWindow <span class=\"token operator\">!=</span> <span class=\"token operator\">-</span><span class=\"token number\">1</span> <span class=\"token operator\">?</span> n <span class=\"token operator\">-</span> maxWindow <span class=\"token operator\">:</span> <span class=\"token operator\">-</span><span class=\"token number\">1</span><span class=\"token punctuation\">;</span></pre></td></tr><tr><td data-num=\"28\"></td><td><pre>    <span class=\"token punctuation\">&#125;</span></pre></td></tr><tr><td data-num=\"29\"></td><td><pre><span class=\"token punctuation\">&#125;</span></pre></td></tr></table></figure></div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"C++\">\n<pre><code class=\"language-cpp\">\n</code></pre>\n</div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"Python\">\n<pre><code class=\"language-pyhton\">\n</code></pre>\n</div>\n<details class=\"success\"><summary>單字</summary><div>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv\">** **</span><br />\n!! !!</p>\n<blockquote></blockquote>\n</div></details>\n<details class=\"info\"><summary>片語 & 搭配詞</summary><div>\n<hr />\n<p>!! !!</p>\n</div></details>\n",
             "tags": [
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
                 "Hash Table",
-                "Binary Search",
+                "Array",
                 "Sliding Window",
-                "Prefix Sum"
+                "Prefix Sum",
+                "Binary Search"
             ]
         },
         {
@@ -76,10 +76,10 @@
                 "Leetcode",
                 "Easy",
                 "Array",
-                "Binary Search",
-                "Matrix",
+                "Heap (Priority Queue)",
                 "Sorting",
-                "Heap (Priority Queue)"
+                "Binary Search",
+                "Matrix"
             ]
         },
         {
@@ -117,8 +117,8 @@
                 "Leetcode",
                 "Hard",
                 "Dynamic Programming",
-                "Breadth-First Search",
                 "Graph",
+                "Breadth-First Search",
                 "Bit Manipulation",
                 "Bitmask"
             ]
@@ -170,9 +170,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
                 "Union Find",
                 "Graph",
+                "Array",
                 "Minimum Spanning Tree"
             ]
         },
@@ -210,8 +210,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
-                "Hash Table"
+                "Hash Table",
+                "Array"
             ]
         },
         {
@@ -250,8 +250,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Hard",
-                "Array",
-                "Dynamic Programming"
+                "Dynamic Programming",
+                "Array"
             ]
         },
         {
@@ -264,8 +264,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
                 "Dynamic Programming",
+                "Array",
                 "Breadth-First Search",
                 "Matrix"
             ]
@@ -281,9 +281,9 @@
                 "Leetcode",
                 "Hard",
                 "Array",
+                "Queue",
                 "Sliding Window",
                 "Heap (Priority Queue)",
-                "Queue",
                 "Monotonic Queue"
             ]
         }
