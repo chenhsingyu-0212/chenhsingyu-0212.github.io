@@ -191,8 +191,8 @@ The 1st letter is &amp;quot;a&amp;quot;.&lt;/p&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-            <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
             <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+            <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
             <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Monotonic Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Monotonic-Stack/" />
             <pubDate>Tue, 26 Sep 2023 11:48:36 +0800</pubDate>
@@ -244,9 +244,9 @@ If the first min(a.length, b.length) characters do not differ, then the shorter 
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-            <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-            <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
             <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+            <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+            <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
             <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
             <pubDate>Mon, 25 Sep 2023 23:09:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
@@ -645,10 +645,10 @@ D071&lt;br /&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-            <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
             <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
             <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+            <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
             <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
             <pubDate>Sat, 23 Sep 2023 11:14:36 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
@@ -1081,11 +1081,11 @@ TERM 7 IS 1/4&lt;/p&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-            <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-            <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
+            <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
             <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
             <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
+            <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
             <pubDate>Wed, 20 Sep 2023 09:23:58 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/?envType=daily-question&amp;amp;envId=2023-09-20&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -1138,8 +1138,8 @@ TERM 7 IS 1/4&lt;/p&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="CPE" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/cpe/" />
             <category term="One Star" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/cpe/One-Star/" />
-            <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
             <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+            <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
             <pubDate>Tue, 19 Sep 2023 20:47:27 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;🌕🌑🌑🌑🌑&lt;/p&gt;
 &lt;h2 id=&#34;題目連結&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#題目連結&#34;&gt;#&lt;/a&gt; 題目連結&lt;/h2&gt;
