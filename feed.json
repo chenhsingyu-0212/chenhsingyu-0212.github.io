@@ -55,8 +55,8 @@
                 "Leetcode",
                 "Medium",
                 "String",
-                "Greedy",
                 "Stack",
+                "Greedy",
                 "Monotonic Stack"
             ]
         },
@@ -70,9 +70,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Hash Table",
-                "Sorting",
                 "String",
+                "Sorting",
+                "Hash Table",
                 "Bit Manipulation"
             ]
         },
@@ -125,10 +125,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
-                "Hash Table",
                 "Dynamic Programming",
+                "Array",
                 "String",
+                "Hash Table",
                 "Two Pointers"
             ]
         },
@@ -234,8 +234,8 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Binary Search",
                 "Hash Table",
+                "Binary Search",
                 "Prefix Sum",
                 "Sliding Window"
             ]
@@ -250,8 +250,8 @@
                 "解題筆記",
                 "CPE",
                 "One Star",
-                "Sorting",
-                "String"
+                "String",
+                "Sorting"
             ]
         },
         {
