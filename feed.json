@@ -16,9 +16,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Math",
                 "Bit Manipulation",
-                "Recursion"
+                "Recursion",
+                "Math"
             ]
         },
         {
@@ -44,11 +44,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Hard",
-                "Dynamic Programming",
                 "Array",
-                "Heap (Priority Queue)",
-                "Sliding Window",
+                "Dynamic Programming",
                 "Queue",
+                "Sliding Window",
+                "Heap (Priority Queue)",
                 "Monotonic Queue"
             ]
         },
@@ -86,11 +86,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Tree",
+                "Queue",
                 "Depth-First Search",
+                "Tree",
                 "Stack",
                 "Design",
-                "Queue",
                 "Iterator"
             ]
         },
@@ -129,9 +129,9 @@
                 "Leetcode",
                 "Easy",
                 "String",
+                "Two Pointers",
                 "Stack",
-                "Simulation",
-                "Two Pointers"
+                "Simulation"
             ]
         },
         {
@@ -180,8 +180,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Dynamic Programming",
-                "Array"
+                "Array",
+                "Dynamic Programming"
             ]
         },
         {
