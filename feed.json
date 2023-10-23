@@ -46,9 +46,9 @@
                 "Hard",
                 "Array",
                 "Dynamic Programming",
-                "Queue",
                 "Sliding Window",
                 "Heap (Priority Queue)",
+                "Queue",
                 "Monotonic Queue"
             ]
         },
@@ -86,11 +86,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Queue",
                 "Depth-First Search",
                 "Tree",
                 "Stack",
                 "Design",
+                "Queue",
                 "Iterator"
             ]
         },
@@ -128,10 +128,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
+                "Two Pointers",
                 "String",
                 "Stack",
-                "Simulation",
-                "Two Pointers"
+                "Simulation"
             ]
         },
         {
