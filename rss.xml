@@ -21,8 +21,8 @@
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-            <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
             <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
+            <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
             <category term="Recursion" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Recursion/" />
             <pubDate>Mon, 23 Oct 2023 08:21:01 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
@@ -72,9 +72,9 @@
             <title>介紹 Svelte</title>
             <link>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/program-language/Framework/Svelte/%E4%BB%8B%E7%B4%B9-Svelte/</link>
             <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-            <category term="Program-Language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Program-Language/" />
-            <category term="Framework" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Program-Language/Framework/" />
-            <category term="Svelte" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Program-Language/Framework/Svelte/" />
+            <category term="Program-Language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
+            <category term="Framework" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/Framework/" />
+            <category term="Svelte" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/Framework/Svelte/" />
             <pubDate>Sun, 22 Oct 2023 16:44:33 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
@@ -99,11 +99,11 @@
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Hard" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Hard/" />
-            <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-            <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
+            <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
             <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
+            <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
             <category term="Monotonic Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Monotonic-Queue/" />
             <pubDate>Sat, 21 Oct 2023 16:30:01 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️⭐️⭐️&lt;/p&gt;
@@ -272,11 +272,11 @@ OOOOXOOOOXOOOOX&lt;/p&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-            <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
+            <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <category term="Depth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Depth-First-Search/" />
+            <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
             <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Design" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Design/" />
-            <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <category term="Iterator" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Iterator/" />
             <pubDate>Fri, 20 Oct 2023 17:15:37 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
@@ -685,8 +685,8 @@ UNDETERMINED&lt;/p&gt;
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-            <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+            <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
             <pubDate>Fri, 13 Oct 2023 12:32:48 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/min-cost-climbing-stairs/description/?envType=daily-question&amp;amp;envId=2023-10-13&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
