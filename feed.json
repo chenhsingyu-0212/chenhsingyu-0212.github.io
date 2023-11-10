@@ -29,7 +29,7 @@
             "content_html": "<p><div class=\"links\"><div class=\"item\" title=\"ChienI Kao\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==\" data-background-image=\"https://chienikao.github.io/images/avatar.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==\">ChienI Kao</span>\n          <p class=\"desc\">筆記網站</p>\n          </div></div><div class=\"item\" title=\"JHTNT\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v\" data-background-image=\"https://i.imgur.com/cBOtjyB.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v\">JHTNT</span>\n          <p class=\"desc\">筆記網站</p>\n          </div></div></div></p>\n<h1 id=\"簡介\"><a class=\"anchor\" href=\"#簡介\">#</a> 簡介</h1>\n<p>這是一個在 2019 年，衝進大家視眼裡的一個前端框架。</p>\n<p>在介紹此框架前，大家可能比較熟悉的三大前端框架是: React、Vue 或 Angular。<br />\n而這個前端框架有別於這三種，留一些懸念看下去吧！</p>\n<h1 id=\"特色\"><a class=\"anchor\" href=\"#特色\">#</a> 特色</h1>\n",
             "tags": [
                 "資訊工程",
-                "Program-Language",
+                "Programming Language",
                 "Framework",
                 "Svelte"
             ]
@@ -46,9 +46,9 @@
                 "Hard",
                 "Dynamic Programming",
                 "Array",
-                "Queue",
-                "Sliding Window",
                 "Heap (Priority Queue)",
+                "Sliding Window",
+                "Queue",
                 "Monotonic Queue"
             ]
         },
@@ -86,11 +86,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Queue",
-                "Depth-First Search",
                 "Tree",
+                "Depth-First Search",
                 "Stack",
                 "Design",
+                "Queue",
                 "Iterator"
             ]
         },
@@ -129,9 +129,9 @@
                 "Leetcode",
                 "Easy",
                 "String",
-                "Two Pointers",
                 "Stack",
-                "Simulation"
+                "Simulation",
+                "Two Pointers"
             ]
         },
         {
