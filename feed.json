@@ -214,11 +214,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Hard",
-                "Array",
                 "Dynamic Programming",
-                "Heap (Priority Queue)",
-                "Sliding Window",
+                "Array",
                 "Queue",
+                "Sliding Window",
+                "Heap (Priority Queue)",
                 "Monotonic Queue"
             ]
         },
@@ -256,11 +256,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Tree",
+                "Queue",
                 "Depth-First Search",
+                "Tree",
                 "Stack",
                 "Design",
-                "Queue",
                 "Iterator"
             ]
         }
