@@ -186,8 +186,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Bit Manipulation",
                 "Math",
+                "Bit Manipulation",
                 "Recursion"
             ]
         },
@@ -216,9 +216,9 @@
                 "Hard",
                 "Array",
                 "Dynamic Programming",
-                "Queue",
-                "Sliding Window",
                 "Heap (Priority Queue)",
+                "Sliding Window",
+                "Queue",
                 "Monotonic Queue"
             ]
         },
@@ -256,11 +256,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Queue",
-                "Depth-First Search",
                 "Tree",
+                "Depth-First Search",
                 "Stack",
                 "Design",
+                "Queue",
                 "Iterator"
             ]
         }
