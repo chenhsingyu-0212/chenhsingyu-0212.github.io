@@ -16,10 +16,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Array",
                 "Dynamic Programming",
-                "Greedy",
-                "String"
+                "Array",
+                "String",
+                "Greedy"
             ]
         },
         {
@@ -85,8 +85,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Heap (Priority Queue)",
                 "Hash Table",
+                "Heap (Priority Queue)",
                 "Design",
                 "Ordered Set"
             ]
@@ -101,9 +101,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
+                "String",
                 "Sorting",
-                "Hash Table",
-                "String"
+                "Hash Table"
             ]
         },
         {
@@ -127,8 +127,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Hash Table",
-                "String"
+                "String",
+                "Hash Table"
             ]
         },
         {
