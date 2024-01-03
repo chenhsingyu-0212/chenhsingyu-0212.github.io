@@ -883,6 +883,12 @@ Clearly the destination city is &amp;quot;A&amp;quot;.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;MPI_ALLreduce&lt;/code&gt; : 包括 MPI_Reduce 和 MPI_Bcast&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;MPI_Scatter&lt;/code&gt; : 與 MPI_Bcast 很像，但區別於他是用於接收一個陣列，幫他分隔成不同區塊，然後同區塊傳給不同人&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;MPI_Gather&lt;/code&gt; : 與 MPI_Scatter 剛好相反，將不同的東西收到一起，集中到其中一個&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MPI_Barrier()&lt;/code&gt; : 保證在通訊域內，所有的進程都已經執行完了呼叫之前的所有操作
+&lt;ol&gt;
+&lt;li&gt;可以用於要確保其他 processor 前面計算正確，到後面使用&lt;/li&gt;
+&lt;li&gt;在計算時間時可以確保計算大家都跑完的時間&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;mpi_op&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mpi_op&#34;&gt;#&lt;/a&gt; MPI_Op&lt;/h3&gt;
 &lt;ul&gt;
