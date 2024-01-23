@@ -17,9 +17,9 @@
                 "Leetcode",
                 "Medium",
                 "Array",
+                "Bit Manipulation",
                 "String",
-                "Backtracking",
-                "Bit Manipulation"
+                "Backtracking"
             ]
         },
         {
@@ -33,8 +33,8 @@
                 "Leetcode",
                 "Easy",
                 "Array",
-                "Hash Table",
                 "Sorting",
+                "Hash Table",
                 "Bit Manipulation"
             ]
         },
@@ -136,8 +136,8 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Hash Table",
                 "Sorting",
+                "Hash Table",
                 "Counting"
             ]
         },
@@ -151,8 +151,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Hash Table",
                 "Sorting",
+                "Hash Table",
                 "String",
                 "Counting"
             ]
@@ -177,12 +177,12 @@
             "url": "https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/Artificial-Intelligence/AI-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B9/",
             "title": "AI 基礎介紹",
             "date_published": "2024-01-12T06:21:35.000Z",
-            "content_html": "<p><div class=\"links\"><div class=\"item\" title=\"ChienI Kao\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==\" data-background-image=\"https://chienikao.github.io/images/avatar.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==\">ChienI Kao</span>\n          <p class=\"desc\">筆記網站</p>\n          </div></div><div class=\"item\" title=\"JHTNT\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v\" data-background-image=\"https://i.imgur.com/cBOtjyB.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v\">JHTNT</span>\n          <p class=\"desc\">筆記網站</p>\n          </div></div></div></p>\n<h1 id=\"what-is-ai\"><a class=\"anchor\" href=\"#what-is-ai\">#</a> What is AI?</h1>\n<p>能夠如同人類進行智慧處理的技術、機器</p>\n<h2 id=\"人工智能認知狀態\"><a class=\"anchor\" href=\"#人工智能認知狀態\">#</a> 人工智能認知狀態</h2>\n<ul>\n<li><strong>強人工智慧:</strong> 可能擁有人類的自我意識，具有超越人類的可能性</li>\n<li><strong>弱人工智慧:</strong> 可能會取代部分的人類能力，但沒辦法取代全部</li>\n</ul>\n<h2 id=\"人工智慧發展階段\"><a class=\"anchor\" href=\"#人工智慧發展階段\">#</a> 人工智慧發展階段</h2>\n<p><img data-src=\"https://i.imgur.com/WxZqpFB.png\" alt=\"Imgur\" width=\"550px\" /></p>\n<ul>\n<li><strong>機器學習:</strong> 進行適當的處理，就可以根據輸入資料預測數值、最佳化。</li>\n<li><strong>深度學習:</strong> 輸入資料不經過處理，讓電腦自己擷取特徵，來獲取最後的結果。</li>\n</ul>\n<h1 id=\"機器學習-machine-learning\"><a class=\"anchor\" href=\"#機器學習-machine-learning\">#</a> 機器學習 Machine Learning</h1>\n<p>讓電腦有更高的辨識程度，需要決定要依據哪個基準 (參數) 運作。</p>\n<p>機器學習能夠根據輸入資料，自動決定 (學習) 作為最正確的行為，之前是利用記住全部資料的記憶學習，但無法解答未知的資料。<br />\n利用大數據資料反覆訓練，讓未知的資料也能得到解答。</p>\n<h2 id=\"詳細程序\"><a class=\"anchor\" href=\"#詳細程序\">#</a> 詳細程序</h2>\n<p>電腦接收輸入資料，使用學習模型輸出運算結果。</p>\n<p><img data-src=\"https://i.imgur.com/OIHalc4.png\" alt=\"Imgur\" width=\"550px\" /></p>\n<p>學習模型訓練的過程中，會去<strong>比較預期的輸出 (標籤、監督訊號) 與學習模型的運算結果</strong>，來修正學習模型。<br />\n經過反覆修正後，完成學習模型，將最後的模型保存，結束學習的處理。</p>\n<h2 id=\"處理的問題\"><a class=\"anchor\" href=\"#處理的問題\">#</a> 處理的問題</h2>\n<p>可以分成兩類:</p>\n<ul>\n<li><strong>分類:</strong> 找出資料在哪個類別，分成一個個群組，無視群組的細微差異。例如：貓和狗是兩個不同群組。</li>\n<li><strong>迴歸:</strong> 發掘資料傾向，把資料認為是一個群組，比較組內差異。例如：年紀可以由長到幼。</li>\n</ul>\n<h2 id=\"基本工作程序\"><a class=\"anchor\" href=\"#基本工作程序\">#</a> 基本工作程序</h2>\n<p><strong>整體設計</strong></p>\n<ol>\n<li>將問題轉為公式</li>\n<li>設計系統</li>\n<li>蒐集資料</li>\n</ol>\n<p><strong>機器學習的設計</strong><br />\n 4. 選擇機器學習的演算法<br />\n 5. 資料變形與特徵工程<br />\n 6. 模型的學習<br />\n 7. 驗證與評估預測結果<br />\n 8. 調整超參數</p>\n<p><strong>運用</strong><br />\n 9. 系統的運用</p>\n<h2 id=\"監督式學習-supervised-learning\"><a class=\"anchor\" href=\"#監督式學習-supervised-learning\">#</a> 監督式學習 Supervised learning</h2>\n<p>將輸入資料做一些標籤，並利用已知答案的資料進行訓練，學習模型會依據已知答案的資料去比對自己的回答是否正確，做一些調整，直到訓練完成。</p>\n<h2 id=\"非監督式學習-unsupervised-learning\"><a class=\"anchor\" href=\"#非監督式學習-unsupervised-learning\">#</a> 非監督式學習 Unsupervised learning</h2>\n<p>不對資料進行標示，由機器自己去對每個資料捕捉資料特徵，重點在於學習資料本身的特徵。</p>\n<h2 id=\"強化學習\"><a class=\"anchor\" href=\"#強化學習\">#</a> 強化學習</h2>\n<p>沒有特別明確的解答，以一些報酬描述該動作的優劣，使機器選擇高報酬的動作，重點是學習最佳的動作。</p>\n<h1 id=\"深度學習-deep-learning\"><a class=\"anchor\" href=\"#深度學習-deep-learning\">#</a> 深度學習 Deep Learning</h1>\n<p>深度學習是利用<strong>類神經網路學習模型</strong>來模仿人類的神經網路，由輸入層與輸出層之間的「<strong>隱藏層</strong>」增加深度，能夠自動擷取最佳特徵量。</p>\n<p><strong>隱藏層:</strong> 將輸入層接收的資料以各種方式傳遞下去，最後轉為有助於輸出層的形式。</p>\n<h2 id=\"machine-learning-vs-deep-learning\"><a class=\"anchor\" href=\"#machine-learning-vs-deep-learning\">#</a> Machine Learning vs. Deep Learning</h2>\n<ul>\n<li>深度學習也是機器學習的一種，但不同的地方在於，<strong>不是由人類加工輸入資料</strong>，幫助學習模型推出答案，而是學習模型自行擷取「<strong>特徵量</strong>」來學習。</li>\n<li>原來機器學習的瓶頸在於，我們人類關注到的特徵未必與電腦的特徵相同，或是無法描述精確到位，使電腦比較難回答準確、細微答案，如：我們人類其時很難準確描述聲音 A 與 聲音 B 得區別。</li>\n</ul>\n<div class=\"note primary no-icon\">\n<p><strong>舉🌰:</strong> 如果是要分辨狗與貓</p>\n<ul>\n<li>機器學習的輸入資料我們就需要為它標註，哪類是狗，哪類是貓。</li>\n<li>深度學習擇是我們直接將原生資料給它，不加以描述，自行擷取特徵。</li>\n</ul>\n</div>\n<p><img data-src=\"https://miro.medium.com/v2/resize:fit:1400/1*AXoNKxKw1_tGrT4aDCVjTQ.png\" alt=\"\" width=\"550px\" /></p>\n",
+            "content_html": "<p><div class=\"links\"><div class=\"item\" title=\"ChienI Kao\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==\" data-background-image=\"https://chienikao.github.io/images/avatar.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==\">ChienI Kao</span>\n          <p class=\"desc\">筆記網站</p>\n          </div></div><div class=\"item\" title=\"JHTNT\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v\" data-background-image=\"https://i.imgur.com/cBOtjyB.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v\">JHTNT</span>\n          <p class=\"desc\">筆記網站</p>\n          </div></div></div></p>\n<h1 id=\"what-is-ai\"><a class=\"anchor\" href=\"#what-is-ai\">#</a> What is AI?</h1>\n<p>能夠如同人類進行智慧處理的技術、機器</p>\n<h2 id=\"人工智能認知狀態\"><a class=\"anchor\" href=\"#人工智能認知狀態\">#</a> 人工智能認知狀態</h2>\n<ul>\n<li><strong>強人工智慧:</strong> 可能擁有人類的自我意識，具有超越人類的可能性</li>\n<li><strong>弱人工智慧:</strong> 可能會取代部分的人類能力，但沒辦法取代全部</li>\n</ul>\n<h2 id=\"人工智慧發展階段\"><a class=\"anchor\" href=\"#人工智慧發展階段\">#</a> 人工智慧發展階段</h2>\n<p><img data-src=\"https://i.imgur.com/WxZqpFB.png\" alt=\"Imgur\" width=\"550px\" /></p>\n<ul>\n<li><strong>機器學習:</strong> 進行適當的處理，就可以根據輸入資料預測數值、最佳化。</li>\n<li><strong>深度學習:</strong> 輸入資料不經過處理，讓電腦自己擷取特徵，來獲取最後的結果。</li>\n</ul>\n<h1 id=\"機器學習-machine-learning\"><a class=\"anchor\" href=\"#機器學習-machine-learning\">#</a> 機器學習 Machine Learning</h1>\n<p>讓電腦有更高的辨識程度，需要決定要依據哪個基準 (參數) 運作。</p>\n<p>機器學習能夠根據輸入資料，自動決定 (學習) 作為最正確的行為，之前是利用記住全部資料的記憶學習，但無法解答未知的資料。<br />\n利用大數據資料反覆訓練，讓未知的資料也能得到解答。</p>\n<h2 id=\"詳細程序\"><a class=\"anchor\" href=\"#詳細程序\">#</a> 詳細程序</h2>\n<p>電腦接收輸入資料，使用學習模型輸出運算結果。</p>\n<p><img data-src=\"https://i.imgur.com/OIHalc4.png\" alt=\"Imgur\" width=\"550px\" /></p>\n<p>學習模型訓練的過程中，會去<strong>比較預期的輸出 (標籤、監督訊號) 與學習模型的運算結果</strong>，來修正學習模型。<br />\n經過反覆修正後，完成學習模型，將最後的模型保存，結束學習的處理。</p>\n<h2 id=\"處理的問題\"><a class=\"anchor\" href=\"#處理的問題\">#</a> 處理的問題</h2>\n<p>可以分成兩類:</p>\n<ul>\n<li><strong>分類:</strong> 找出資料在哪個類別，分成一個個群組，無視群組的細微差異。例如：貓和狗是兩個不同群組。</li>\n<li><strong>迴歸:</strong> 發掘資料傾向，把資料認為是一個群組，比較組內差異。例如：年紀可以由長到幼。</li>\n</ul>\n<h2 id=\"基本工作程序\"><a class=\"anchor\" href=\"#基本工作程序\">#</a> 基本工作程序</h2>\n<p><strong>整體設計</strong></p>\n<ul>\n<li>將問題轉為公式</li>\n<li>設計系統</li>\n<li>蒐集資料</li>\n</ul>\n<p><strong>機器學習的設計</strong></p>\n<ul>\n<li>選擇機器學習的演算法</li>\n<li>資料變形與特徵工程</li>\n<li>模型的學習</li>\n<li>驗證與評估預測結果</li>\n<li>調整超參數</li>\n</ul>\n<p><strong>運用</strong></p>\n<ul>\n<li>系統的運用</li>\n</ul>\n<h2 id=\"監督式學習-supervised-learning\"><a class=\"anchor\" href=\"#監督式學習-supervised-learning\">#</a> 監督式學習 Supervised learning</h2>\n<p>將輸入資料做一些標籤，並利用已知答案的資料進行訓練，學習模型會依據已知答案的資料去比對自己的回答是否正確，做一些調整，直到訓練完成。</p>\n<h2 id=\"非監督式學習-unsupervised-learning\"><a class=\"anchor\" href=\"#非監督式學習-unsupervised-learning\">#</a> 非監督式學習 Unsupervised learning</h2>\n<p>不對資料進行標示，由機器自己去對每個資料捕捉資料特徵，重點在於學習資料本身的特徵。</p>\n<h2 id=\"強化學習\"><a class=\"anchor\" href=\"#強化學習\">#</a> 強化學習</h2>\n<p>沒有特別明確的解答，以一些報酬描述該動作的優劣，使機器選擇高報酬的動作，重點是學習最佳的動作。</p>\n<h1 id=\"深度學習-deep-learning\"><a class=\"anchor\" href=\"#深度學習-deep-learning\">#</a> 深度學習 Deep Learning</h1>\n<p>深度學習是利用<strong>類神經網路學習模型</strong>來模仿人類的神經網路，由輸入層與輸出層之間的「<strong>隱藏層</strong>」增加深度，能夠自動擷取最佳特徵量。</p>\n<p><strong>隱藏層:</strong> 將輸入層接收的資料以各種方式傳遞下去，最後轉為有助於輸出層的形式。</p>\n<h2 id=\"machine-learning-vs-deep-learning\"><a class=\"anchor\" href=\"#machine-learning-vs-deep-learning\">#</a> Machine Learning vs. Deep Learning</h2>\n<ul>\n<li>深度學習也是機器學習的一種，但不同的地方在於，<strong>不是由人類加工輸入資料</strong>，幫助學習模型推出答案，而是學習模型自行擷取「<strong>特徵量</strong>」來學習。</li>\n<li>原來機器學習的瓶頸在於，我們人類關注到的特徵未必與電腦的特徵相同，或是無法描述精確到位，使電腦比較難回答準確、細微答案，如：我們人類其時很難準確描述聲音 A 與 聲音 B 得區別。</li>\n</ul>\n<div class=\"note primary no-icon\">\n<p><strong>舉🌰:</strong> 如果是要分辨狗與貓</p>\n<ul>\n<li>機器學習的輸入資料我們就需要為它標註，哪類是狗，哪類是貓。</li>\n<li>深度學習擇是我們直接將原生資料給它，不加以描述，自行擷取特徵。</li>\n</ul>\n</div>\n<p><img data-src=\"https://miro.medium.com/v2/resize:fit:1400/1*AXoNKxKw1_tGrT4aDCVjTQ.png\" alt=\"\" width=\"550px\" /></p>\n",
             "tags": [
                 "資訊工程",
                 "Artificial-Intelligence",
-                "Deep Learning",
-                "Machine Learning"
+                "Machine Learning",
+                "Deep Learning"
             ]
         },
         {

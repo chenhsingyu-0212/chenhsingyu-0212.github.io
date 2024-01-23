@@ -73,9 +73,9 @@ Maximum length is 4.&lt;/li&gt;
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
+        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
         <category term="Backtracking" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Backtracking/" />
-        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
         <updated>2024-01-23T02:31:55.000Z</updated>
     </entry>
     <entry>
@@ -123,8 +123,8 @@ Maximum length is 4.&lt;/li&gt;
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
         <updated>2024-01-22T03:17:58.000Z</updated>
     </entry>
@@ -634,8 +634,8 @@ Thus, answer[0] = [1,2,5,6] and answer[1] = [].&lt;/p&gt;
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="Counting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Counting/" />
         <updated>2024-01-15T03:35:46.000Z</updated>
     </entry>
@@ -708,8 +708,8 @@ Apply Operation 2: &amp;quot;baaccc&amp;quot; -&amp;gt; &amp;quot;abbccc&amp;quo
         <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
         <category term="Counting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Counting/" />
         <updated>2024-01-14T03:59:52.000Z</updated>
@@ -814,19 +814,23 @@ Apply Operation 2: &amp;quot;baaccc&amp;quot; -&amp;gt; &amp;quot;abbccc&amp;quo
 &lt;/ul&gt;
 &lt;h2 id=&#34;基本工作程序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本工作程序&#34;&gt;#&lt;/a&gt; 基本工作程序&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;整體設計&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;將問題轉為公式&lt;/li&gt;
 &lt;li&gt;設計系統&lt;/li&gt;
 &lt;li&gt;蒐集資料&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;機器學習的設計&lt;/strong&gt;&lt;br /&gt;
- 4. 選擇機器學習的演算法&lt;br /&gt;
- 5. 資料變形與特徵工程&lt;br /&gt;
- 6. 模型的學習&lt;br /&gt;
- 7. 驗證與評估預測結果&lt;br /&gt;
- 8. 調整超參數&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;運用&lt;/strong&gt;&lt;br /&gt;
- 9. 系統的運用&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;機器學習的設計&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;選擇機器學習的演算法&lt;/li&gt;
+&lt;li&gt;資料變形與特徵工程&lt;/li&gt;
+&lt;li&gt;模型的學習&lt;/li&gt;
+&lt;li&gt;驗證與評估預測結果&lt;/li&gt;
+&lt;li&gt;調整超參數&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;運用&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;系統的運用&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;監督式學習-supervised-learning&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#監督式學習-supervised-learning&#34;&gt;#&lt;/a&gt; 監督式學習 Supervised learning&lt;/h2&gt;
 &lt;p&gt;將輸入資料做一些標籤，並利用已知答案的資料進行訓練，學習模型會依據已知答案的資料去比對自己的回答是否正確，做一些調整，直到訓練完成。&lt;/p&gt;
 &lt;h2 id=&#34;非監督式學習-unsupervised-learning&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#非監督式學習-unsupervised-learning&#34;&gt;#&lt;/a&gt; 非監督式學習 Unsupervised learning&lt;/h2&gt;
@@ -852,8 +856,8 @@ Apply Operation 2: &amp;quot;baaccc&amp;quot; -&amp;gt; &amp;quot;abbccc&amp;quo
 </content>
         <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
         <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/Artificial-Intelligence/" />
-        <category term="Deep Learning" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Deep-Learning/" />
         <category term="Machine Learning" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Machine-Learning/" />
+        <category term="Deep Learning" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Deep-Learning/" />
         <updated>2024-01-12T06:21:35.000Z</updated>
     </entry>
     <entry>
