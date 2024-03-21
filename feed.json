@@ -46,9 +46,9 @@
                 "Array",
                 "Heap (Priority Queue)",
                 "Sorting",
-                "Greedy",
                 "Hash Table",
-                "Counting"
+                "Counting",
+                "Greedy"
             ]
         },
         {
@@ -90,8 +90,8 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Prefix Sum",
-                "Hash Table"
+                "Hash Table",
+                "Prefix Sum"
             ]
         },
         {
@@ -119,9 +119,9 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Sliding Window",
+                "Hash Table",
                 "Prefix Sum",
-                "Hash Table"
+                "Sliding Window"
             ]
         },
         {
@@ -237,8 +237,8 @@
                 "Medium",
                 "Array",
                 "Sorting",
-                "Greedy",
-                "Two Pointers"
+                "Two Pointers",
+                "Greedy"
             ]
         },
         {
@@ -251,11 +251,11 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Dynamic Programming",
                 "Heap (Priority Queue)",
-                "Graph",
                 "Depth-First Search",
                 "Breadth-First Search",
+                "Dynamic Programming",
+                "Graph",
                 "Shortest Path"
             ]
         },
@@ -270,8 +270,8 @@
                 "Leetcode",
                 "Easy",
                 "Array",
-                "Graph",
-                "Hash Table"
+                "Hash Table",
+                "Graph"
             ]
         },
         {
@@ -301,8 +301,8 @@
                 "Binary Search",
                 "Sorting",
                 "Hash Table",
-                "Bit Manipulation",
-                "Math"
+                "Math",
+                "Bit Manipulation"
             ]
         }
     ]
