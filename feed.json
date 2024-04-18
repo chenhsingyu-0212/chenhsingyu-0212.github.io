@@ -117,10 +117,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
+                "Stack",
                 "Two Pointers",
-                "Linked List",
                 "Recursion",
-                "Stack"
+                "Linked List"
             ]
         },
         {
@@ -133,10 +133,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
+                "Stack",
                 "Two Pointers",
-                "Linked List",
                 "Recursion",
-                "Stack"
+                "Linked List"
             ]
         },
         {
@@ -149,8 +149,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Linked List",
-                "Recursion"
+                "Recursion",
+                "Linked List"
             ]
         },
         {
@@ -177,8 +177,8 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Sorting",
                 "Heap (Priority Queue)",
+                "Sorting",
                 "Hash Table",
                 "Counting",
                 "Greedy"
