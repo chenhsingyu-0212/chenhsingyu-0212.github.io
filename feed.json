@@ -74,9 +74,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Hash Table",
+                "Dynamic Programming",
                 "String",
-                "Dynamic Programming"
+                "Hash Table"
             ]
         },
         {
@@ -89,8 +89,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Math",
                 "Dynamic Programming",
+                "Math",
                 "Memoization"
             ]
         },
@@ -104,10 +104,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Breadth-First Search",
                 "Array",
+                "String",
                 "Hash Table",
-                "String"
+                "Breadth-First Search"
             ]
         },
         {
@@ -236,8 +236,8 @@
                 "Medium",
                 "Stack",
                 "Two Pointers",
-                "Linked List",
-                "Recursion"
+                "Recursion",
+                "Linked List"
             ]
         },
         {
@@ -252,8 +252,8 @@
                 "Easy",
                 "Stack",
                 "Two Pointers",
-                "Linked List",
-                "Recursion"
+                "Recursion",
+                "Linked List"
             ]
         },
         {
@@ -266,8 +266,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Linked List",
-                "Recursion"
+                "Recursion",
+                "Linked List"
             ]
         },
         {
@@ -294,9 +294,9 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Heap (Priority Queue)",
                 "Sorting",
                 "Hash Table",
+                "Heap (Priority Queue)",
                 "Counting",
                 "Greedy"
             ]
