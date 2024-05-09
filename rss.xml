@@ -22,8 +22,8 @@
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-            <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
             <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+            <category term="Heap (Priority Queue)" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Heap-Priority-Queue/" />
             <pubDate>Wed, 08 May 2024 13:04:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/relative-ranks/description/?envType=daily-question&amp;amp;envId=2024-05-08&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -77,10 +77,13 @@
             <link>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/2816-Double-a-Number-Represented-as-a-Linked-List/</link>
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-            <category term="Easy/Medium/Hard" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy-Medium-Hard/" />
+            <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
+            <category term="Linked List" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Linked-List/" />
+            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
+            <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
             <pubDate>Wed, 08 May 2024 00:27:09 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
-&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/boats-to-save-people/&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/?envType=daily-question&amp;amp;envId=2024-05-09&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You are given the  &lt;code&gt;head&lt;/code&gt;  of a &lt;strong&gt;non-empty&lt;/strong&gt; linked list representing a non-negative integer without leading zeroes.&lt;/p&gt;
 &lt;p&gt;Return &lt;em&gt;the  &lt;code&gt;head&lt;/code&gt;  of the linked list after doubling it.&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
@@ -130,8 +133,8 @@
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Linked List" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Linked-List/" />
+            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Recursion" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Recursion/" />
             <category term="Monotonic Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Monotonic-Stack/" />
             <pubDate>Mon, 06 May 2024 21:57:07 +0800</pubDate>
@@ -255,8 +258,8 @@
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
             <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-            <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
             <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
+            <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
             <pubDate>Thu, 02 May 2024 20:10:47 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/description/?envType=daily-question&amp;amp;envId=2024-05-02&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -488,8 +491,8 @@ Note that &amp;quot;acfgbd&amp;quot; is not ideal because &#39;c&#39; and &#39;f
             <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-            <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
             <category term="Dynamic Programming" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Dynamic-Programming/" />
+            <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
             <category term="Memoization" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Memoization/" />
             <pubDate>Thu, 25 Apr 2024 00:16:22 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
@@ -730,8 +733,8 @@ because the wheels of the lock become stuck after the display becomes the dead e
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
             <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
-            <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <category term="Simulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Simulation/" />
+            <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <pubDate>Wed, 10 Apr 2024 13:12:15 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/reveal-cards-in-increasing-order/description/?envType=daily-question&amp;amp;envId=2024-04-10&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -800,8 +803,8 @@ Since all the cards revealed are in increasing order, the answer is correct.&lt;
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
             <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
             <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
-            <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <category term="Simulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Simulation/" />
+            <category term="Queue" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Queue/" />
             <pubDate>Mon, 08 Apr 2024 19:48:57 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/?envType=daily-question&amp;amp;envId=2024-04-08&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -1029,8 +1032,8 @@ A &lt;strong&gt;substring&lt;/strong&gt; is a contiguous &lt;strong&gt;non-empty
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
             <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
-            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Linked List" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Linked-List/" />
+            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Recursion" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Recursion/" />
             <pubDate>Sat, 23 Mar 2024 15:49:43 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
@@ -1090,8 +1093,8 @@ A &lt;strong&gt;substring&lt;/strong&gt; is a contiguous &lt;strong&gt;non-empty
             <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
             <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
             <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
-            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Linked List" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Linked-List/" />
+            <category term="Stack" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Stack/" />
             <category term="Recursion" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Recursion/" />
             <pubDate>Fri, 22 Mar 2024 16:19:15 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;⭐️&lt;/p&gt;
