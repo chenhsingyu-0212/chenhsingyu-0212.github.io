@@ -45,8 +45,8 @@
                 "Leetcode",
                 "Easy",
                 "Hash Table",
-                "String",
-                "Greedy"
+                "Greedy",
+                "String"
             ]
         },
         {
@@ -59,9 +59,9 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
+                "Greedy",
                 "String",
-                "Two Pointers",
-                "Greedy"
+                "Two Pointers"
             ]
         },
         {
@@ -116,10 +116,10 @@
                 "Leetcode",
                 "Medium",
                 "Array",
-                "Math",
                 "Hash Table",
                 "Prefix Sum",
-                "Bit Manipulation"
+                "Bit Manipulation",
+                "Math"
             ]
         },
         {
@@ -132,8 +132,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "String",
-                "Bit Manipulation"
+                "Bit Manipulation",
+                "String"
             ]
         },
         {
@@ -146,10 +146,10 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "String",
+                "Sliding Window",
                 "Binary Search",
                 "Prefix Sum",
-                "Sliding Window"
+                "String"
             ]
         },
         {
@@ -227,9 +227,9 @@
                 "Leetcode",
                 "Easy",
                 "Array",
+                "Bit Manipulation",
                 "Math",
                 "Backtracking",
-                "Bit Manipulation",
                 "Combinatorics",
                 "Enumeration"
             ]
@@ -257,8 +257,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Medium",
-                "Tree",
                 "Depth-First Search",
+                "Tree",
                 "Binary Tree"
             ]
         },
@@ -272,8 +272,8 @@
                 "解題筆記",
                 "Leetcode",
                 "Easy",
-                "Tree",
                 "Depth-First Search",
+                "Tree",
                 "Binary Tree"
             ]
         },
