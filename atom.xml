@@ -1,20 +1,150 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io</id>
+    <id>https://chenhsingyu-0212.github.io/ https://hsingyu.blog</id>
     <title></title>
     <subtitle>We are the dreamers. We make it happen &#39;cause we can see it.</subtitle>
-    <icon>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/images/favicon.ico</icon>
-    <link href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io" />
+    <icon>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/images/favicon.ico</icon>
+    <link href="https://chenhsingyu-0212.github.io/ https://hsingyu.blog" />
     <author>
       <name>Hsing Yu</name>
     </author>
-    <updated>2024-07-12T03:25:01.000Z</updated>
+    <updated>2024-11-06T09:22:30.000Z</updated>
     <category term="Note" />
     <category term=" Coding" />
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/Linux/Ubuntu-%E5%90%84%E7%A8%AE%E8%A8%AD%E5%AE%9A/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/3011-Find-if-Array-Can-Be-Sorted/</id>
+        <title>3011. Find if Array Can Be Sorted</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/3011-Find-if-Array-Can-Be-Sorted/"/>
+        <content type="html">&lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/find-if-array-can-be-sorted/description/?envType=daily-question&amp;amp;envId=2024-11-06&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You are given a &lt;strong&gt;0-indexed&lt;/strong&gt; array of &lt;strong&gt;positive&lt;/strong&gt; integers nums.&lt;/p&gt;
+&lt;p&gt;In one &lt;strong&gt;operation&lt;/strong&gt;, you can swap any two &lt;strong&gt;adjacent&lt;/strong&gt; elements if they have the &lt;strong&gt;same&lt;/strong&gt; number of set bits. You are allowed to do this operation &lt;strong&gt;any&lt;/strong&gt; number of times (&lt;strong&gt;including zero&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Return &lt;em&gt; &lt;code&gt;true&lt;/code&gt;  if you can sort the array, else return  &lt;code&gt;false&lt;/code&gt; .&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1:&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [8,4,2,30,15]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; true&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; Let&#39;s look at the binary representation of every element. The numbers 2, 4, and 8 have one set bit each with binary representation &amp;quot;10&amp;quot;, &amp;quot;100&amp;quot;, and &amp;quot;1000&amp;quot; respectively. The numbers 15 and 30 have four set bits each with binary representation &amp;quot;1111&amp;quot; and &amp;quot;11110&amp;quot;.&lt;br /&gt;
+We can sort the array using 4 operations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Swap nums[0] with nums[1]. This operation is valid because 8 and 4 have one set bit each. The array becomes [4,8,2,30,15].&lt;/li&gt;
+&lt;li&gt;Swap nums[1] with nums[2]. This operation is valid because 8 and 2 have one set bit each. The array becomes [4,2,8,30,15].&lt;/li&gt;
+&lt;li&gt;Swap nums[0] with nums[1]. This operation is valid because 4 and 2 have one set bit each. The array becomes [2,4,8,30,15].&lt;/li&gt;
+&lt;li&gt;Swap nums[3] with nums[4]. This operation is valid because 30 and 15 have four set bits each. The array becomes [2,4,8,15,30].&lt;br /&gt;
+The array has become sorted, hence we return true.&lt;br /&gt;
+Note that there may be other sequences of operations which also sort the array.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [1,2,3,4,5]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; true&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; The array is already sorted, hence we return true.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-3&#34;&gt;#&lt;/a&gt; Example 3&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [3,16,8,4,2]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; false&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; It can be shown that it is not possible to sort the input array using any number of operations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
+&lt;p&gt;用簡單的 sort 演算法 Bubble Sort 進行，他的作法本身就是在與身邊的 array index value 做比較，進行交換，與題目要求相同，而接著我們只需要在檢查可以交換的兩個數字 bitcount 是否相同，若不同回傳 false。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bitcount&lt;/code&gt; : 透過  &lt;code&gt;n = n &amp;amp; (n - 1);&lt;/code&gt;  讓 n 去掉最前頭的數字 1，這樣我去掉過幾次，就知道有幾個數字 1。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;canSortArray&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; j &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;bitcount&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;bitcount&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; temp &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                    nums&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; temp&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;bitcount&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; count &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            count&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; count&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
+!! !!&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
+&lt;hr /&gt;
+&lt;p&gt;!! !!&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+</content>
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
+        <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Sorting/" />
+        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Bit-Manipulation/" />
+        <updated>2024-11-06T09:22:30.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/LLM-%E4%BB%8B%E7%B4%B9/</id>
+        <title>LLM 介紹</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/LLM-%E4%BB%8B%E7%B4%B9/"/>
+        <content type="html">&lt;h2 id=&#34;large-language-model-模型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#large-language-model-模型&#34;&gt;#&lt;/a&gt; Large Language Model 模型&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大語言模型&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之所以被稱為 large，是因為他是經過大量資料進行訓練的模型。&lt;br /&gt;
+發展過程經歷了：機器學習 -&amp;gt; 神經元 -&amp;gt; 神經網路 -&amp;gt; 深度學習 -&amp;gt; RNN (Recurrent neural network) -&amp;gt; LSTM (Long Short-Term Memory) -&amp;gt; LM (Language model) -&amp;gt; LLM (Large Language model)&lt;/p&gt;
+&lt;p&gt;簡單來說是一種利用大量文字去訓練的人工智慧，他會針對問題，預測每個答案的下一個字。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在發明詞向量後，可以透過將文字轉成數學向量，讓電腦理解自然語言。&lt;/li&gt;
+&lt;li&gt;而後來 Google 發現經過大量訓練的神經網路模型，可以將類似詞語的向量放在相鄰的位置。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Artificial-Intelligence/" />
+        <category term="LLM" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/LLM/" />
+        <updated>2024-09-20T12:07:29.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Cloud-Computing/GCP-CI-CD-%E5%AF%A6%E4%BD%9C/</id>
+        <title>GCP CI/CD 實作</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Cloud-Computing/GCP-CI-CD-%E5%AF%A6%E4%BD%9C/"/>
+        <content type="html"></content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Cloud-Computing" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Cloud-Computing/" />
+        <updated>2024-09-20T07:30:59.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Website/DevOps/GitLab-CI-CD-%E5%AF%A6%E4%BD%9C/</id>
+        <title>GitLab CI/CD 實作</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Website/DevOps/GitLab-CI-CD-%E5%AF%A6%E4%BD%9C/"/>
+        <content type="html"></content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Website" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Website/" />
+        <category term="DevOps" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Website/DevOps/" />
+        <updated>2024-09-20T07:30:28.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E5%AF%A6%E4%BD%9C/</id>
+        <title>Fine-tuning 實作</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E5%AF%A6%E4%BD%9C/"/>
+        <content type="html"></content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Artificial-Intelligence/" />
+        <category term="LLM" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/LLM/" />
+        <updated>2024-09-20T07:25:46.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E4%BB%8B%E7%B4%B9/</id>
+        <title>Fine-tuning 介紹</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E4%BB%8B%E7%B4%B9/"/>
+        <content type="html"></content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Artificial-Intelligence/" />
+        <category term="LLM" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/LLM/" />
+        <updated>2024-09-20T07:25:26.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Ubuntu-%E5%90%84%E7%A8%AE%E8%A8%AD%E5%AE%9A/</id>
         <title>Ubuntu 各種設定</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/Linux/Ubuntu-%E5%90%84%E7%A8%AE%E8%A8%AD%E5%AE%9A/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Ubuntu-%E5%90%84%E7%A8%AE%E8%A8%AD%E5%AE%9A/"/>
         <content type="html">&lt;h2 id=&#34;module-簡介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#module-簡介&#34;&gt;#&lt;/a&gt; module 簡介&lt;/h2&gt;
 &lt;p&gt;專門管理環境變數的工具，全程是 module environment，一般應用於軟體或運行庫等設備有多個版本，且需要分別配置這些環境變數。&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module ava&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;使用權限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用權限&#34;&gt;#&lt;/a&gt; 使用權限&lt;/h2&gt;
@@ -29,16 +159,16 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;user@vm:~$ &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;passwd&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;user name&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;刪除使用者&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#刪除使用者&#34;&gt;#&lt;/a&gt; 刪除使用者&lt;/h3&gt;
 &lt;h3 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h3&gt;
 </content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/" />
-        <category term="Linux" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/Linux/" />
-        <category term="Ubuntu" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Ubuntu/" />
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/HPC/" />
+        <category term="Linux" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/HPC/Linux/" />
+        <category term="Ubuntu" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Ubuntu/" />
         <updated>2024-07-12T03:25:01.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/1002-Find-Common-Characters/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/1002-Find-Common-Characters/</id>
         <title>1002. Find Common Characters</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/1002-Find-Common-Characters/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/1002-Find-Common-Characters/"/>
         <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/find-common-characters/description/?envType=daily-question&amp;amp;envId=2024-06-05&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Given a string array  &lt;code&gt;words&lt;/code&gt; , return &lt;em&gt;an array of all characters that show up in all strings within the  &lt;code&gt;words&lt;/code&gt;  (including duplicates).&lt;/em&gt; You may return the answer in &lt;strong&gt;any order&lt;/strong&gt;.&lt;/p&gt;
@@ -74,18 +204,18 @@
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
         <updated>2024-06-05T15:42:10.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/409-Longest-Palindrome/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/409-Longest-Palindrome/</id>
         <title>409. Longest Palindrome</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/409-Longest-Palindrome/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/409-Longest-Palindrome/"/>
         <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/longest-palindrome/?envType=daily-question&amp;amp;envId=2024-06-04&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Given a string  &lt;code&gt;s&lt;/code&gt;  which consists of lowercase or uppercase letters, return the length of the &lt;strong&gt;longest palindrome&lt;/strong&gt; that can be built with those letters.&lt;/p&gt;
@@ -128,18 +258,18 @@ A palindrome is a string that reads the same forward and backward.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Greedy/" />
         <updated>2024-06-04T13:31:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/2486-Append-Characters-to-String-to-Make-Subsequence/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/2486-Append-Characters-to-String-to-Make-Subsequence/</id>
         <title>2486. Append Characters to String to Make Subsequence</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/2486-Append-Characters-to-String-to-Make-Subsequence/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/2486-Append-Characters-to-String-to-Make-Subsequence/"/>
         <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/append-characters-to-string-to-make-subsequence/description/?envType=daily-question&amp;amp;envId=2024-06-03&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You are given two strings  &lt;code&gt;s&lt;/code&gt;  and  &lt;code&gt;t&lt;/code&gt;  consisting of only lowercase English letters.&lt;/p&gt;
@@ -189,18 +319,18 @@ It can be shown that appending any 4 characters to the end of s will never make 
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Greedy/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
-        <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Two-Pointers/" />
+        <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Greedy/" />
         <updated>2024-06-03T06:10:07.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/344-Reverse-String/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/344-Reverse-String/</id>
         <title>344. Reverse String</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/344-Reverse-String/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/344-Reverse-String/"/>
         <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/reverse-string/description/?envType=daily-question&amp;amp;envId=2024-06-02&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Write a function that reverses a string. The input string is given as an array of characters  &lt;code&gt;s&lt;/code&gt; .&lt;/p&gt;
@@ -237,17 +367,17 @@ It can be shown that appending any 4 characters to the end of s will never make 
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
-        <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Two-Pointers/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Two Pointers" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Two-Pointers/" />
         <updated>2024-06-02T08:46:34.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/3110-Score-of-a-String/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/3110-Score-of-a-String/</id>
         <title>3110. Score of a String</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/3110-Score-of-a-String/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/3110-Score-of-a-String/"/>
         <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/score-of-a-string/description/?envType=daily-question&amp;amp;envId=2024-06-01&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You are given a string  &lt;code&gt;s&lt;/code&gt; . The &lt;strong&gt;score&lt;/strong&gt; of a string is defined as the sum of the absolute difference between the &lt;strong&gt;ASCII&lt;/strong&gt; values of adjacent characters.&lt;/p&gt;
@@ -288,16 +418,16 @@ The ASCII values of the characters in s are: &#39;z&#39; = 122, &#39;a&#39; = 97
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
         <updated>2024-06-01T12:20:22.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/260-Single-Number-III/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/260-Single-Number-III/</id>
         <title>260. Single Number III</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/260-Single-Number-III/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/260-Single-Number-III/"/>
         <content type="html">&lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/single-number-iii/description/?envType=daily-question&amp;amp;envId=2024-05-31&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Given an integer array  &lt;code&gt;nums&lt;/code&gt; , in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in &lt;strong&gt;any order&lt;/strong&gt;.&lt;/p&gt;
@@ -342,17 +472,17 @@ The ASCII values of the characters in s are: &#39;z&#39; = 122, &#39;a&#39; = 97
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
+        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Bit-Manipulation/" />
         <updated>2024-05-31T08:20:32.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1442-Count-Triplets-That-Can-Form-Two-Arrays-of-Equal-XOR/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/1442-Count-Triplets-That-Can-Form-Two-Arrays-of-Equal-XOR/</id>
         <title>1442. Count Triplets That Can Form Two Arrays of Equal XOR</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1442-Count-Triplets-That-Can-Form-Two-Arrays-of-Equal-XOR/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/1442-Count-Triplets-That-Can-Form-Two-Arrays-of-Equal-XOR/"/>
         <content type="html">&lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/description/?envType=daily-question&amp;amp;envId=2024-05-30&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Given an array of integers  &lt;code&gt;arr&lt;/code&gt; .&lt;/p&gt;
@@ -399,20 +529,20 @@ Note that &lt;strong&gt;^&lt;/strong&gt; denotes the &lt;strong&gt;bitwise-xor&l
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Hash-Table/" />
-        <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
-        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
-        <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
+        <category term="Math" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Math/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
+        <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Prefix-Sum/" />
+        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Bit-Manipulation/" />
         <updated>2024-05-30T08:53:44.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One/</id>
         <title>1404. Number of Steps to Reduce a Number in Binary Representation to One</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One/"/>
         <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/description/?envType=daily-question&amp;amp;envId=2024-05-29&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Given the binary representation of an integer as a string  &lt;code&gt;s&lt;/code&gt; , return &lt;em&gt;the number of steps to reduce it to  &lt;code&gt;1&lt;/code&gt;  under the following rules&lt;/em&gt;:&lt;/p&gt;
@@ -467,17 +597,17 @@ Step 1) 2 is even, divide by 2 and obtain 1.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Bit-Manipulation/" />
         <updated>2024-05-29T12:48:47.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1208-Get-Equal-Substrings-Within-Budget/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/1208-Get-Equal-Substrings-Within-Budget/</id>
         <title>1208. Get Equal Substrings Within Budget</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/1208-Get-Equal-Substrings-Within-Budget/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/1208-Get-Equal-Substrings-Within-Budget/"/>
         <content type="html">&lt;p&gt;⭐️⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/get-equal-substrings-within-budget/description/?envType=daily-question&amp;amp;envId=2024-05-28&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You are given two strings  &lt;code&gt;s&lt;/code&gt;  and  &lt;code&gt;t&lt;/code&gt;  of the same length and an integer  &lt;code&gt;maxCost&lt;/code&gt; .&lt;/p&gt;
@@ -524,19 +654,19 @@ That costs 3, so the maximum length is 3.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
-        <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sliding-Window/" />
-        <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Prefix-Sum/" />
-        <category term="String" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/String/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
+        <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Binary-Search/" />
+        <category term="Prefix Sum" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Prefix-Sum/" />
+        <category term="Sliding Window" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Sliding-Window/" />
         <updated>2024-05-28T13:51:13.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X/</id>
         <title>1608. Special Array With X Elements Greater Than or Equal X</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X/"/>
         <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
 &lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/description/?envType=daily-question&amp;amp;envId=2024-05-27&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You are given an array  &lt;code&gt;nums&lt;/code&gt;  of non-negative integers.  &lt;code&gt;nums&lt;/code&gt;  is considered &lt;strong&gt;special&lt;/strong&gt; if there exists a number  &lt;code&gt;x&lt;/code&gt;  such that there are &lt;strong&gt;exactly&lt;/strong&gt;  &lt;code&gt;x&lt;/code&gt;  numbers in  &lt;code&gt;nums&lt;/code&gt;  that are &lt;strong&gt;greater than or equal to&lt;/strong&gt;  &lt;code&gt;x&lt;/code&gt; .&lt;/p&gt;
@@ -586,18 +716,18 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Search/" />
-        <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Sorting/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
+        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Binary-Search/" />
+        <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Sorting/" />
         <updated>2024-05-27T10:25:01.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/Linux/Anaconda-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Anaconda-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95/</id>
         <title>Anaconda 指令用法</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/Linux/Anaconda-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Anaconda-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95/"/>
         <content type="html">&lt;h2 id=&#34;查看-conda-安裝了那些包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看-conda-安裝了那些包&#34;&gt;#&lt;/a&gt; 查看 conda 安裝了那些包&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;查看-conda-現在有哪些虛擬環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看-conda-現在有哪些虛擬環境&#34;&gt;#&lt;/a&gt; 查看 conda 現在有哪些虛擬環境&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;env&lt;/span&gt; list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;檢查更新當前-conda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#檢查更新當前-conda&#34;&gt;#&lt;/a&gt; 檢查更新當前 conda&lt;/h2&gt;
@@ -607,16 +737,16 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# out of the virtual env&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;虛擬環境名稱&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;package&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# in the virtual env&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;package&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;關閉虛擬環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#關閉虛擬環境&#34;&gt;#&lt;/a&gt; 關閉虛擬環境&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda deactivate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;刪除虛擬環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#刪除虛擬環境&#34;&gt;#&lt;/a&gt; 刪除虛擬環境&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# delete virtual env&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda remove &lt;span class=&#34;token parameter variable&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;虛擬環境名稱&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--all&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# delete virtual env package&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda remove &lt;span class=&#34;token parameter variable&#34;&gt;--name&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;虛擬環境名稱&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;package&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/" />
-        <category term="Linux" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/Linux/" />
-        <category term="Ubuntu" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Ubuntu/" />
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/HPC/" />
+        <category term="Linux" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/HPC/Linux/" />
+        <category term="Ubuntu" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Ubuntu/" />
         <updated>2024-05-21T09:01:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/cpe/One%20Star/10062-Tell-me-the-frequencies/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10062-Tell-me-the-frequencies/</id>
         <title>10062 - Tell me the frequencies!</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/cpe/One%20Star/10062-Tell-me-the-frequencies/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10062-Tell-me-the-frequencies/"/>
         <content type="html">&lt;p&gt;🌕🌗🌑🌑🌑&lt;/p&gt;
 &lt;h2 id=&#34;題目連結&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#題目連結&#34;&gt;#&lt;/a&gt; 題目連結&lt;/h2&gt;
 &lt;ul&gt;
@@ -661,15 +791,15 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="CPE" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/cpe/" />
-        <category term="One Star" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/cpe/One-Star/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="CPE" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/" />
+        <category term="One Star" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/One-Star/" />
         <updated>2024-05-20T16:52:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/cpe/One%20Star/10057-A-mid-summer-night-s-dream/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10057-A-mid-summer-night-s-dream/</id>
         <title>10057 - A mid-summer night&#39;s dream.</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/cpe/One%20Star/10057-A-mid-summer-night-s-dream/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10057-A-mid-summer-night-s-dream/"/>
         <content type="html">&lt;p&gt;🌕🌗🌑🌑🌑&lt;/p&gt;
 &lt;h2 id=&#34;題目連結&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#題目連結&#34;&gt;#&lt;/a&gt; 題目連結&lt;/h2&gt;
 &lt;ul&gt;
@@ -717,405 +847,9 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="CPE" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/cpe/" />
-        <category term="One Star" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/cpe/One-Star/" />
+        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="CPE" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/" />
+        <category term="One Star" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/One-Star/" />
         <updated>2024-05-20T16:05:27.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/program-language/Python/Python-virtualenv/</id>
-        <title>Python virtualenv</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/program-language/Python/Python-virtualenv/"/>
-        <content type="html"></content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="Programming Language" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/" />
-        <category term="PHP" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/program-language/PHP/" />
-        <updated>2024-05-20T15:54:42.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/1863-Sum-of-All-Subset-XOR-Totals/</id>
-        <title>1863. Sum of All Subset XOR Totals</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/1863-Sum-of-All-Subset-XOR-Totals/"/>
-        <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
-&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/sum-of-all-subset-xor-totals/description/?envType=daily-question&amp;amp;envId=2024-05-20&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;XOR total&lt;/strong&gt; of an array is defined as the bitwise  &lt;code&gt;XOR&lt;/code&gt;  of &lt;strong&gt;all its elements&lt;/strong&gt;, or  &lt;code&gt;0&lt;/code&gt;  if the array is &lt;strong&gt;empty&lt;/strong&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For example, the &lt;strong&gt;XOR total&lt;/strong&gt; of the array  &lt;code&gt;[2,5,6]&lt;/code&gt;  is  &lt;code&gt;2 XOR 5 XOR 6 = 1&lt;/code&gt; .&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Given an array  &lt;code&gt;nums&lt;/code&gt; , return &lt;em&gt;the &lt;strong&gt;sum&lt;/strong&gt; of all &lt;strong&gt;XOR totals&lt;/strong&gt; for every &lt;strong&gt;subset&lt;/strong&gt; of  &lt;code&gt;nums&lt;/code&gt; .&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Subsets with the &lt;strong&gt;same&lt;/strong&gt; elements should be counted &lt;strong&gt;multiple&lt;/strong&gt; times.&lt;/p&gt;
-&lt;p&gt;An array  &lt;code&gt;a&lt;/code&gt;  is a &lt;strong&gt;subset&lt;/strong&gt; of an array  &lt;code&gt;b&lt;/code&gt;  if  &lt;code&gt;a&lt;/code&gt;  can be obtained from  &lt;code&gt;b&lt;/code&gt;  by deleting some (possibly zero) elements of  &lt;code&gt;b&lt;/code&gt; .&lt;/p&gt;
-&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [1,3]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; 6&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; The 4 subsets of [1,3] are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The empty subset has an XOR total of 0.&lt;/li&gt;
-&lt;li&gt;[1] has an XOR total of 1.&lt;/li&gt;
-&lt;li&gt;[3] has an XOR total of 3.&lt;/li&gt;
-&lt;li&gt;[1,3] has an XOR total of 1 XOR 3 = 2.&lt;br /&gt;
-0 + 1 + 3 + 2 = 6&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [5,1,6]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; 28&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; The 8 subsets of [5,1,6] are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The empty subset has an XOR total of 0.&lt;/li&gt;
-&lt;li&gt;[5] has an XOR total of 5.&lt;/li&gt;
-&lt;li&gt;[6] has an XOR total of 6.&lt;/li&gt;
-&lt;li&gt;[5,1] has an XOR total of 5 XOR 1 = 4.&lt;/li&gt;
-&lt;li&gt;[5,6] has an XOR total of 5 XOR 6 = 3.&lt;/li&gt;
-&lt;li&gt;[1,6] has an XOR total of 1 XOR 6 = 7.&lt;/li&gt;
-&lt;li&gt;[5,1,6] has an XOR total of 5 XOR 1 XOR 6 = 2.&lt;br /&gt;
-0 + 5 + 1 + 6 + 4 + 3 + 7 + 2 = 28&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;example-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-3&#34;&gt;#&lt;/a&gt; Example 3&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [3,4,5,6,7,8]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; 480&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; The sum of all XOR totals for every subset is 480.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
-&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;span&gt;Solution.java&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;subsetXORSum&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;|=&lt;/span&gt; num&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
-!! !!&lt;/p&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
-&lt;hr /&gt;
-&lt;p&gt;!! !!&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-</content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Array" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Array/" />
-        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Bit-Manipulation/" />
-        <category term="Math" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Math/" />
-        <category term="Backtracking" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Backtracking/" />
-        <category term="Combinatorics" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Combinatorics/" />
-        <category term="Enumeration" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Enumeration/" />
-        <updated>2024-05-20T01:11:15.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/Linux/Ubuntu-%E5%AE%89%E8%A3%9D%E8%BB%9F%E9%AB%94/</id>
-        <title>Ubuntu 安裝軟體</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/Linux/Ubuntu-%E5%AE%89%E8%A3%9D%E8%BB%9F%E9%AB%94/"/>
-        <content type="html">&lt;h2 id=&#34;安裝-c-等套件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-c-等套件&#34;&gt;#&lt;/a&gt; 安裝 C++ 等套件&lt;/h2&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; build-essential&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;安裝-java-默認-jrejdk&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-java-默認-jrejdk&#34;&gt;#&lt;/a&gt; 安裝 java 默認 JRE/JDK&lt;/h2&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 更新包&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 檢查 java 是否已經安裝過&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;java&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--version&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 安裝默認 JRE&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; default-jre&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 安裝默認 JDK&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; default-jdk&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 檢查 javac，java 編譯器版本&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;javac &lt;span class=&#34;token parameter variable&#34;&gt;--version&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;gpu-環境安裝在虛擬環境上的做法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gpu-環境安裝在虛擬環境上的做法&#34;&gt;#&lt;/a&gt; GPU 環境安裝 (在虛擬環境上的做法)&lt;/h2&gt;
-&lt;p&gt;RTX 3090 on Ubuntu 22.04.4 LTS + anaconda&lt;/p&gt;
-&lt;h3 id=&#34;安裝-nvidia-driver-驅動&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-nvidia-driver-驅動&#34;&gt;#&lt;/a&gt; 安裝 nvidia driver (驅動)&lt;/h3&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nvidia-common&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# add nvidia ppa&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; add-apt-respository ppa:graphics-drivers/ppa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ubuntu-drivers devices&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# install nvidia driver&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nvidia-driver-535&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;重新開機&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重新開機&#34;&gt;#&lt;/a&gt; 重新開機&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;確認是否有安裝成功&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#確認是否有安裝成功&#34;&gt;#&lt;/a&gt; 確認是否有安裝成功&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nvidia-smi&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/8OoM6KG.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安裝-anaconda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-anaconda&#34;&gt;#&lt;/a&gt; 安裝 anaconda&lt;/h3&gt;
-&lt;p&gt;前往 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYW5hY29uZGEuY29tL2Rvd25sb2FkL3N1Y2Nlc3M=&#34;&gt;anaconda&lt;/span&gt; 網站進行下載&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/LIStvrn.png&#34; alt=&#34;anaconda 下載畫面&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;下載後會得到一個 ``&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;利用  &lt;code&gt;bash [下載檔案名稱.sh]&lt;/code&gt;  開始安裝，接著按下  &lt;code&gt;Enter&lt;/code&gt;  會有一段授權條款，可以用上下鍵看內容&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/6sGHptV.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;接著會問你是否同意，輸入  &lt;code&gt;yes&lt;/code&gt; &lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/VhQUJpv.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;接著確認安裝位置，按下  &lt;code&gt;Enter&lt;/code&gt; &lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/TYBJuDa.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;接著安裝好後，記得重新開機&lt;/li&gt;
-&lt;li&gt;電腦重開後，終端機提示命令符會看到 (base) 在前面&lt;/li&gt;
-&lt;li&gt;可以利用  &lt;code&gt;conda deactivate&lt;/code&gt;  退出 conda 環境&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;note warning no-icon&#34;&gt;
-&lt;p&gt;可以輸入以下指令，停用自動進入 conda 環境&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda config &lt;span class=&#34;token parameter variable&#34;&gt;--set&lt;/span&gt; auto_activate_base &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;h3 id=&#34;在-anaconda-中安裝-cuda-cudnn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-anaconda-中安裝-cuda-cudnn&#34;&gt;#&lt;/a&gt; 在 Anaconda 中安裝 cuda &amp;amp; cuDNN&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;創建 conda 虛擬環境，並進入虛擬環境&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda create &lt;span class=&#34;token parameter variable&#34;&gt;-n&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;虛擬環境名稱&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3.9&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda activate &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;虛擬環境名稱&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看 conda 環境中可以安裝的 cuda toolkit 版本&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda search cudatoolkit&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda search cudatoolkit &lt;span class=&#34;token parameter variable&#34;&gt;--info&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hbmFjb25kYS5vcmcvbnZpZGlhL3JlcG8vaW5zdGFsbGVycz9sYWJlbD1jdWRhLTExLjguMCZhbXA7dHlwZT1jb25kYQ==&#34;&gt;conda&lt;/span&gt; 環境中安裝 cuda toolkit&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--channel&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;nvidia/label/cuda-11.8.0&#34;&lt;/span&gt; cuda&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看 conda 環境中可以安裝的 cuDNN 版本&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda search cudnn&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda search cudnn &lt;span class=&#34;token parameter variable&#34;&gt;--info&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 conda 環境中安裝 cuDNN&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 指定版本&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;cudnn&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8.9&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 不指定版本，會自動選與 cuda 相匹配的 cuDNN 版本&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; cudnn&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;gpu-環境安裝在本機上的做法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gpu-環境安裝在本機上的做法&#34;&gt;#&lt;/a&gt; GPU 環境安裝 (在本機上的做法)&lt;/h2&gt;
-&lt;p&gt;RTX 3090 on Ubuntu 22.04.4 LTS&lt;/p&gt;
-&lt;h3 id=&#34;移除-nvidia-cuda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移除-nvidia-cuda&#34;&gt;#&lt;/a&gt; 移除 nvidia &amp;amp; cuda&lt;/h3&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; remove &lt;span class=&#34;token parameter variable&#34;&gt;--purge&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;^nvidia-.*&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; remove &lt;span class=&#34;token parameter variable&#34;&gt;--purge&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;^cuda-.*&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;安裝-nvidia-driver-驅動-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-nvidia-driver-驅動-2&#34;&gt;#&lt;/a&gt; 安裝 nvidia driver (驅動)&lt;/h3&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nvidia-common&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# add nvidia ppa&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; add-apt-respository ppa:graphics-drivers/ppa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ubuntu-drivers devices&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# install nvidia driver&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nvidia-driver-535&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;重新開機-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重新開機-2&#34;&gt;#&lt;/a&gt; 重新開機&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;確認是否有安裝成功-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#確認是否有安裝成功-2&#34;&gt;#&lt;/a&gt; 確認是否有安裝成功&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nvidia-smi&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/8OoM6KG.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安裝-cuda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-cuda&#34;&gt;#&lt;/a&gt; 安裝 Cuda&lt;/h3&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9jdWRhLXRvb2xraXQtYXJjaGl2ZQ==&#34;&gt;CUDA Toolkit Archive&lt;/span&gt;&lt;br /&gt;
-&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9jdWRhLTExLTctMS1kb3dubG9hZC1hcmNoaXZlP3RhcmdldF9vcz1MaW51eCZhbXA7dGFyZ2V0X2FyY2g9eDg2XzY0JmFtcDtEaXN0cmlidXRpb249VWJ1bnR1JmFtcDt0YXJnZXRfdmVyc2lvbj0yMi4wNCZhbXA7dGFyZ2V0X3R5cGU9ZGViX2xvY2Fs&#34;&gt;CUDA Toolkit 11.7 Update 1 Downloads Linux&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/6v7ETkw.png&#34; alt=&#34;CUDA Toolkit setting&#34; /&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mv&lt;/span&gt; cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://developer.download.nvidia.com/compute/cuda/12.2.2/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.2-535.104.05-1_amd64.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-i&lt;/span&gt; cuda-repo-ubuntu2204-12-2-local_12.2.2-535.104.05-1_amd64.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; cuda&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;設置環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#設置環境&#34;&gt;#&lt;/a&gt; 設置環境&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight vim&#34;&gt;&lt;figcaption data-lang=&#34;vim&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;export PATH&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;usr&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;local&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;cuda&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;bin&lt;/span&gt;$&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;PATH&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;$&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;PATH&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;export LD_LIBRARY_PATH&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;$LD_LIBRARY_PATH&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;usr&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;local&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;cuda&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;lib64&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;重新載入&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重新載入&#34;&gt;#&lt;/a&gt; 重新載入&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; ldconfig&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;檢查-cuda-是否有安裝成功&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#檢查-cuda-是否有安裝成功&#34;&gt;#&lt;/a&gt; 檢查 CUDA 是否有安裝成功&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nvcc &lt;span class=&#34;token parameter variable&#34;&gt;-V&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/mxP3zNx.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;安裝完成後重新開機&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝完成後重新開機&#34;&gt;#&lt;/a&gt; 安裝完成後重新開機&lt;/h4&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;cudnn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cudnn&#34;&gt;#&lt;/a&gt; cuDNN&lt;/h3&gt;
-&lt;p&gt;CUDNN 要去 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9yZHAvY3Vkbm4tYXJjaGl2ZQ==&#34;&gt;nvidia&lt;/span&gt; 登入下載，必須有開發者身份。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/qOfp703.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-xvf&lt;/span&gt; 下載的 &lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; 名稱&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; 解壓縮的名稱&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; include/* /usr/local/cuda-12.2/include&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; lib/libcudnn* /usr/local/cuda-12.2/lib64&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; a+r /usr/local/cuda-12.2/include/cudnn*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; a+r /usr/local/cuda-12.2/lib64/libcudnn*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; /usr/local/cuda/include/cudnn_version.h &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; CUDNN_MAJOR &lt;span class=&#34;token parameter variable&#34;&gt;-A&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/HFdjhDP.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安裝-pytorch-檢測&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-pytorch-檢測&#34;&gt;#&lt;/a&gt; 安裝 pytorch &amp;amp; 檢測&lt;/h2&gt;
-&lt;h3 id=&#34;pytorch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pytorch&#34;&gt;#&lt;/a&gt; pytorch&lt;/h3&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; pytorch torchvision torchaudio &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; hcc &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; pytorch&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;檢測&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#檢測&#34;&gt;#&lt;/a&gt; 檢測&lt;/h3&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;python&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;import&lt;/span&gt; torch&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; torch.cuda.is_available&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;True&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; torch.cuda.device_count&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; torch.cuda.current_device&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; torch.cuda.device&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;torch.cuda.device at 0x7efcc0b03be&lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;0&lt;/span&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; torch.cuda.get_device_name&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token string&#34;&gt;&#39;GeForce GTX 3090&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;參考資料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#參考資料&#34;&gt;#&lt;/a&gt; 參考資料&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qYWNrZnJpc2h0Lm1lZGl1bS5jb20vaW5zdGFsbC1udmlkaWEtZHJpdmVyLXZpYS1wcGEtaW4tdWJ1bnR1LTE4LTA0LWZjOWE4YzQ2NThiOQ==&#34;&gt;安裝 Nvidia driver 545 CUDA 12.3 cudnn 12.x on Ubuntu 22.04&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/" />
-        <category term="Linux" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/Linux/" />
-        <category term="Ubuntu" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Ubuntu/" />
-        <updated>2024-05-19T10:06:04.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/979-Distribute-Coins-in-Binary-Tree/</id>
-        <title>979. Distribute Coins in Binary Tree</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Medium/979-Distribute-Coins-in-Binary-Tree/"/>
-        <content type="html">&lt;p&gt;⭐️⭐️⭐️&lt;/p&gt;
-&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/distribute-coins-in-binary-tree/description/?envType=daily-question&amp;amp;envId=2024-05-18&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;You are given the  &lt;code&gt;root&lt;/code&gt;  of a binary tree with  &lt;code&gt;n&lt;/code&gt;  nodes where each  &lt;code&gt;node&lt;/code&gt;  in the tree has  &lt;code&gt;node.val&lt;/code&gt;  coins. There are  &lt;code&gt;n&lt;/code&gt;  coins in total throughout the whole tree.&lt;/p&gt;
-&lt;p&gt;In one move, we may choose two adjacent nodes and move one coin from one node to another. A move may be from parent to child, or from child to parent.&lt;/p&gt;
-&lt;p&gt;Return &lt;em&gt;the &lt;strong&gt;minimum&lt;/strong&gt; number of moves required to make every node have &lt;strong&gt;exactly&lt;/strong&gt; one coin.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://assets.leetcode.com/uploads/2019/01/18/tree1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; root = [3,0,0]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; 2&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; From the root of the tree, we move one coin to its left child, and one coin to its right child.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://assets.leetcode.com/uploads/2019/01/18/tree2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; root = [0,3,0]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; 3&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; From the left child of the root, we move two coins to the root [taking two moves]. Then, we move one coin from the root of the tree to the right child.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;note info no-icon&#34;&gt;
-&lt;p&gt;&lt;strong&gt;TreeNode 的 class 內容&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;span&gt;TreeNode&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// Definition for a binary tree node.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; left&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; right&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; left&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; right&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;left &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; left&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;right &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; right&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
-&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; moves &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;distributeCoins&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        moves &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; moves&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; left &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;left&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; right &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;right&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        moves &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Math&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;left&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Math&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;right&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; left &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; right &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
-!! !!&lt;/p&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
-&lt;hr /&gt;
-&lt;p&gt;!! !!&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-</content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Medium" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Medium/" />
-        <category term="Depth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Depth-First-Search/" />
-        <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
-        <category term="Binary Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Tree/" />
-        <updated>2024-05-18T00:58:54.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/2331-Evaluate-Boolean-Binary-Tree/</id>
-        <title>2331. Evaluate Boolean Binary Tree</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/coding/leetcode/Easy/2331-Evaluate-Boolean-Binary-Tree/"/>
-        <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
-&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/evaluate-boolean-binary-tree/description/?envType=daily-question&amp;amp;envId=2024-05-16&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;You are given the  &lt;code&gt;root&lt;/code&gt;  of a &lt;strong&gt;full binary tree&lt;/strong&gt; with the following properties:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Leaf nodes&lt;/strong&gt; have either the value  &lt;code&gt;0&lt;/code&gt;  or  &lt;code&gt;1&lt;/code&gt; , where  &lt;code&gt;0&lt;/code&gt;  represents  &lt;code&gt;False&lt;/code&gt;  and  &lt;code&gt;1&lt;/code&gt;  represents  &lt;code&gt;True&lt;/code&gt; .&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Non-leaf nodes&lt;/strong&gt; have either the value  &lt;code&gt;2&lt;/code&gt;  or  &lt;code&gt;3&lt;/code&gt; , where  &lt;code&gt;2&lt;/code&gt;  represents the boolean  &lt;code&gt;OR&lt;/code&gt;  and  &lt;code&gt;3&lt;/code&gt;  represents the boolean  &lt;code&gt;AND&lt;/code&gt; .&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The &lt;strong&gt;evaluation&lt;/strong&gt; of a node is as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If the node is a leaf node, the evaluation is the &lt;strong&gt;value&lt;/strong&gt; of the node, i.e.  &lt;code&gt;True&lt;/code&gt;  or  &lt;code&gt;False&lt;/code&gt; .&lt;/li&gt;
-&lt;li&gt;Otherwise, &lt;strong&gt;evaluate&lt;/strong&gt; the node&#39;s two children and &lt;strong&gt;apply&lt;/strong&gt; the boolean operation of its value with the children&#39;s evaluations.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Return &lt;em&gt;the boolean result of &lt;strong&gt;evaluating&lt;/strong&gt; the  &lt;code&gt;root&lt;/code&gt;  node.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;full binary tree&lt;/strong&gt; is a binary tree where each node has either  &lt;code&gt;0&lt;/code&gt;  or  &lt;code&gt;2&lt;/code&gt;  children.&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;leaf node&lt;/strong&gt; is a node that has zero children.&lt;/p&gt;
-&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://assets.leetcode.com/uploads/2022/05/16/example1drawio1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; root = [2,1,3,null,null,0,1]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; true&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; The above diagram illustrates the evaluation process.&lt;br /&gt;
-The AND node evaluates to False AND True = False.&lt;br /&gt;
-The OR node evaluates to True OR False = True.&lt;br /&gt;
-The root node evaluates to True, so we return true.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; root = [0]&lt;br /&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; false&lt;br /&gt;
-&lt;strong&gt;Explanation:&lt;/strong&gt; The root node is a leaf node and it evaluates to false, so we return false.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;note info no-icon&#34;&gt;
-&lt;p&gt;&lt;strong&gt;TreeNode 的 class 內容&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;span&gt;TreeNode&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// Definition for a binary tree node.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; left&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; right&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; left&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; right&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; val&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;left &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; left&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;right &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; right&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
-&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;evaluateTree&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;TreeNode&lt;/span&gt; root&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;left&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;right&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;left&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;right&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; root&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;val &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
-&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
-!! !!&lt;/p&gt;
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
-&lt;hr /&gt;
-&lt;p&gt;!! !!&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-</content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/" />
-        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/" />
-        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/coding/leetcode/Easy/" />
-        <category term="Depth-First Search" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Depth-First-Search/" />
-        <category term="Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Tree/" />
-        <category term="Binary Tree" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Binary-Tree/" />
-        <updated>2024-05-16T08:36:18.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/%E7%81%8C%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/</id>
-        <title>灌作業系統</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/computer-science/HPC/%E7%81%8C%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1/"/>
-        <content type="html">&lt;h2 id=&#34;製作開機機碟&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#製作開機機碟&#34;&gt;#&lt;/a&gt; 製作開機機碟&lt;/h2&gt;
-&lt;p&gt;可以看官方提供的文件&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly91YnVudHUuY29tL3R1dG9yaWFscy9jcmVhdGUtYS11c2Itc3RpY2stb24td2luZG93cyMxLW92ZXJ2aWV3&#34;&gt;Create a bootable USB stick with Rufus on Windows&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;需要的東西&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#需要的東西&#34;&gt;#&lt;/a&gt; 需要的東西&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;一個 4GB 以上的隨身碟 (空的或格式化過的)&lt;/li&gt;
-&lt;li&gt;Windows 作業系統&lt;/li&gt;
-&lt;li&gt;Rufus 軟體，a free and open source USB stick writing tool&lt;/li&gt;
-&lt;li&gt;Ubuntu ISO file&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;到 ubuntu 的官網下載 ISO 檔
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9yZWxlYXNlcy51YnVudHUuY29tL2phbW15Lw==&#34;&gt;Ubuntu 22.04.4 LTS&lt;/span&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/0KtyYUs.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;安裝 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ydWZ1cy5pZS96aF9UVy8=&#34;&gt;Rufus&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;插入 USB 隨身碟&lt;/li&gt;
-&lt;li&gt;Rufus 將更新，在設備欄位中設定設備&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/g18T5oJ.png&#34; alt=&#34;Rufus&#34; width=&#34;350px&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安裝單一系統&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝單一系統&#34;&gt;#&lt;/a&gt; 安裝單一系統&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;製作開機碟 / 拿到一個開機碟&lt;/li&gt;
-&lt;li&gt;隨身碟插上去電腦，並重新開機&lt;/li&gt;
-&lt;li&gt;開機後，狂按 F2 或是 delete 進入 BIOS&lt;/li&gt;
-&lt;li&gt;在右下角的開機硬碟處把隨身碟拉到最上面，接著儲存後重開機&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/HccUxFF.png&#34; alt=&#34;BIOS&#34; width=&#34;600px&#34; /&gt;&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/1USVcrs.png&#34; alt=&#34;BIOS&#34; width=&#34;600px&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;安裝 Ubuntu，選擇清除所有硬碟安裝&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;安裝雙系統&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝雙系統&#34;&gt;#&lt;/a&gt; 安裝雙系統&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;製作開機碟 / 拿到一個開機碟&lt;/li&gt;
-&lt;li&gt;磁碟切割，配置 Ubuntu 的安裝空間，如果是插新的硬碟或 SSD 就不用
-&lt;ul&gt;
-&lt;li&gt;關閉 Windows 快速啟動&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;關機重開，進入 BIOS&lt;/li&gt;
-&lt;li&gt;將 boot option 順序調整為 ubuntu 在前面 (UEFI: USB ......)&lt;/li&gt;
-&lt;li&gt;按下 F10 後儲存 BIOS 設定，重開電腦&lt;/li&gt;
-&lt;li&gt;接著就會進入 Ubuntu 開機選單&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;ubuntu-設定&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-設定&#34;&gt;#&lt;/a&gt; Ubuntu 設定&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;選擇 install ubuntu&lt;/li&gt;
-&lt;li&gt;選擇鍵盤語言&lt;/li&gt;
-&lt;li&gt;選擇安裝選項
-&lt;ul&gt;
-&lt;li&gt;可以選擇&lt;strong&gt;一般安裝&lt;/strong&gt;或&lt;strong&gt;最小安裝&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;其他安裝選項&lt;strong&gt;在安裝時同時下載更新&lt;/strong&gt;或&lt;strong&gt;安裝適用於圖形和 Wi-Fi 硬體以及其他媒體格式的第三方軟體&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;選擇要如何安裝
-&lt;ul&gt;
-&lt;li&gt;與 Windows 啟動管理器一起安裝 ubuntu&lt;/li&gt;
-&lt;li&gt;清除磁碟並安裝 ubuntu&lt;br /&gt;
-&lt;img data-src=&#34;https://i.imgur.com/iflnAIn.png&#34; alt=&#34;Imgur&#34; width=&#34;600px&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;選擇時區&lt;/li&gt;
-&lt;li&gt;設定使用者名稱、密碼等資訊&lt;/li&gt;
-&lt;li&gt;接著就開始安裝啦～～&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;設定網路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#設定網路&#34;&gt;#&lt;/a&gt; 設定網路&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;查詢網路介面名稱&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Show all IP addresses associated with all network devices.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; a&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Display link layer information, including characteristics of link layer devices currently available.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;link&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;編輯設定檔，路徑  &lt;code&gt;/etc/netplan&lt;/code&gt; ，有一個檔案  &lt;code&gt;network-manager.yaml&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;加入網路資訊&lt;/p&gt;
-&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;span&gt;固定 IP&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;network&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token key atrule&#34;&gt;renderer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; NetworkManager&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token key atrule&#34;&gt;ethernets&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;enp5s0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;addresses&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;120.108.204.64/24&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;gateway4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 120.108.204.254&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;dhcp4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token key atrule&#34;&gt;nameservers&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;         &lt;span class=&#34;token key atrule&#34;&gt;addresses&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;8.8.8.8&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;1.1.1.1&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;啟動網路設定&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Use this to try the network is set OK, it will recover originally with 120 seconds.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; netplan try&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# Start new network settings.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; netplan apply&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;參考文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#參考文章&#34;&gt;#&lt;/a&gt; 參考文章&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oYWNrbWQuaW8vQHNoYWxseS15Yy1sYWkvcjFZMndQU09q&#34;&gt;Ubuntu 重灌&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj15TUhPcE91eWpkYw==&#34;&gt;Ubuntu 與 Windows 的雙系統安裝教學&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ2Vla3Nmb3JnZWVrcy5vcmcvaXAtY29tbWFuZC1pbi1saW51eC13aXRoLWV4YW1wbGVzLw==&#34;&gt;ip command in Linux&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/" />
-        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/categories/computer-science/HPC/" />
-        <category term="Ubuntu" scheme="https://chenhsingyu-0212.github.io/chenhsingyu-0212.github.io/tags/Ubuntu/" />
-        <updated>2024-05-15T17:59:48.000Z</updated>
     </entry>
 </feed>
