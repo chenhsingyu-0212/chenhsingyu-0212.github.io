@@ -8,9 +8,79 @@
     <author>
       <name>Hsing Yu</name>
     </author>
-    <updated>2024-11-06T09:22:30.000Z</updated>
+    <updated>2025-03-06T06:18:42.000Z</updated>
     <category term="Note" />
     <category term=" Coding" />
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/How-to-use-tmux/</id>
+        <title>How to use tmux</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/How-to-use-tmux/"/>
+        <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;JHTNT&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34; data-background-image=&#34;https://i.imgur.com/cBOtjyB.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34;&gt;JHTNT&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-is-tmux&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#what-is-tmux&#34;&gt;#&lt;/a&gt; What is tmux?&lt;/h2&gt;
+&lt;p&gt;tmux 是一個終端機管理工具，可以分割視窗、同時開啟多個終端機。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果想要同時使用多個命令，或執行多個任務時，就會很方便&lt;/li&gt;
+&lt;li&gt;如果是遠端 ssh 連線到其他主機使用 tmux 來執行程式，也可以避免 ssh 突然斷連後，正在安裝或執行的任務被終止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;基礎概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基礎概念&#34;&gt;#&lt;/a&gt; 基礎概念&lt;/h3&gt;
+&lt;p&gt;接著我們簡單介紹一下 tmux 的基礎概念，tmux 主要有三個模組 pane、windows、session&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/CiTtRl3.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;當使用 tmux 時&lt;/p&gt;
+&lt;h2 id=&#34;install-tmux&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#install-tmux&#34;&gt;#&lt;/a&gt; Install tmux&lt;/h2&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sudp &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; tmux&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;how-to-use-tmux&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#how-to-use-tmux&#34;&gt;#&lt;/a&gt; How to use tmux?&lt;/h2&gt;
+&lt;h3 id=&#34;pane&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pane&#34;&gt;#&lt;/a&gt; Pane&lt;/h3&gt;
+&lt;h3 id=&#34;windows&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#windows&#34;&gt;#&lt;/a&gt; Windows&lt;/h3&gt;
+&lt;h3 id=&#34;session&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#session&#34;&gt;#&lt;/a&gt; Session&lt;/h3&gt;
+</content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="HPC" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/HPC/" />
+        <category term="Linux" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/HPC/Linux/" />
+        <updated>2025-03-06T06:18:42.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Cloud-Computing/K8s/Kubeadm-create-k8s-cluster/</id>
+        <title>Kubeadm create k8s cluster</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Cloud-Computing/K8s/Kubeadm-create-k8s-cluster/"/>
+        <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;ChienI Kao&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34; data-background-image=&#34;https://chienikao.github.io/images/avatar.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9jaGllbmlrYW8uZ2l0aHViLmlvLw==&#34;&gt;ChienI Kao&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;JHTNT&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34; data-background-image=&#34;https://i.imgur.com/cBOtjyB.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9qaHRudC5naXRodWIuaW8v&#34;&gt;JHTNT&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;筆記網站&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id=&#34;實驗題目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#實驗題目&#34;&gt;#&lt;/a&gt; 實驗題目&lt;/h2&gt;
+&lt;p&gt;將使用 kubeadm 來建構 k8s cluster，並建構兩個以上的 node&lt;/p&gt;
+&lt;h2 id=&#34;實驗環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#實驗環境&#34;&gt;#&lt;/a&gt; 實驗環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;兩個以上的虛擬機或是實體機&lt;/li&gt;
+&lt;li&gt;最小硬體需求:
+&lt;ul&gt;
+&lt;li&gt;CPU: 2 cores&lt;/li&gt;
+&lt;li&gt;RAM: 2GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;必須可以連上網際網路&lt;/li&gt;
+&lt;li&gt;所有節點之間可以互相連線 (在相同的 LAN 中、或有公網 IP、或是可以透過 router 互連)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;實驗內容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#實驗內容&#34;&gt;#&lt;/a&gt; 實驗內容&lt;/h2&gt;
+&lt;h3 id=&#34;安裝-docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-docker&#34;&gt;#&lt;/a&gt; 安裝 Docker&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-fsSL&lt;/span&gt; https://get.docker.com/ &lt;span class=&#34;token parameter variable&#34;&gt;-o&lt;/span&gt; get-docker.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; get-docker.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;usermod&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-aG&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt; &lt;span class=&#34;token environment constant&#34;&gt;$USER&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Cloud-Computing" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Cloud-Computing/" />
+        <category term="K8s" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Cloud-Computing/K8s/" />
+        <category term="kubernetes" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/kubernetes/" />
+        <updated>2025-02-17T08:48:49.000Z</updated>
+    </entry>
     <entry>
         <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Medium/3011-Find-if-Array-Can-Be-Sorted/</id>
         <title>3011. Find if Array Can Be Sorted</title>
@@ -73,43 +143,13 @@ Note that there may be other sequences of operations which also sort the array.&
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Sorting/" />
         <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Bit-Manipulation/" />
         <updated>2024-11-06T09:22:30.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/LLM-%E4%BB%8B%E7%B4%B9/</id>
-        <title>LLM 介紹</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/LLM-%E4%BB%8B%E7%B4%B9/"/>
-        <content type="html">&lt;h2 id=&#34;large-language-model-模型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#large-language-model-模型&#34;&gt;#&lt;/a&gt; Large Language Model 模型&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大語言模型&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;之所以被稱為 large，是因為他是經過大量資料進行訓練的模型。&lt;br /&gt;
-發展過程經歷了：機器學習 -&amp;gt; 神經元 -&amp;gt; 神經網路 -&amp;gt; 深度學習 -&amp;gt; RNN (Recurrent neural network) -&amp;gt; LSTM (Long Short-Term Memory) -&amp;gt; LM (Language model) -&amp;gt; LLM (Large Language model)&lt;/p&gt;
-&lt;p&gt;簡單來說是一種利用大量文字去訓練的人工智慧，他會針對問題，預測每個答案的下一個字。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在發明詞向量後，可以透過將文字轉成數學向量，讓電腦理解自然語言。&lt;/li&gt;
-&lt;li&gt;而後來 Google 發現經過大量訓練的神經網路模型，可以將類似詞語的向量放在相鄰的位置。&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
-        <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Artificial-Intelligence/" />
-        <category term="LLM" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/LLM/" />
-        <updated>2024-09-20T12:07:29.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Cloud-Computing/GCP-CI-CD-%E5%AF%A6%E4%BD%9C/</id>
-        <title>GCP CI/CD 實作</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Cloud-Computing/GCP-CI-CD-%E5%AF%A6%E4%BD%9C/"/>
-        <content type="html"></content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
-        <category term="Cloud-Computing" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Cloud-Computing/" />
-        <updated>2024-09-20T07:30:59.000Z</updated>
     </entry>
     <entry>
         <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Website/DevOps/GitLab-CI-CD-%E5%AF%A6%E4%BD%9C/</id>
@@ -122,31 +162,11 @@ Note that there may be other sequences of operations which also sort the array.&
         <updated>2024-09-20T07:30:28.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E5%AF%A6%E4%BD%9C/</id>
-        <title>Fine-tuning 實作</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E5%AF%A6%E4%BD%9C/"/>
-        <content type="html"></content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
-        <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Artificial-Intelligence/" />
-        <category term="LLM" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/LLM/" />
-        <updated>2024-09-20T07:25:46.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E4%BB%8B%E7%B4%B9/</id>
-        <title>Fine-tuning 介紹</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/Artificial-Intelligence/Fine-tuning-%E4%BB%8B%E7%B4%B9/"/>
-        <content type="html"></content>
-        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
-        <category term="Artificial-Intelligence" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/Artificial-Intelligence/" />
-        <category term="LLM" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/LLM/" />
-        <updated>2024-09-20T07:25:26.000Z</updated>
-    </entry>
-    <entry>
         <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Ubuntu-%E5%90%84%E7%A8%AE%E8%A8%AD%E5%AE%9A/</id>
         <title>Ubuntu 各種設定</title>
         <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Ubuntu-%E5%90%84%E7%A8%AE%E8%A8%AD%E5%AE%9A/"/>
         <content type="html">&lt;h2 id=&#34;module-簡介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#module-簡介&#34;&gt;#&lt;/a&gt; module 簡介&lt;/h2&gt;
-&lt;p&gt;專門管理環境變數的工具，全程是 module environment，一般應用於軟體或運行庫等設備有多個版本，且需要分別配置這些環境變數。&lt;/p&gt;
+&lt;p&gt;專門管理環境變數的工具，全稱是 module environment，一般應用於軟體或運行庫等設備有多個版本，且需要分別配置這些環境變數。&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module ava&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;使用權限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用權限&#34;&gt;#&lt;/a&gt; 使用權限&lt;/h2&gt;
 &lt;p&gt;切換為根使用者&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;user@vm:~$ &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;su&lt;/span&gt; -&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;增加使用者-sudo-權限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#增加使用者-sudo-權限&#34;&gt;#&lt;/a&gt; 增加使用者 sudo 權限&lt;/h3&gt;
@@ -204,12 +224,12 @@ Note that there may be other sequences of operations which also sort the array.&
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
         <updated>2024-06-05T15:42:10.000Z</updated>
     </entry>
     <entry>
@@ -258,11 +278,11 @@ A palindrome is a string that reads the same forward and backward.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
-        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
+        <category term="Hash Table" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Hash-Table/" />
         <category term="Greedy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Greedy/" />
         <updated>2024-06-04T13:31:00.000Z</updated>
     </entry>
@@ -319,7 +339,7 @@ It can be shown that appending any 4 characters to the end of s will never make 
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
@@ -367,7 +387,7 @@ It can be shown that appending any 4 characters to the end of s will never make 
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
@@ -418,7 +438,7 @@ The ASCII values of the characters in s are: &#39;z&#39; = 122, &#39;a&#39; = 97
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
@@ -472,7 +492,7 @@ The ASCII values of the characters in s are: &#39;z&#39; = 122, &#39;a&#39; = 97
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
@@ -529,7 +549,7 @@ Note that &lt;strong&gt;^&lt;/strong&gt; denotes the &lt;strong&gt;bitwise-xor&l
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
         <category term="Math" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Math/" />
@@ -597,7 +617,7 @@ Step 1) 2 is even, divide by 2 and obtain 1.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
@@ -654,7 +674,7 @@ That costs 3, so the maximum length is 3.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Medium" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Medium/" />
         <category term="String" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/String/" />
@@ -716,19 +736,37 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
         <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
         <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
-        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Binary-Search/" />
         <category term="Sorting" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Sorting/" />
+        <category term="Binary Search" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Binary-Search/" />
         <updated>2024-05-27T10:25:01.000Z</updated>
     </entry>
     <entry>
         <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Anaconda-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95/</id>
         <title>Anaconda 指令用法</title>
         <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/HPC/Linux/Anaconda-%E6%8C%87%E4%BB%A4%E7%94%A8%E6%B3%95/"/>
-        <content type="html">&lt;h2 id=&#34;查看-conda-安裝了那些包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看-conda-安裝了那些包&#34;&gt;#&lt;/a&gt; 查看 conda 安裝了那些包&lt;/h2&gt;
+        <content type="html">&lt;h2 id=&#34;安裝-anaconda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安裝-anaconda&#34;&gt;#&lt;/a&gt; 安裝 anaconda&lt;/h2&gt;
+&lt;p&gt;前往 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYW5hY29uZGEuY29tL2Rvd25sb2FkL3N1Y2Nlc3M=&#34;&gt;anaconda&lt;/span&gt; 網站進行下載&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgur.com/LIStvrn.png&#34; alt=&#34;anaconda 下載畫面&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;下載後會得到一個 ``&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;利用  &lt;code&gt;bash [下載檔案名稱.sh]&lt;/code&gt;  開始安裝，接著按下  &lt;code&gt;Enter&lt;/code&gt;  會有一段授權條款，可以用上下鍵看內容&lt;br /&gt;
+&lt;img data-src=&#34;https://i.imgur.com/6sGHptV.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;接著會問你是否同意，輸入  &lt;code&gt;yes&lt;/code&gt; &lt;br /&gt;
+&lt;img data-src=&#34;https://i.imgur.com/VhQUJpv.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;接著確認安裝位置，按下  &lt;code&gt;Enter&lt;/code&gt; &lt;br /&gt;
+&lt;img data-src=&#34;https://i.imgur.com/TYBJuDa.png&#34; alt=&#34;Imgur&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;接著安裝好後，記得重新開機&lt;/li&gt;
+&lt;li&gt;電腦重開後，終端機提示命令符會看到 (base) 在前面&lt;/li&gt;
+&lt;li&gt;可以利用  &lt;code&gt;conda deactivate&lt;/code&gt;  退出 conda 環境&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note warning no-icon&#34;&gt;
+&lt;p&gt;可以輸入以下指令，停用自動進入 conda 環境&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda config &lt;span class=&#34;token parameter variable&#34;&gt;--set&lt;/span&gt; auto_activate_base &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h2 id=&#34;查看-conda-安裝了那些包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看-conda-安裝了那些包&#34;&gt;#&lt;/a&gt; 查看 conda 安裝了那些包&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;查看-conda-現在有哪些虛擬環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看-conda-現在有哪些虛擬環境&#34;&gt;#&lt;/a&gt; 查看 conda 現在有哪些虛擬環境&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;env&lt;/span&gt; list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;檢查更新當前-conda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#檢查更新當前-conda&#34;&gt;#&lt;/a&gt; 檢查更新當前 conda&lt;/h2&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda update conda&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;創建虛擬環境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#創建虛擬環境&#34;&gt;#&lt;/a&gt; 創建虛擬環境&lt;/h2&gt;
@@ -744,9 +782,9 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
         <updated>2024-05-21T09:01:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10062-Tell-me-the-frequencies/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/10062-Tell-me-the-frequencies/</id>
         <title>10062 - Tell me the frequencies!</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10062-Tell-me-the-frequencies/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/10062-Tell-me-the-frequencies/"/>
         <content type="html">&lt;p&gt;🌕🌗🌑🌑🌑&lt;/p&gt;
 &lt;h2 id=&#34;題目連結&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#題目連結&#34;&gt;#&lt;/a&gt; 題目連結&lt;/h2&gt;
 &lt;ul&gt;
@@ -791,15 +829,14 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="CPE" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/" />
-        <category term="One Star" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/One-Star/" />
         <updated>2024-05-20T16:52:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10057-A-mid-summer-night-s-dream/</id>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/10057-A-mid-summer-night-s-dream/</id>
         <title>10057 - A mid-summer night&#39;s dream.</title>
-        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/One%20Star/10057-A-mid-summer-night-s-dream/"/>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/cpe/10057-A-mid-summer-night-s-dream/"/>
         <content type="html">&lt;p&gt;🌕🌗🌑🌑🌑&lt;/p&gt;
 &lt;h2 id=&#34;題目連結&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#題目連結&#34;&gt;#&lt;/a&gt; 題目連結&lt;/h2&gt;
 &lt;ul&gt;
@@ -847,9 +884,127 @@ x cannot be greater since there are only 2 numbers in nums.&lt;/p&gt;
 &lt;p&gt;!! !!&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 </content>
-        <category term="解題筆記" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
         <category term="CPE" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/" />
-        <category term="One Star" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/cpe/One-Star/" />
         <updated>2024-05-20T16:05:27.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/program-language/Python/Python-virtual-env/</id>
+        <title>Python virtual env</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/computer-science/program-language/Python/Python-virtual-env/"/>
+        <content type="html">&lt;h1 id=&#34;differen-virtual-environment&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#differen-virtual-environment&#34;&gt;#&lt;/a&gt; Differen virtual environment&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;venv&lt;/li&gt;
+&lt;li&gt;peotry&lt;/li&gt;
+&lt;li&gt;anaconda (minconda)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Following this post we will show the difference virtual environment how to install and use.&lt;/p&gt;
+&lt;h2 id=&#34;poetry&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#poetry&#34;&gt;#&lt;/a&gt; Poetry&lt;/h2&gt;
+&lt;h3 id=&#34;install&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#install&#34;&gt;#&lt;/a&gt; Install&lt;/h3&gt;
+&lt;p&gt;we have two methods for installing poetry&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;use  &lt;code&gt;pipx&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If  &lt;code&gt;pipx&lt;/code&gt;  is not already installed, you can follow any of the options in the official  &lt;code&gt;pipx&lt;/code&gt;  installation instructions. Any non-ancient version of  &lt;code&gt;pipx&lt;/code&gt;  will do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pipx &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; poetry&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;use the official installer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux, macOS, Windows (WSL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-sSL&lt;/span&gt; https://install.python-poetry.org &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; python3 -&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;If you use the official installer, you need to set up the &lt;strong&gt;PATH&lt;/strong&gt; manually.&lt;/p&gt;
+&lt;p&gt;First you might go to the path with ~. Then, find file  &lt;code&gt;.profile&lt;/code&gt;  or  &lt;code&gt;.bashrc&lt;/code&gt;  and add the following line in that file.&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;&lt;span class=&#34;token environment constant&#34;&gt;PATH&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/home/&amp;lt;username&gt;/.local/bin:&lt;span class=&#34;token environment constant&#34;&gt;$PATH&lt;/span&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;div class=&#34;note warning no-icon&#34;&gt;
+&lt;p&gt;remember to change the &amp;lt;username&amp;gt; with you own computer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;init&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#init&#34;&gt;#&lt;/a&gt; Init&lt;/h3&gt;
+</content>
+        <category term="資訊工程" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/" />
+        <category term="Programming Language" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/program-language/" />
+        <category term="Python" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/computer-science/program-language/Python/" />
+        <updated>2024-05-20T15:54:42.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/1863-Sum-of-All-Subset-XOR-Totals/</id>
+        <title>1863. Sum of All Subset XOR Totals</title>
+        <link rel="alternate" href="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/coding/leetcode/Easy/1863-Sum-of-All-Subset-XOR-Totals/"/>
+        <content type="html">&lt;p&gt;⭐️&lt;/p&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://leetcode.com/problems/sum-of-all-subset-xor-totals/description/?envType=daily-question&amp;amp;envId=2024-05-20&#34;&gt;&lt;ins class=&#34;dot&#34;&gt;題目敘述&lt;/ins&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;XOR total&lt;/strong&gt; of an array is defined as the bitwise  &lt;code&gt;XOR&lt;/code&gt;  of &lt;strong&gt;all its elements&lt;/strong&gt;, or  &lt;code&gt;0&lt;/code&gt;  if the array is &lt;strong&gt;empty&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For example, the &lt;strong&gt;XOR total&lt;/strong&gt; of the array  &lt;code&gt;[2,5,6]&lt;/code&gt;  is  &lt;code&gt;2 XOR 5 XOR 6 = 1&lt;/code&gt; .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given an array  &lt;code&gt;nums&lt;/code&gt; , return &lt;em&gt;the &lt;strong&gt;sum&lt;/strong&gt; of all &lt;strong&gt;XOR totals&lt;/strong&gt; for every &lt;strong&gt;subset&lt;/strong&gt; of  &lt;code&gt;nums&lt;/code&gt; .&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Subsets with the &lt;strong&gt;same&lt;/strong&gt; elements should be counted &lt;strong&gt;multiple&lt;/strong&gt; times.&lt;/p&gt;
+&lt;p&gt;An array  &lt;code&gt;a&lt;/code&gt;  is a &lt;strong&gt;subset&lt;/strong&gt; of an array  &lt;code&gt;b&lt;/code&gt;  if  &lt;code&gt;a&lt;/code&gt;  can be obtained from  &lt;code&gt;b&lt;/code&gt;  by deleting some (possibly zero) elements of  &lt;code&gt;b&lt;/code&gt; .&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-1&#34;&gt;#&lt;/a&gt; Example 1&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [1,3]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; 6&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; The 4 subsets of [1,3] are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The empty subset has an XOR total of 0.&lt;/li&gt;
+&lt;li&gt;[1] has an XOR total of 1.&lt;/li&gt;
+&lt;li&gt;[3] has an XOR total of 3.&lt;/li&gt;
+&lt;li&gt;[1,3] has an XOR total of 1 XOR 3 = 2.&lt;br /&gt;
+0 + 1 + 3 + 2 = 6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-2&#34;&gt;#&lt;/a&gt; Example 2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [5,1,6]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; 28&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; The 8 subsets of [5,1,6] are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The empty subset has an XOR total of 0.&lt;/li&gt;
+&lt;li&gt;[5] has an XOR total of 5.&lt;/li&gt;
+&lt;li&gt;[6] has an XOR total of 6.&lt;/li&gt;
+&lt;li&gt;[5,1] has an XOR total of 5 XOR 1 = 4.&lt;/li&gt;
+&lt;li&gt;[5,6] has an XOR total of 5 XOR 6 = 3.&lt;/li&gt;
+&lt;li&gt;[1,6] has an XOR total of 1 XOR 6 = 7.&lt;/li&gt;
+&lt;li&gt;[5,1,6] has an XOR total of 5 XOR 1 XOR 6 = 2.&lt;br /&gt;
+0 + 5 + 1 + 6 + 4 + 3 + 7 + 2 = 28&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#example-3&#34;&gt;#&lt;/a&gt; Example 3&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; nums = [3,4,5,6,7,8]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; 480&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; The sum of all XOR totals for every subset is 480.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解題思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解題思路&#34;&gt;#&lt;/a&gt; 解題思路&lt;/h2&gt;
+&lt;h2 id=&#34;solution&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solution&#34;&gt;#&lt;/a&gt; Solution&lt;/h2&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Java&#34;&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;span&gt;Solution.java&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;subsetXORSum&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; nums&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;|=&lt;/span&gt; num&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; ans &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;nums&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;C++&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;Python&#34;&gt;
+&lt;pre&gt;&lt;code class=&#34;language-pyhton&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;單字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemh0LyVFOCVBOSU5RSVFNSU4NSVCOC8lRTglOEIlQjElRTglQUElOUUv&#34;&gt;** **&lt;/span&gt;&lt;br /&gt;
+!! !!&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;片語 &amp; 搭配詞&lt;/summary&gt;&lt;div&gt;
+&lt;hr /&gt;
+&lt;p&gt;!! !!&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+</content>
+        <category term="Coding" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/" />
+        <category term="Leetcode" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/" />
+        <category term="Easy" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/categories/coding/leetcode/Easy/" />
+        <category term="Math" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Math/" />
+        <category term="Array" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Array/" />
+        <category term="Backtracking" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Backtracking/" />
+        <category term="Bit Manipulation" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Bit-Manipulation/" />
+        <category term="Combinatorics" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Combinatorics/" />
+        <category term="Enumeration" scheme="https://chenhsingyu-0212.github.io/%20https://hsingyu.blog/tags/Enumeration/" />
+        <updated>2024-05-20T01:11:15.000Z</updated>
     </entry>
 </feed>
