@@ -1,0 +1,25 @@
+{{ $p := . }}
+<nav class="site">
+  <div class="nav-in">
+    <a class="brand" href="{{ .Site.Home.RelPermalink }}">
+      <span class="paw-mark" aria-hidden="true"><i class="pad"></i><i class="t1"></i><i class="t2"></i><i class="t3"></i></span>{{ site.Params.brand }}
+    </a>
+
+    <div class="nav-links">
+      {{ range site.Menus.main }}
+        {{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
+        <a href="{{ .URL }}"{{ if $active }} class="on"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </div>
+
+    <div class="toggles">
+      {{ partial "lang-switch.html" . }}
+      <div class="dn" title="{{ T "toggle_theme" }}">
+        <div class="toggle--daynight">
+          <input type="checkbox" id="themeToggle" class="toggle--checkbox" aria-label="{{ T "toggle_theme" }}">
+          <label class="toggle--btn" for="themeToggle"><span class="toggle--feature"></span></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

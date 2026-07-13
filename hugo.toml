@@ -1,0 +1,138 @@
+# ============================================================
+#  Hsing-Yu — personal site (Hugo, hand-written theme)
+#  baseURL is overridden at build time by GitHub Actions.
+# ============================================================
+baseURL = "https://example.github.io/"
+title = "Hsing-Yu"
+enableRobotsTXT = true
+enableEmoji = true
+
+# ---- Multilingual (EN default at /, 中文 at /zh/) ----
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[pagination]
+  pagerSize = 8
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Keep post URLs flat (/posts/<filename>/) regardless of content subfolders,
+# so posts can be organised into category folders without changing URLs.
+[permalinks]
+  posts = "/posts/:contentbasename/"
+
+# ---- Markup ----
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true            # allow raw HTML in markdown
+  [markup.goldmark.extensions.passthrough]
+    enable = true            # preserve $…$ / $$…$$ for KaTeX
+    [markup.goldmark.extensions.passthrough.delimiters]
+      inline = [['$', '$'], ['\\(', '\\)']]
+      block  = [['$$', '$$'], ['\\[', '\\]']]
+  [markup.highlight]
+    noClasses = false        # emit CSS classes so our theme controls colors
+    lineNos = false
+    tabWidth = 2
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 2
+
+# ---- Site-wide params ----
+[params]
+  brand = "Hsing-Yu"
+  avatarInitial = "H"        # fallback shown if no avatarImage
+  avatarImage = "img/hsingyu.jpg"   # in assets/; leave empty to use the initial
+  gradientFrom = "#6a6ff0"
+  gradientVia  = "#9a7bf5"
+  gradientTo   = "#c98ce8"
+  showCompanionCat = true
+
+  # Page-view counter (busuanzi / 不蒜子) — no backend needed
+  enableBusuanzi = true
+  busuanziSrc = "https://cn.vercount.one/js"
+  # Carry over the old site's lifetime totals as a baseline (shown = live + baseline)
+  pvBaseline = 20652
+  uvBaseline = 15483
+
+  [params.social]
+    github    = "https://github.com/chenhsingyu-0212"
+    linkedin  = "https://www.linkedin.com/in/hsingyu0212"
+    instagram = "https://www.instagram.com/hsing.yu0212/"
+    email     = "mailto:cindychen20030212@gmail.com"
+
+# ============================================================
+#  Languages
+# ============================================================
+[languages]
+  [languages.en]
+    label = "EN"
+    locale = "en"
+    weight = 1
+    [languages.en.params]
+      role = "Ph.D. @ NYCU CS (CGI Lab) · Game AI &amp; Reinforcement Learning"
+      tagline = "Hi, I'm Hsing-Yu"
+      bio = "Ph.D. student at NYCU (CGI Lab) and research student at Academia Sinica RLG Lab. I work on reinforcement learning and game AI — Taiwanese Mahjong, Werewolf, and Wall Go — and enjoy building web systems. Coding, CS, and English notes live here."
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        name = "Home"
+        pageRef = "/"
+        weight = 1
+      [[languages.en.menus.main]]
+        name = "About"
+        pageRef = "/about"
+        weight = 2
+      [[languages.en.menus.main]]
+        name = "Research"
+        pageRef = "/research"
+        weight = 3
+      [[languages.en.menus.main]]
+        name = "Projects"
+        pageRef = "/projects"
+        weight = 4
+      [[languages.en.menus.main]]
+        name = "Posts"
+        pageRef = "/posts"
+        weight = 5
+      [[languages.en.menus.main]]
+        name = "Beyond"
+        pageRef = "/beyond"
+        weight = 6
+
+  [languages.zh]
+    label = "中文"
+    locale = "zh-Hant"
+    weight = 2
+    [languages.zh.params]
+      role = "陽明交大資科所 (CGI Lab) 博士生 · 遊戲 AI 與強化學習"
+      tagline = "嗨，我是 Hsing-Yu"
+      bio = "陽明交大資科所博士生（CGI Lab），中研院 RLG Lab 研究生。研究強化學習與遊戲 AI（台灣麻將、狼人殺、Wall Go），也喜歡做網站系統。這裡放我的程式、資工筆記與英文學習。"
+    # zh site = English-primary: nav tabs stay in ENGLISH; only 關於/課外 (About/
+    # Beyond) point to Chinese pages, the rest link to the English pages.
+    [languages.zh.menus]
+      [[languages.zh.menus.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+      [[languages.zh.menus.main]]
+        name = "About"
+        pageRef = "/about"
+        weight = 2
+      [[languages.zh.menus.main]]
+        name = "Research"
+        url = "/research/"
+        weight = 3
+      [[languages.zh.menus.main]]
+        name = "Projects"
+        url = "/projects/"
+        weight = 4
+      [[languages.zh.menus.main]]
+        name = "Posts"
+        url = "/posts/"
+        weight = 5
+      [[languages.zh.menus.main]]
+        name = "Beyond"
+        pageRef = "/beyond"
+        weight = 6

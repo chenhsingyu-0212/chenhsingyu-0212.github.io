@@ -1,0 +1,35 @@
+<footer class="site">
+  <div class="foot-in">
+    {{ if site.Params.enableBusuanzi }}
+    <div class="counter">
+      <span id="busuanzi_container_site_uv" style="display:none">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span id="busuanzi_value_site_uv"></span> {{ T "visitors" }}
+      </span>
+      <span id="busuanzi_container_site_pv" style="display:none">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span id="busuanzi_value_site_pv"></span> {{ T "views" }}
+      </span>
+    </div>
+    {{ end }}
+    <div>© {{ now.Year }} {{ site.Params.brand }} · {{ T "built_with" }}</div>
+  </div>
+</footer>
+{{ if and site.Params.enableBusuanzi (or site.Params.pvBaseline site.Params.uvBaseline) }}
+<script>
+/* Carry over the old site's lifetime totals: shown = live count + baseline */
+(function(){
+  var B={busuanzi_value_site_pv:{{ site.Params.pvBaseline | default 0 }},busuanzi_value_site_uv:{{ site.Params.uvBaseline | default 0 }}};
+  Object.keys(B).forEach(function(id){
+    var el=document.getElementById(id); if(!el||!B[id]) return;
+    var o=new MutationObserver(function(){
+      if(el.getAttribute("data-based")) return;
+      var r=(el.textContent||"").replace(/[^0-9]/g,""); if(!r) return;
+      el.setAttribute("data-based","1");
+      el.textContent=String(parseInt(r,10)+B[id]); o.disconnect();
+    });
+    o.observe(el,{childList:true,characterData:true,subtree:true});
+  });
+})();
+</script>
+{{ end }}

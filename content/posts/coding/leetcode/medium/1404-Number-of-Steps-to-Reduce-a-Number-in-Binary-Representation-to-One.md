@@ -1,0 +1,87 @@
++++
+title = "1404. Number of Steps to Reduce a Number in Binary Representation to One"
+date = 2024-05-29 20:48:47
+draft = false
+categories = ["Coding", "LeetCode", "Medium"]
+tags = ["String", "Bit Manipulation"]
++++
+
+:star::star:
+
+## [題目敘述](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/description/?envType=daily-question&envId=2024-05-29)
+
+Given the binary representation of an integer as a string `s`, return *the number of steps to reduce it to `1` under the following rules*:
+
+- If the current number is even, you have to divide it by `2`.
+- If the current number is odd, you have to add `1` to it.
+
+It is guaranteed that you can always reach one for all test cases.
+
+### Example 1
+
+> **Input:** s = "1101"
+**Output:** 6
+**Explanation:** "1101" corressponds to number 13 in their decimal representation.
+Step 1) 13 is odd, add 1 and obtain 14.
+Step 2) 14 is even, divide by 2 and obtain 7.
+Step 3) 7 is odd, add 1 and obtain 8.
+Step 4) 8 is even, divide by 2 and obtain 4.
+Step 5) 4 is even, divide by 2 and obtain 2.
+Step 6) 2 is even, divide by 2 and obtain 1.
+
+### Example 2
+
+> **Input:** s = "10"
+**Output:** 1
+**Explanation:** "10" corressponds to number 2 in their decimal representation.
+Step 1) 2 is even, divide by 2 and obtain 1. 
+
+### Example 3
+
+> **Input:** s = "1"
+**Output:** 0
+
+## 解題思路
+
+## Solution
+
+{{< tabs >}}
+{{% tab "Java" %}}
+
+```java
+class Solution {
+    public int numSteps(String s) {
+        int steps = 0;
+        int carry = 0;
+        
+        for (int i = s.length() - 1; i > 0; i--) {
+            int num = s.charAt(i) - '0' + carry;
+            carry = 1;
+            
+            if(num == 0)  carry = 0;
+            else if(num == 1) steps++;
+
+            steps++;
+        }
+        
+        return (carry == 1) ? steps + 1 : steps;
+    }
+}
+```
+
+{{% /tab %}}
+{{% tab "C++" %}}
+
+```cpp
+
+```
+
+{{% /tab %}}
+{{% tab "Python" %}}
+
+```pyhton
+
+```
+
+{{% /tab %}}
+{{< /tabs >}}

@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ $role := index site.Params "role" }}
+{{ $parts := split $role " · " }}
+{{ $prefix := index $parts 0 }}
+{{ $suffix := $role }}{{ if gt (len $parts) 1 }}{{ $suffix = index $parts 1 }}{{ end }}
+<header class="hero">
+  <div class="hero-main">
+    <div class="eyebrow rv"><span class="ebp">{{ $prefix | safeHTML }} · </span><span class="tw" id="heroTw" data-rotate>{{ $suffix | safeHTML }}</span><span class="tw-cursor" aria-hidden="true"></span></div>
+    <h1 class="rv"><span class="zh">陳幸妤</span><span class="spot-name">Hsing-Yu Chen</span></h1>
+    {{ with .Content }}<div class="bio rv">{{ . }}</div>{{ else }}<p class="bio rv">{{ site.Params.bio }}</p>{{ end }}
+    {{ partial "social.html" . }}
+  </div>
+  <figure class="portrait rv">
+    {{ with site.Params.avatarImage }}{{ $img := resources.Get . }}{{ if $img }}{{ $p := $img.Resize "560x" }}
+    <div class="ph"><img src="{{ $p.RelPermalink }}" alt="Hsing-Yu Chen 陳幸妤" width="264" height="264"></div>{{ end }}{{ end }}
+    <figcaption>Hsing-Yu Chen · 陳幸妤</figcaption>
+  </figure>
+</header>
+
+<div class="hr-run" aria-hidden="true"><div class="hr-stage" id="hrStage"></div></div>
+
+{{ $allr := where site.RegularPages "Section" "research" }}
+{{ $featured := where $allr "Params.featured" true }}
+{{ $research := first 5 (sort (cond (gt (len $featured) 0) $featured $allr) "Date" "desc") }}
+{{ with $research }}
+<section class="blk">
+  <div class="label"><span>{{ T "selected_research" }}</span> <span class="cn">研究</span><a class="more" href="{{ (site.GetPage "/research").RelPermalink }}">{{ T "all" }} →</a></div>
+  <div class="work">{{ range . }}{{ partial "work-item.html" . }}{{ end }}</div>
+</section>
+{{ end }}
+
+{{ $projects := first 4 (sort (where site.RegularPages "Section" "projects") "Date" "desc") }}
+{{ with $projects }}
+<section class="blk">
+  <div class="label"><span>{{ T "projects" }}</span> <span class="cn">專案</span><a class="more" href="{{ (site.GetPage "/projects").RelPermalink }}">{{ T "all" }} →</a></div>
+  <div class="grid">{{ range . }}{{ partial "card-research.html" . }}{{ end }}</div>
+</section>
+{{ end }}
+
+{{ $posts := first 5 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }}
+{{ with $posts }}
+<section class="blk">
+  <div class="label"><span>{{ T "recent_posts" }}</span> <span class="cn">文章</span><a class="more" href="{{ (site.GetPage "/posts").RelPermalink }}">{{ T "all_posts" }} →</a></div>
+  <div class="posts">{{ range . }}{{ partial "post-item.html" . }}{{ end }}</div>
+</section>
+{{ end }}
+{{ end }}

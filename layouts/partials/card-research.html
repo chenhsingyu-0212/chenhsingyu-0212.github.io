@@ -1,0 +1,19 @@
+<a class="card rv" href="{{ .RelPermalink }}">
+  {{ with .Params.badge }}<span class="kind">{{ . }}</span>{{ end }}
+  <h3>{{ .Title }}</h3>
+  <p>{{ .Params.summary | default .Summary | plainify }}</p>
+  {{ with .Params.links }}
+    {{ $paper := and .paper (ne .paper "#") }}
+    {{ $code  := and .code  (ne .code  "#") }}
+    {{ $demo  := and .demo  (ne .demo  "#") }}
+    {{ $page  := and .page  (ne .page  "#") }}
+    {{ if or $paper $code $demo $page }}
+    <div class="meta">
+      {{ if $paper }}<span class="pill">paper</span>{{ end }}
+      {{ if $code }}<span class="pill code"><span class="gly" aria-hidden="true">&lt;/&gt;</span>code</span>{{ end }}
+      {{ if $demo }}<span class="pill">demo</span>{{ end }}
+      {{ if $page }}<span class="pill pagelink"><span class="gly" aria-hidden="true">↗</span>page</span>{{ end }}
+    </div>
+    {{ end }}
+  {{ end }}
+</a>

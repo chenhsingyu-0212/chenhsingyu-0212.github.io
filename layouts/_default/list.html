@@ -1,0 +1,36 @@
+{{ define "main" }}
+<header class="page-head">
+  <div class="eyebrow">{{ site.Params.brand }}</div>
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="sub">{{ . }}</div>{{ else }}{{ with .Description }}<p class="sub">{{ . }}</p>{{ end }}{{ end }}
+</header>
+
+{{ $pages := .Pages }}
+{{ if eq .Section "research" }}
+  <section class="blk" style="border-bottom:none;padding-top:30px">
+    <div class="work">{{ range (sort $pages "Date" "desc") }}{{ partial "work-item.html" . }}{{ end }}</div>
+  </section>
+{{ else if eq .Section "projects" }}
+  <section class="blk" style="border-bottom:none;padding-top:30px">
+    <div class="grid">{{ range (sort $pages "Date" "desc") }}{{ partial "card-research.html" . }}{{ end }}</div>
+  </section>
+{{ else }}
+  {{/* Posts → category structure + post rows with client-side pagination (20/50 per page) */}}
+  <section class="blk" style="border-bottom:none;padding-top:26px">
+    {{ partial "category-tree.html" . }}
+    {{/* RegularPagesRecursive so posts nested in category subfolders are still collected */}}
+    {{ $posts := sort (where .RegularPagesRecursive "Section" "posts") "Date" "desc" }}
+    {{ if $posts }}
+      <div class="post-tools" id="postTools" hidden>
+        <span class="pp-info" id="ppInfo"></span>
+      </div>
+      <div class="posts" id="postlist" style="margin-top:16px">
+        {{ range $posts }}{{ partial "post-item.html" . }}{{ end }}
+      </div>
+      <nav class="pager" id="postPager" aria-label="pagination"></nav>
+    {{ else }}
+      <p class="sub" style="margin-top:24px">{{ T "no_posts" }}</p>
+    {{ end }}
+  </section>
+{{ end }}
+{{ end }}

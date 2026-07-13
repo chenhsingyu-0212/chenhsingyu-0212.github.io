@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}" data-lang="{{ .Language.Lang }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a class="skip" href="#main">{{ T "read_more" }} →</a>
+
+  <div id="loader" aria-hidden="true">
+    <div class="kitty"><span class="ear l"></span><span class="ear r"></span><span class="face"></span><span class="eye l"></span><span class="eye r"></span><span class="nose"></span></div>
+    <div class="paws">
+      <span class="paw"><i class="pad"></i><i class="toe t1"></i><i class="toe t2"></i><i class="toe t3"></i></span>
+      <span class="paw"><i class="pad"></i><i class="toe t1"></i><i class="toe t2"></i><i class="toe t3"></i></span>
+      <span class="paw"><i class="pad"></i><i class="toe t1"></i><i class="toe t2"></i><i class="toe t3"></i></span>
+    </div>
+    <div class="load-name">{{ site.Params.brand }}</div>
+  </div>
+
+  {{ partial "nav.html" . }}
+
+  <main id="main">
+    <div class="page">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  {{ if site.Params.showCompanionCat }}{{ partial "cat-companion.html" . }}{{ end }}
+  {{ partial "theme-loader.html" . }}
+
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}"{{ if $js.Data.Integrity }} integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
+  {{ if site.Params.enableBusuanzi }}<script src="{{ site.Params.busuanziSrc }}" defer></script>{{ end }}
+  {{ if .IsPage }}
+  <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}">
+  <script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
+  <script defer src="{{ "katex/auto-render.min.js" | relURL }}"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false})"></script>
+  {{ end }}
+</body>
+</html>

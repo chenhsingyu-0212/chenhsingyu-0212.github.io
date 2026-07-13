@@ -1,0 +1,20 @@
+{{ if gt .TotalPages 1 }}
+{{ $cur := .PageNumber }}
+{{ $total := .TotalPages }}
+{{ $window := 2 }}
+<nav class="pager" aria-label="pagination">
+  {{ if .HasPrev }}<a href="{{ .Prev.URL }}" aria-label="Previous">←</a>{{ end }}
+  {{ range .Pagers }}
+    {{ $n := .PageNumber }}
+    {{ $edge := or (eq $n 1) (eq $n $total) }}
+    {{ $near := le (math.Abs (sub $n $cur)) $window }}
+    {{ if or $edge $near }}
+      {{ if eq $n $cur }}<span class="cur">{{ $n }}</span>
+      {{ else }}<a href="{{ .URL }}">{{ $n }}</a>{{ end }}
+    {{ else if or (eq $n (sub $cur (add $window 1))) (eq $n (add $cur (add $window 1))) }}
+      <span class="gap">…</span>
+    {{ end }}
+  {{ end }}
+  {{ if .HasNext }}<a href="{{ .Next.URL }}" aria-label="Next">→</a>{{ end }}
+</nav>
+{{ end }}

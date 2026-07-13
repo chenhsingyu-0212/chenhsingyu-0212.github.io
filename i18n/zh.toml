@@ -1,0 +1,61 @@
+# UI strings for the zh site — kept in ENGLISH on purpose.
+# Site is English-primary; the zh locale only serves the Chinese About/Beyond
+# *content*. All chrome (nav, footer, TOC, toggles) stays English for consistency.
+[home]
+other = "Home"
+[research]
+other = "Research"
+[research_projects]
+other = "Research & Projects"
+[posts]
+other = "Posts"
+[recent_posts]
+other = "Recent Posts"
+[selected_research]
+other = "Selected Research"
+[about]
+other = "About"
+[cv]
+other = "CV"
+[all]
+other = "All"
+[all_posts]
+other = "All posts"
+[read_more]
+other = "Read"
+[back]
+other = "Back"
+[categories]
+other = "Categories"
+[tags]
+other = "Tags"
+[in_category]
+other = "In category"
+[posts_in]
+other = "posts in"
+[no_posts]
+other = "No posts yet."
+[subcategories]
+other = "Subcategories"
+[on_this_page]
+other = "On this page"
+[built_with]
+other = "Built with Hugo"
+[toggle_theme]
+other = "Toggle theme"
+[switch_language]
+other = "Switch language"
+[meow]
+other = "meow~"
+[updated]
+other = "Updated"
+[minute_read]
+other = "min read"
+[views]
+other = "views"
+[visitors]
+other = "visitors"
+[category_structure]
+other = "Categories"
+[projects]
+other = "Projects"
