@@ -190,6 +190,9 @@ section.blk{padding:44px 0;border-bottom:1px solid var(--line)}
 .post .dt{font-family:var(--font-mono);font-size:12.5px;color:var(--mut);font-variant-numeric:tabular-nums}
 .post .pt{font-size:16px;font-family:var(--font-serif);font-weight:600}
 .post .cat{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.post .cat.sec-research,.post .cat.sec-projects{padding:2px 8px;border-radius:999px;font-size:10px;border:1px solid;line-height:1.6}
+.post .cat.sec-research{color:#5c7cb0;border-color:#5c7cb055;background:#5c7cb012}
+.post .cat.sec-projects{color:#bf8a4c;border-color:#bf8a4c55;background:#bf8a4c12}
 
 /* ---------- Page header (list/single) ---------- */
 .page-head{padding:54px 0 20px;border-bottom:1px solid var(--line)}
