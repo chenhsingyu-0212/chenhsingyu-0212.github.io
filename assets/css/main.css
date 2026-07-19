@@ -392,15 +392,20 @@ footer.site .counter svg{opacity:.7}
 
 /* ---------- Responsive ---------- */
 @media (max-width:680px){
-  .hero{grid-template-columns:1fr;gap:26px}
-  .portrait{max-width:210px;margin-top:0}
+  .hero{grid-template-columns:1fr;gap:26px;text-align:center}
+  .hero .role,.hero .bio{margin-left:auto;margin-right:auto}
+  .social{justify-content:center}
+  .portrait{max-width:210px;margin:0 auto}
   .grid{grid-template-columns:1fr}
   .item{grid-template-columns:50px 1fr;gap:12px}
   .item .go{grid-column:2}
   .post{grid-template-columns:60px 1fr;gap:12px}
   .post .cat{grid-column:2}
   .nav-links{display:none}
-  .companion{width:56px;height:64px;right:14px;bottom:14px}
+  /* nav-links held the margin-left:auto — with it hidden, keep the toggles pinned right */
+  .toggles{margin-left:auto}
+  /* real class is .cats (not .companion); scale the trio down so it clears the content */
+  .cats{right:12px;bottom:12px;transform:scale(.8);transform-origin:bottom right}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
