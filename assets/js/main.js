@@ -49,6 +49,30 @@
     onScroll();
   }
 
+  // ---- Mobile menu: hamburger toggles the nav-links dropdown ----
+  var navToggle = document.getElementById("navToggle");
+  if (nav && navToggle) {
+    var closeMenu = function () {
+      nav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+    navToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = nav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    // tapping a link, clicking outside, or Escape all close the menu
+    nav.querySelectorAll(".nav-links a").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("click", function (e) {
+      if (nav.classList.contains("open") && !nav.contains(e.target)) closeMenu();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
+
   // ---- Theme toggle: day/night checkbox (persisted; FOUC guard in theme-init) ----
   var themeToggle = document.getElementById("themeToggle");
   function current() {

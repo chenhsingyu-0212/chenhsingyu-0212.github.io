@@ -39,6 +39,8 @@ other = "Subcategories"
 other = "On this page"
 [built_with]
 other = "Built with Hugo"
+[menu]
+other = "Menu"
 [toggle_theme]
 other = "Toggle theme"
 [switch_language]

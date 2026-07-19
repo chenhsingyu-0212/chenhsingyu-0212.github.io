@@ -110,6 +110,21 @@ nav.site.scrolled{border-color:var(--line)}
 #themeBtn{width:32px;padding-left:0;padding-right:0}
 #themeBtn #themeIcon{display:inline-block;width:1em;text-align:center;font-size:13px;line-height:1}
 
+/* hamburger — hidden on desktop, shown in the mobile breakpoint */
+.nav-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--mut);
+  border-radius:7px;width:36px;height:32px;padding:0;cursor:pointer;align-items:center;justify-content:center;transition:.2s}
+.nav-toggle:hover{color:var(--ink);border-color:var(--accent)}
+.nav-toggle .nt-bars{position:relative;display:block;width:18px;height:12px}
+.nav-toggle .nt-bars i{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;
+  transform-origin:center;transition:transform .25s ease,opacity .18s ease}
+.nav-toggle .nt-bars i:nth-child(1){top:0}
+.nav-toggle .nt-bars i:nth-child(2){top:5px}
+.nav-toggle .nt-bars i:nth-child(3){top:10px}
+nav.site.open .nav-toggle{color:var(--ink);border-color:var(--accent)}
+nav.site.open .nav-toggle .nt-bars i:nth-child(1){transform:translateY(5px) rotate(45deg)}
+nav.site.open .nav-toggle .nt-bars i:nth-child(2){opacity:0}
+nav.site.open .nav-toggle .nt-bars i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
 main{flex:1 0 auto}
 
 /* ---------- Reveal ---------- */
@@ -401,9 +416,19 @@ footer.site .counter svg{opacity:.7}
   .item .go{grid-column:2}
   .post{grid-template-columns:60px 1fr;gap:12px}
   .post .cat{grid-column:2}
-  .nav-links{display:none}
-  /* nav-links held the margin-left:auto — with it hidden, keep the toggles pinned right */
+  /* nav-links become a dropdown panel below the bar, toggled by the hamburger */
+  .nav-toggle{display:inline-flex}
   .toggles{margin-left:auto}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:color-mix(in srgb,var(--paper) 97%,transparent);
+    backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--line);
+    box-shadow:0 12px 24px rgba(35,48,70,.12);padding:4px 28px 12px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease}
+  nav.site.open .nav-links{opacity:1;visibility:visible;transform:none}
+  .nav-links a{padding:12px 2px;font-size:15px;border-bottom:1px solid var(--line)}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-links a.on::after{display:none}
   /* real class is .cats (not .companion); scale the trio down so it clears the content */
   .cats{right:12px;bottom:12px;transform:scale(.8);transform-origin:bottom right}
 }
