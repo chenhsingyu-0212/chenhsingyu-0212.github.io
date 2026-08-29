@@ -26,11 +26,35 @@ categories = ["Computer Science", "Website", "DevOps"]
 
 一個 **workflow** 就是一個 YAML 檔，放在 repo 的 `.github/workflows/` 底下（可以有很多份，各自獨立觸發）。階層是：
 
-```
-Workflow (一個 .yml 檔，由事件觸發)
-└── Job (跑在某一台 runner 上；多個 job 預設並行)
-    └── Step (依序執行；每步是一行 run: 指令，或一個 uses: 現成 Action)
-```
+<figure>
+<div class="figbox">
+<svg viewBox="0 0 900 300" role="img" aria-label="GitHub Actions 的三層結構：Workflow 內含多個並行的 Job，每個 Job 內含依序執行的 Step">
+  <rect class="svg-line-d" x="20" y="14" width="860" height="270" rx="10" fill="none"/>
+  <text class="svg-l" x="36" y="36">Workflow · 一個 .yml 檔，由事件觸發</text>
+
+  <rect class="svg-box" x="46" y="52" width="390" height="214" rx="8"/>
+  <text class="svg-t" x="241" y="80" text-anchor="middle">Job A</text>
+  <text class="svg-s" x="241" y="99" text-anchor="middle">跑在某一台 runner 上</text>
+  <rect class="svg-box-a" x="70" y="114" width="342" height="38" rx="6"/>
+  <text class="svg-s" x="241" y="138" text-anchor="middle">Step 1 — uses: actions/checkout</text>
+  <rect class="svg-box-a" x="70" y="160" width="342" height="38" rx="6"/>
+  <text class="svg-s" x="241" y="184" text-anchor="middle">Step 2 — run: npm ci</text>
+  <rect class="svg-box-a" x="70" y="206" width="342" height="38" rx="6"/>
+  <text class="svg-s" x="241" y="230" text-anchor="middle">Step 3 — run: npm test</text>
+
+  <rect class="svg-box" x="464" y="52" width="390" height="214" rx="8"/>
+  <text class="svg-t" x="659" y="80" text-anchor="middle">Job B</text>
+  <text class="svg-s" x="659" y="99" text-anchor="middle">與 Job A 預設並行</text>
+  <rect class="svg-box-a" x="488" y="114" width="342" height="38" rx="6"/>
+  <text class="svg-s" x="659" y="138" text-anchor="middle">Step 1 — uses: actions/checkout</text>
+  <rect class="svg-box-a" x="488" y="160" width="342" height="38" rx="6"/>
+  <text class="svg-s" x="659" y="184" text-anchor="middle">Step 2 — run: docker build</text>
+  <rect class="svg-box-a" x="488" y="206" width="342" height="38" rx="6"/>
+  <text class="svg-s" x="659" y="230" text-anchor="middle">Step 3 — run: docker push</text>
+</svg>
+</div>
+<figcaption>Workflow 內的多個 Job 預設並行（可用 <code>needs:</code> 指定相依）；Job 內的 Step 則一定依序執行，任何一步失敗就中止該 Job。</figcaption>
+</figure>
 
 - **`on`**：什麼事件會觸發（push、pull_request、排程、手動…）。
 - **`jobs`**：一個 workflow 底下的工作；每個 job 用 `runs-on` 指定跑在哪種 runner。

@@ -92,6 +92,75 @@ Slurm (Simple Linux Utility for Resource Management)，最早由 Lawrence Liverm
 - MUNGE
   - 節點之間的身分驗證服務，Slurm 依賴它確認訊息來源
 
+Slurm 是「常駐 daemon + client 指令」的架構，三個 daemon 各司其職：
+
+<figure>
+<div class="figbox">
+<svg viewBox="0 0 900 450" role="img" aria-label="Slurm 架構圖：client 指令連到 slurmctld 與 slurmdbd，slurmctld 派工給各節點的 slurmd">
+  <defs>
+    <marker id="ah-slurm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--mut)"/>
+    </marker>
+  </defs>
+
+  <rect class="svg-box" x="20" y="150" width="158" height="170" rx="8"/>
+  <text class="svg-t" x="99" y="176" text-anchor="middle">client 指令</text>
+  <text class="svg-s" x="99" y="200" text-anchor="middle">srun · sbatch</text>
+  <text class="svg-s" x="99" y="220" text-anchor="middle">squeue · sinfo</text>
+  <text class="svg-s" x="99" y="240" text-anchor="middle">scancel · scontrol</text>
+  <text class="svg-s" x="99" y="266" text-anchor="middle">sacct · sreport</text>
+  <text class="svg-s" x="99" y="286" text-anchor="middle">sacctmgr</text>
+  <text class="svg-s" x="99" y="310" text-anchor="middle">（Login Node）</text>
+
+  <rect class="svg-box-a" x="286" y="66" width="212" height="80" rx="8"/>
+  <text class="svg-t" x="392" y="100" text-anchor="middle">slurmctld</text>
+  <text class="svg-s" x="392" y="122" text-anchor="middle">中央控制器 · Headnode[1-2]</text>
+
+  <rect class="svg-box" x="620" y="66" width="212" height="80" rx="8"/>
+  <text class="svg-t" x="726" y="100" text-anchor="middle">slurmdbd</text>
+  <text class="svg-s" x="726" y="122" text-anchor="middle">帳務服務</text>
+
+  <rect class="svg-box" x="666" y="204" width="120" height="52" rx="8"/>
+  <text class="svg-s" x="726" y="235" text-anchor="middle">MariaDB</text>
+
+  <path class="svg-line" d="M 178 196 H 252 V 106 H 286" marker-end="url(#ah-slurm)"/>
+  <text class="svg-l" x="246" y="186" text-anchor="end">派工 / 查詢</text>
+
+  <path class="svg-line-d" d="M 99 150 L 99 30 L 726 30 L 726 66" marker-end="url(#ah-slurm)"/>
+  <text class="svg-l" x="380" y="22" text-anchor="middle">帳務查詢 sacct / sacctmgr</text>
+
+  <path class="svg-line" d="M 498 106 L 620 106" marker-end="url(#ah-slurm)" marker-start="url(#ah-slurm)"/>
+  <path class="svg-line" d="M 726 146 L 726 204" marker-end="url(#ah-slurm)"/>
+
+  <path class="svg-line" d="M 392 146 L 392 300 L 250 300 L 250 336" marker-end="url(#ah-slurm)"/>
+  <path class="svg-line" d="M 392 146 L 392 300 L 375 300 L 375 336" marker-end="url(#ah-slurm)"/>
+  <path class="svg-line" d="M 392 146 L 392 300 L 500 300 L 500 336" marker-end="url(#ah-slurm)"/>
+  <path class="svg-line" d="M 392 146 L 392 300 L 625 300 L 625 336" marker-end="url(#ah-slurm)"/>
+  <path class="svg-line" d="M 392 146 L 392 300 L 750 300 L 750 336" marker-end="url(#ah-slurm)"/>
+  <text class="svg-l" x="404" y="290">派送工作 / 回報狀態</text>
+
+  <g>
+    <rect class="svg-box" x="196" y="336" width="108" height="72" rx="8"/>
+    <text class="svg-t" x="250" y="366" text-anchor="middle" font-size="13">slurmd</text>
+    <text class="svg-s" x="250" y="388" text-anchor="middle">DGX-1 · H100</text>
+    <rect class="svg-box" x="321" y="336" width="108" height="72" rx="8"/>
+    <text class="svg-t" x="375" y="366" text-anchor="middle" font-size="13">slurmd</text>
+    <text class="svg-s" x="375" y="388" text-anchor="middle">DGX-2 · H100</text>
+    <rect class="svg-box" x="446" y="336" width="108" height="72" rx="8"/>
+    <text class="svg-t" x="500" y="366" text-anchor="middle" font-size="13">slurmd</text>
+    <text class="svg-s" x="500" y="388" text-anchor="middle">DGX-3 · H200</text>
+    <rect class="svg-box" x="571" y="336" width="108" height="72" rx="8"/>
+    <text class="svg-t" x="625" y="366" text-anchor="middle" font-size="13">slurmd</text>
+    <text class="svg-s" x="625" y="388" text-anchor="middle">DGX-4 · H200</text>
+    <rect class="svg-box" x="696" y="336" width="108" height="72" rx="8"/>
+    <text class="svg-t" x="750" y="366" text-anchor="middle" font-size="13">slurmd</text>
+    <text class="svg-s" x="750" y="388" text-anchor="middle">DGX-5 · H200</text>
+  </g>
+</svg>
+</div>
+<figcaption>控制平面在 Headnode，執行平面在 DGX；帳務獨立成一條線，所以歷史與即時狀態是兩個不同的查詢對象。</figcaption>
+</figure>
+
 {{% callout "info" %}}
 對照前面 PBS 的角色比喻:
 
@@ -100,29 +169,36 @@ Slurm (Simple Linux Utility for Resource Management)，最早由 Lawrence Liverm
 - `slurmdbd`: 帳本 → PBS 沒有直接對應的組件
 {{% /callout %}}
 
-```
-[User @ Login Node]
-       │
-       │  sbatch job.sh
-       │
-       ▼
-[slurmctld]───(排隊/排程/資源配置)
-       │
-       │  (MUNGE 驗證)
-       ▼
-[slurmd @ Compute Node]
-       │
-       ├─► 設定 SLURM_* 環境變數
-       ├─► 直接在提交目錄下執行 (不需自行 cd)
-       │
-       ▼
-[Job 執行中]
-       │
-       ├─► stdout/stderr → slurm-12345.out
-       │
-       ▼
-[Job 結束 → 資源釋放 → 紀錄寫入 slurmdbd]
-```
+<figure>
+<div class="figbox">
+<svg viewBox="0 0 900 544" role="img" aria-label="Slurm 工作流程：使用者從 Login Node 提交，slurmctld 排程後交由 slurmd 執行，結束後寫入帳務">
+  <defs><marker id="ah-sflow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--mut)"/></marker></defs>
+  <rect class="svg-box" x="230" y="16" width="440" height="56" rx="8"/>
+  <text class="svg-t" x="450" y="42" text-anchor="middle">使用者 @ Login Node</text>
+  <text class="svg-s" x="450" y="61" text-anchor="middle">編輯程式、準備資料</text>
+  <path class="svg-line" d="M 450 72 V 130" marker-end="url(#ah-sflow)"/>
+  <text class="svg-l" x="466" y="94">sbatch job.sh</text>
+  <rect class="svg-box-a" x="230" y="130" width="440" height="56" rx="8"/>
+  <text class="svg-t" x="450" y="156" text-anchor="middle">slurmctld</text>
+  <text class="svg-s" x="450" y="175" text-anchor="middle">排隊 · 排程 · 資源配置</text>
+  <path class="svg-line" d="M 450 186 V 244" marker-end="url(#ah-sflow)"/>
+  <text class="svg-l" x="466" y="201">MUNGE 驗證</text>
+  <text class="svg-l" x="466" y="216">派送工作</text>
+  <rect class="svg-box" x="230" y="244" width="440" height="56" rx="8"/>
+  <text class="svg-t" x="450" y="270" text-anchor="middle">slurmd @ Compute Node</text>
+  <text class="svg-s" x="450" y="289" text-anchor="middle">設定 SLURM_* 環境變數，直接在提交目錄下執行</text>
+  <path class="svg-line" d="M 450 300 V 358" marker-end="url(#ah-sflow)"/>
+  <rect class="svg-box" x="230" y="358" width="440" height="56" rx="8"/>
+  <text class="svg-t" x="450" y="384" text-anchor="middle">Job 執行中</text>
+  <text class="svg-s" x="450" y="403" text-anchor="middle">stdout / stderr → slurm-12345.out</text>
+  <path class="svg-line" d="M 450 414 V 472" marker-end="url(#ah-sflow)"/>
+  <rect class="svg-box" x="230" y="472" width="440" height="56" rx="8"/>
+  <text class="svg-t" x="450" y="498" text-anchor="middle">Job 結束</text>
+  <text class="svg-s" x="450" y="517" text-anchor="middle">資源釋放，紀錄寫入 slurmdbd</text>
+</svg>
+</div>
+<figcaption>Slurm 預設就在提交腳本時所在的目錄執行，不需要自行切換工作目錄。</figcaption>
+</figure>
 
 ### Slurm 的常用指令
 
@@ -211,33 +287,99 @@ PBS 採 Client-Server-Mom 的架構，分工如下:
   - 部署在計算節點 (compute node) 上
   - 負責真正執行 job，並回報狀態給 server
 
-![PBS Pro 架構](/img/posts/pbspro-architecture.png)
+<figure>
+<div class="figbox">
+<svg viewBox="0 0 900 400" role="img" aria-label="PBS Pro 架構：PBS 指令與 job 送進 Server，Server 與 Scheduler 協作決定排程，再經 Communication 服務派送到各 Execution Host 上的 MoM">
+  <defs>
+    <marker id="ah-pbs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--mut)"/>
+    </marker>
+  </defs>
 
-```
-[User @ Login Node]
-       │
-       │  qsub job.pbs
-       │
-       ▼
-[PBS Server]───(排隊/排程)───►[PBS Scheduler]
-       │
-       ▼
-[PBS Mom @ Compute Node]
-       │
-       ├─► 設定環境變數
-       ├─► 切換到 $PBS_O_WORKDIR (共享 FS)
-       ├─► (可選) Stage-in → Local scratch
-       │
-       ▼
-[Job 執行中]
-       │
-       ├─► 讀取輸入檔 (FS or scratch)
-       ├─► 寫出輸出檔 (scratch → FS)
-       ├─► stdout/stderr → job.o12345, job.e12345
-       │
-       ▼
-[Job 結束 → 資源釋放]
-```
+  <rect class="svg-line-d" x="18" y="40" width="424" height="322" rx="10" fill="none"/>
+  <text class="svg-l" x="34" y="60">PBS Server 主機</text>
+
+  <rect class="svg-box" x="38" y="76" width="150" height="48" rx="8"/>
+  <text class="svg-s" x="113" y="105" text-anchor="middle">PBS Commands</text>
+
+  <rect class="svg-box" x="38" y="272" width="150" height="48" rx="8"/>
+  <text class="svg-s" x="113" y="301" text-anchor="middle">Jobs</text>
+
+  <rect class="svg-box-a" x="242" y="152" width="180" height="56" rx="8"/>
+  <text class="svg-t" x="332" y="178" text-anchor="middle">Server</text>
+  <text class="svg-s" x="332" y="197" text-anchor="middle">pbs_server</text>
+
+  <rect class="svg-box" x="242" y="276" width="180" height="56" rx="8"/>
+  <text class="svg-t" x="332" y="302" text-anchor="middle">Scheduler</text>
+  <text class="svg-s" x="332" y="321" text-anchor="middle">pbs_sched</text>
+
+  <path class="svg-line" d="M 188 100 H 215 V 172 H 242" marker-end="url(#ah-pbs)"/>
+  <path class="svg-line" d="M 188 296 H 215 V 190 H 242" marker-end="url(#ah-pbs)"/>
+  <path class="svg-line" d="M 332 208 V 276" marker-end="url(#ah-pbs)" marker-start="url(#ah-pbs)"/>
+
+  <rect class="svg-box" x="500" y="152" width="180" height="56" rx="8"/>
+  <text class="svg-t" x="590" y="178" text-anchor="middle">Communication</text>
+  <text class="svg-s" x="590" y="197" text-anchor="middle">pbs_comm</text>
+  <path class="svg-line" d="M 422 180 H 500" marker-end="url(#ah-pbs)" marker-start="url(#ah-pbs)"/>
+
+  <path class="svg-line" d="M 680 180 H 712"/>
+  <path class="svg-line" d="M 712 62 V 318"/>
+  <path class="svg-line" d="M 712 62 H 740" marker-end="url(#ah-pbs)"/>
+  <path class="svg-line" d="M 712 148 H 740" marker-end="url(#ah-pbs)"/>
+  <path class="svg-line" d="M 712 234 H 740" marker-end="url(#ah-pbs)"/>
+  <path class="svg-line" d="M 712 318 H 740" marker-end="url(#ah-pbs)"/>
+
+  <rect class="svg-box" x="740" y="36" width="150" height="52" rx="8"/>
+  <text class="svg-t" x="815" y="60" text-anchor="middle" font-size="13">MoM</text>
+  <text class="svg-s" x="815" y="78" text-anchor="middle">Execution Host</text>
+  <rect class="svg-box" x="740" y="122" width="150" height="52" rx="8"/>
+  <text class="svg-t" x="815" y="146" text-anchor="middle" font-size="13">MoM</text>
+  <text class="svg-s" x="815" y="164" text-anchor="middle">Execution Host</text>
+  <rect class="svg-box" x="740" y="208" width="150" height="52" rx="8"/>
+  <text class="svg-t" x="815" y="232" text-anchor="middle" font-size="13">MoM</text>
+  <text class="svg-s" x="815" y="250" text-anchor="middle">Execution Host</text>
+  <rect class="svg-box" x="740" y="292" width="150" height="52" rx="8"/>
+  <text class="svg-s" x="815" y="316" text-anchor="middle">…</text>
+  <text class="svg-s" x="815" y="334" text-anchor="middle">其餘計算節點</text>
+</svg>
+</div>
+<figcaption>PBS 採 Client–Server–Mom 架構：使用者的指令與 job 進到 Server，Scheduler 決定執行順序，再透過 pbs_comm 把工作派送到各計算節點上的 MoM。</figcaption>
+</figure>
+
+<figure>
+<div class="figbox">
+<svg viewBox="0 0 900 544" role="img" aria-label="PBS 工作流程：使用者從 Login Node 提交，PBS Server 與 Scheduler 排程後交由 PBS Mom 執行">
+  <defs><marker id="ah-pflow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--mut)"/></marker></defs>
+  <rect class="svg-box" x="90" y="16" width="430" height="56" rx="8"/>
+  <text class="svg-t" x="305" y="42" text-anchor="middle">使用者 @ Login Node</text>
+  <text class="svg-s" x="305" y="61" text-anchor="middle">編輯程式、準備資料</text>
+  <path class="svg-line" d="M 305 72 V 130" marker-end="url(#ah-pflow)"/>
+  <text class="svg-l" x="321" y="94">qsub job.pbs</text>
+  <rect class="svg-box-a" x="90" y="130" width="430" height="56" rx="8"/>
+  <text class="svg-t" x="305" y="156" text-anchor="middle">PBS Server</text>
+  <text class="svg-s" x="305" y="175" text-anchor="middle">接收並管理 job 佇列</text>
+  <path class="svg-line" d="M 305 186 V 244" marker-end="url(#ah-pflow)"/>
+  <text class="svg-l" x="321" y="208">派送工作</text>
+  <rect class="svg-box" x="90" y="244" width="430" height="56" rx="8"/>
+  <text class="svg-t" x="305" y="270" text-anchor="middle">PBS Mom @ Compute Node</text>
+  <text class="svg-s" x="305" y="289" text-anchor="middle">設定環境變數，切換到 $PBS_O_WORKDIR（共享 FS）</text>
+  <path class="svg-line" d="M 305 300 V 358" marker-end="url(#ah-pflow)"/>
+  <rect class="svg-box" x="90" y="358" width="430" height="56" rx="8"/>
+  <text class="svg-t" x="305" y="384" text-anchor="middle">Job 執行中</text>
+  <text class="svg-s" x="305" y="403" text-anchor="middle">讀輸入 / 寫輸出，stdout → job.o12345、stderr → job.e12345</text>
+  <path class="svg-line" d="M 305 414 V 472" marker-end="url(#ah-pflow)"/>
+  <rect class="svg-box" x="90" y="472" width="430" height="56" rx="8"/>
+  <text class="svg-t" x="305" y="498" text-anchor="middle">Job 結束</text>
+  <text class="svg-s" x="305" y="517" text-anchor="middle">資源釋放</text>
+  <rect class="svg-box" x="650" y="130" width="230" height="56" rx="8"/>
+  <text class="svg-t" x="765" y="156" text-anchor="middle">PBS Scheduler</text>
+  <text class="svg-s" x="765" y="175" text-anchor="middle">決定執行順序</text>
+  <path class="svg-line" d="M 520 158 H 650" marker-end="url(#ah-pflow)" marker-start="url(#ah-pflow)"/>
+  <text class="svg-l" x="585" y="184" text-anchor="middle">排隊 / 排程</text>
+</svg>
+</div>
+<figcaption>PBS 把佇列管理與排程決策拆成 Server 與 Scheduler 兩個組件；Slurm 則由 slurmctld 一併承擔。</figcaption>
+</figure>
 
 {{% callout "info" %}}
 - Server: 工作櫃台 → 負責登記與排隊
