@@ -575,6 +575,21 @@ footer.site .counter svg{opacity:.7}
 .callout-warning{border-left-color:#c9791a}
 .callout-danger{border-left-color:#d64545}
 .callout-primary{border-left-color:var(--accent)}
+
+/* ── diagrams: figure + inline SVG, theme-aware ───────────────────────
+   The svg scales to the container width; no horizontal scrolling. */
+.prose figure{margin:22px 0 24px}
+.prose .figbox{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:20px 16px 12px}
+.prose .figbox svg{display:block;width:100%;height:auto}
+.prose figcaption{font-size:13px;color:var(--mut);margin-top:10px;line-height:1.6}
+.svg-box{fill:var(--paper);stroke:var(--line);stroke-width:1.2}
+.svg-box-a{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.4}
+.svg-t{fill:var(--ink);font-family:var(--font-mono);font-size:14px;font-weight:500}
+.svg-s{fill:var(--mut);font-family:var(--font-sans);font-size:11.5px}
+.svg-l{fill:var(--accent);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em}
+.svg-line{stroke:var(--mut);stroke-width:1.3;fill:none}
+.svg-line-d{stroke:var(--mut);stroke-width:1.3;fill:none;stroke-dasharray:5 4}
 /* collapsible details */
 .prose .details{border:1px solid var(--line);border-radius:9px;margin:1.15em 0;background:var(--panel);overflow:hidden}
 .prose .details>summary{cursor:pointer;list-style:none;padding:11px 16px;font-weight:600;font-size:14px;color:var(--ink);display:flex;align-items:center;gap:9px}
