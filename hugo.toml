@@ -7,6 +7,10 @@ title = "Hsing-Yu"
 enableRobotsTXT = true
 enableEmoji = true
 
+# Front-matter dates without an offset are read as local time, not UTC —
+# otherwise an afternoon timestamp lands in the future and Hugo skips the post.
+timeZone = "Asia/Taipei"
+
 # ---- Multilingual (EN default at /, 中文 at /zh/) ----
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
