@@ -62,7 +62,7 @@ vue-project
 
 Vue.js嚮往的就是先建立好根實體(Vue Instance)，再開發好底下每個小元件(Components)，慢慢往上組合成一個完整頁面，最後全部搭建起來成為一個完整專案。
 
-![](https://vuejs.org/assets/components.7fbb3771.png)
+![Vue 元件樹](/img/posts/vue-components-tree.png)
 
 通常一個元件包含 html、css、js，而 Vue 會將其全部寫在一個 `.vue` 為副檔名的檔案當中，vue-loader 會編譯這個 `.vue` 的檔案，將結果顯示出來。
 

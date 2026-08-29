@@ -42,7 +42,7 @@ Thus, the maximum twin sum of the linked list is max(7, 4) = 7.
 
 
 ### Example 3:
-![](https://assets.leetcode.com/uploads/2021/12/03/eg3drawio.png =300x)
+![](https://assets.leetcode.com/uploads/2021/12/03/eg3drawio.png)
 
 > **Input**: head = [1,100000]
 **Output**: 100001

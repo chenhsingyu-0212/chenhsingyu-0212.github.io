@@ -22,7 +22,7 @@ Note that a connecting line cannot intersect even at the endpoints (i.e., each n
 Return *the maximum number of connecting lines we can draw in this way*.
 
 ### Example 1:
-![](https://hackmd.io/_uploads/rkIjNpKN3.png =400x)
+![](https://assets.leetcode.com/uploads/2019/04/26/142.png)
 
 > **Input:** nums1 = [1,4,2], nums2 = [1,2,4]
 > **Output:** 2

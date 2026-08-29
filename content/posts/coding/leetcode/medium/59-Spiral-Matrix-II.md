@@ -13,7 +13,7 @@ tags = ["Array", "Matrix", "Simulation"]
 Given a positive integer `n`, generate an `n x n` `matrix` filled with elements from `1` to `n^2` in spiral order.
 
 ### Example 1:
-![](https://hackmd.io/_uploads/SyE0X_OVn.png)
+![](https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg)
 
 > **Input:** n = 3
 **Output:** [[1,2,3],[8,9,4],[7,6,5]]
