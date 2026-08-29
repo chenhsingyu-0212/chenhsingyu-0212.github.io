@@ -67,7 +67,17 @@ translationKey = "about"
 
 ### 工作經歷
 
-**開發及維護人員** — 陽明交大資訊技術服務中心 · *2025.09 – 至今*
+**開發人員 / HPC 系統** — 陽明交大資訊技術服務中心 · *2025.09 – 至今*
+- 負責在校內 HPC 叢集上建置 **PaaS 推論平台**——該叢集以 **Slurm** 排程，含 **5 台 NVIDIA DGX 節點（H100 / H200）**、**InfiniBand** 高速網路、**WEKA** 平行檔案系統，並透過 **NVIDIA Base Command Manager** 管理。
+- 開發校內的**表單審核流程系統**，涵蓋**職務不法侵害**案件的通報與多層級審核流程。
+  - 負責**後端與 DevOps**：**資料庫結構設計**、以 **FastAPI** 開發後端服務、撰寫自動化測試，並建置 **GitHub Actions** CI/CD 流程。
+
+**設備管理** — 陽明交大 CGI Lab · *2025.09 – 至今*
+- 管理實驗室運算設備：**30 台以上 GPU 主機（每台 4 張 GPU，合計 120 張以上）**、一台 **NVIDIA DGX** 系統，以及 **3 台 NAS**。
+- GPU 為**異質環境**，橫跨多個 NVIDIA 世代（Pascal 至 Ada），需逐台處理驅動與 CUDA 版本的相容性。
+- 建置並維運實驗室的 **LDAP** 服務，統一管理全部主機的**使用者帳號**。
+- 負責儲存相關管理：**備份**、**權限設定**，以及 **TLS 憑證更換**。
+- 負責實驗室成員的**設備與 IP 分配**，以及**主機組裝**。
 
 **研究生** — 中研院 RLG Lab · *2025.07 – 至今*
 
@@ -75,6 +85,9 @@ translationKey = "about"
 - 研究進階 LLM 技術（prompt engineering、RAG、step-by-step distillation），並設計大規模模型訓練的資料流程。
 
 **網站開發與維護負責人** — 臺中教大資工系 · *2022 – 2025*
+- 擔任系上官方網站的**專案負責人**，分配工作、審查組員程式碼並核准 Merge Request。
+- 以**可維護性**為核心設計部署流程：**Svelte + Strapi**，經 **CI/CD** 容器化並推送至 **Docker Hub**，部署機上由 **Watchtower** 自動更新。
+- 負責部署主機的維運，並**帶新進成員**建立交接與傳承機制。
 
 **暑期實習生** — 上海電腦軟體技術開發中心，中國上海 · *2023.07 – 2023.08*
 - 以 **Vue.js** 與 **PHP（Laravel）** 進行網站開發，並涵蓋 **DevOps**。
@@ -103,7 +116,8 @@ translationKey = "about"
 
 - **程式語言** — C/C++、Python、Java、JavaScript、TypeScript
 - **深度學習 &amp; AI** — PyTorch、MCTS/AlphaZero 實作、LLM 微調、RAG
-- **HPC &amp; 平行運算** — MPI、OpenMP、CUDA、Slurm、效能調校（CPU/GPU affinity）
+- **HPC &amp; 平行運算** — MPI、OpenMP、CUDA、效能調校（CPU/GPU affinity）
+- **叢集與系統管理** — Slurm（partition、QOS、帳務）、NVIDIA Base Command Manager、GPU 驅動與 CUDA 環境、NAS 與平行儲存、LDAP 帳號管理
 - **雲端 &amp; DevOps** — AWS Certified AI Practitioner、Docker、Kubernetes (K8s)、Git、CI/CD
 
 ---

@@ -66,7 +66,17 @@ generative-AI systems.
 
 ### Work Experience
 
-**Developer** — NYCU Information Technology Service Center · *Sep. 2025 – present*
+**Developer / HPC Systems** — NYCU Information Technology Service Center · *Sep. 2025 – present*
+- Building a **PaaS inference platform** on the university's HPC cluster — **Slurm**-scheduled, **5 NVIDIA DGX nodes (H100 / H200)** over **InfiniBand**, backed by a **WEKA** parallel filesystem and managed through **NVIDIA Base Command Manager**.
+- Developing a university-wide **form-based review and approval workflow system**, covering the reporting and multi-level review process for **workplace unlawful-infringement** (workplace violence and harassment) cases.
+  - Own the **backend and DevOps** side: **database schema design**, **FastAPI** services, automated **tests**, and a **GitHub Actions** CI/CD pipeline.
+
+**Lab Systems Administrator** — CGI Lab, NYCU · *Sep. 2025 – present*
+- Administer the lab's computing infrastructure: **30+ GPU machines (4 GPUs each — 120+ GPUs)**, an **NVIDIA DGX** system, and **3 NAS units**.
+- The GPU fleet is **heterogeneous**, spanning several NVIDIA generations (Pascal through Ada), so driver and CUDA compatibility has to be managed per machine.
+- Set up and operate the lab's **LDAP** service, giving centralised **user account management** across the fleet.
+- Run the storage side: **backups**, **permission / ACL setup**, and **TLS certificate renewal**.
+- Allocate machines and **IP addresses** to lab members, and **assemble the workstations** themselves.
 
 **Research Student** — Academia Sinica, RLG Lab · *Jul. 2025 – present*
 
@@ -74,6 +84,9 @@ generative-AI systems.
 - Investigated advanced LLM techniques — prompt engineering, RAG, and step-by-step distillation — and designed data pipelines for large-scale model training.
 
 **Lead Web Developer** — Dept. of Computer Science, NTCU · *2022 – 2025*
+- **Project lead** for the department's official website — assigned tasks, reviewed teammates' code, and approved merge requests.
+- Designed a deployment pipeline built for maintainability: **Svelte + Strapi**, containerized and shipped through **CI/CD** to **Docker Hub**, with **Watchtower** rolling out updates automatically on the deployment machine.
+- Operated the deployment servers and **mentored junior members**, so the site would keep its maintainers after handover.
 
 **Summer Intern** — Shanghai Development Center of Computer Software Technology, Shanghai, China · *Jul. 2023 – Aug. 2023*
 - Web development with **Vue.js** and **PHP (Laravel)**, plus **DevOps**.
@@ -102,7 +115,8 @@ generative-AI systems.
 
 - **Languages** — C/C++, Python, Java, JavaScript, TypeScript
 - **Deep Learning &amp; AI** — PyTorch, MCTS/AlphaZero implementation, LLM fine-tuning, RAG
-- **HPC &amp; Parallel Computing** — MPI, OpenMP, CUDA, Slurm, performance tuning (CPU/GPU affinity)
+- **HPC &amp; Parallel Computing** — MPI, OpenMP, CUDA, performance tuning (CPU/GPU affinity)
+- **Cluster &amp; Systems Administration** — Slurm (partitions, QOS, accounting), NVIDIA Base Command Manager, GPU driver &amp; CUDA environments, NAS/parallel storage, LDAP account management
 - **Cloud &amp; DevOps** — AWS Certified AI Practitioner, Docker, Kubernetes (K8s), Git, CI/CD
 
 ---
