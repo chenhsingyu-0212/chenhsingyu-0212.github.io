@@ -2,7 +2,7 @@
 title = "安裝 Microsoft MPI with vscode in Windows"
 date = 2023-12-13 21:49:08
 draft = false
-categories = ["Computer Science", "HPC", "Parallel Processing"]
+categories = ["Computer Science", "Infrastructure", "HPC", "Parallel Processing"]
 +++
 
 # 安裝 Microsoft MPI

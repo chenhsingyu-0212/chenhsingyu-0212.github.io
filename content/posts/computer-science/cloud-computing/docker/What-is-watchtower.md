@@ -2,7 +2,7 @@
 title = "What is watchtower?"
 date = 2023-10-20 15:24:42
 draft = false
-categories = ["Computer Science", "Cloud Computing", "Docker"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing", "Docker"]
 +++
 
 {{% callout "info" %}}

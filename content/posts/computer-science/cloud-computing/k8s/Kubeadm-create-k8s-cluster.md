@@ -2,7 +2,7 @@
 title = "Kubeadm create k8s cluster"
 date = 2025-02-17 16:48:49
 draft = false
-categories = ["Computer Science", "Cloud Computing", "K8s"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing", "K8s"]
 +++
 
 ## 實驗題目

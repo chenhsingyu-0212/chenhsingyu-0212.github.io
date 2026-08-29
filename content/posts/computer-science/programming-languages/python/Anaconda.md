@@ -1,11 +1,13 @@
 +++
-title = "Anaconda"
+title = "Anaconda & Miniconda"
 date = 2024-05-21 17:01:18
 draft = false
-categories = ["Computer Science", "HPC", "Tools"]
+categories = ["Computer Science", "Programming Languages", "Python"]
 +++
 
-## 安裝 anaconda
+![conda、Miniconda 與 Anaconda 的關係](https://miro.medium.com/v2/resize:fit:4800/format:webp/0*G4QA2olHnFamlV3Z.png)
+
+## 安裝 Anaconda
 
 前往 [anaconda](https://www.anaconda.com/download/success) 網站進行下載
 
@@ -31,6 +33,35 @@ conda config --set auto_activate_base false
 ```
 
 {{% /callout %}}
+
+## 安裝 Miniconda
+
+> [Miniconda Docs](https://www.anaconda.com/docs/getting-started/miniconda/install)
+
+1. 下載 miniconda shell script
+   ```bash
+   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   ```
+2. 執行 miniconda shell script 檔案
+   ```bash
+   bash ~/Miniconda3-latest-Linux-x86_64.sh
+   ```
+
+   安裝過程的互動提示與建議的回答：
+
+   | 提示 | 回答 |
+   | --- | --- |
+   | `Please, press ENTER to continue` | **Enter** |
+   | `Do you accept the license terms?` | **yes** |
+   | `Miniconda3 will now be installed into this location: /home/hsingyu/miniconda3` | **Enter** |
+   | `Do you wish to update your shell profile to automatically initialize conda? [yes\|no]` | **no** |
+
+   最後一項選 `no`，conda 就不會在每次開 shell 時自動啟用 base 環境。若之後想改變這個行為，可在 conda 啟用的狀態下執行 `conda config --set auto_activate_base false`，或用 `conda init --reverse $SHELL` 復原。
+3. 執行在當前 shell 臨時啟用 conda
+   ```bash
+   sh=$(basename "$SHELL"); eval "$(/home/hsingyu/miniconda3/bin/conda shell.$sh hook)"
+   conda init
+   ```
 
 ## 查看 conda 安裝了那些包
 

@@ -2,7 +2,7 @@
 title = "Docker Information"
 date = 2023-05-16 15:52:43
 draft = false
-categories = ["Computer Science", "Cloud Computing", "Docker"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing", "Docker"]
 +++
 
 # 簡介

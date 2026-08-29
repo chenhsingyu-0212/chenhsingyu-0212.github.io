@@ -2,7 +2,7 @@
 title = "Dockerfile"
 date = 2023-05-16 19:11:57
 draft = false
-categories = ["Computer Science", "Cloud Computing", "Docker"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing", "Docker"]
 +++
 
 # Dockerfile

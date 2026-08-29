@@ -2,7 +2,7 @@
 title = "Docker-安裝"
 date = 2023-05-16 18:33:53
 draft = false
-categories = ["Computer Science", "Cloud Computing", "Docker"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing", "Docker"]
 +++
 
 # Windows

@@ -2,7 +2,7 @@
 title = "Ubuntu 安裝 CUDA 環境"
 date = 2024-05-19 18:06:04
 draft = false
-categories = ["Computer Science", "HPC", "Linux"]
+categories = ["Computer Science", "Infrastructure", "Linux"]
 +++
 
 ## GPU 環境安裝(在虛擬環境上的做法)
@@ -14,8 +14,10 @@ RTX 3090 on Ubuntu 22.04.4 LTS + anaconda
 ```shell
 sudo apt-get install nvidia-common
 # add nvidia ppa
-sudo add-apt-respository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
+# ubuntu-drivers 指令由 ubuntu-drivers-common 提供
+sudo apt install ubuntu-drivers-common
 ubuntu-drivers devices
 # install nvidia driver
 sudo apt install nvidia-driver-535
@@ -95,8 +97,10 @@ sudo apt remove --purge '^cuda-.*'
 ```shell
 sudo apt-get install nvidia-common
 # add nvidia ppa
-sudo add-apt-respository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
+# ubuntu-drivers 指令由 ubuntu-drivers-common 提供
+sudo apt install ubuntu-drivers-common
 ubuntu-drivers devices
 # install nvidia driver
 sudo apt install nvidia-driver-535

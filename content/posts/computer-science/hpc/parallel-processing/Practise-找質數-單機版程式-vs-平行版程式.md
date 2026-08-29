@@ -2,7 +2,7 @@
 title = "Practise 找質數 - 單機版程式 vs. 平行版程式"
 date = 2023-12-13 23:57:58
 draft = false
-categories = ["Computer Science", "HPC", "Parallel Processing"]
+categories = ["Computer Science", "Infrastructure", "HPC", "Parallel Processing"]
 +++
 
 # 題目

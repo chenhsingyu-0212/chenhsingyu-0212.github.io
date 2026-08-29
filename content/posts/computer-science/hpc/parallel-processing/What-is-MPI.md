@@ -2,7 +2,7 @@
 title = "What is MPI?"
 date = 2023-12-13 15:02:33
 draft = false
-categories = ["Computer Science", "HPC", "Parallel Processing"]
+categories = ["Computer Science", "Infrastructure", "HPC", "Parallel Processing"]
 +++
 
 {{% callout "info" %}}

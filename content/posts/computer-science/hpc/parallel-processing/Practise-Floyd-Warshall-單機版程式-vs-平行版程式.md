@@ -2,7 +2,7 @@
 title = "Practise Floyd-Warshall 單機版程式 vs. 平行版程式"
 date = 2023-12-20 13:15:25
 draft = false
-categories = ["Computer Science", "HPC", "Parallel Processing"]
+categories = ["Computer Science", "Infrastructure", "HPC", "Parallel Processing"]
 +++
 
 # 題目

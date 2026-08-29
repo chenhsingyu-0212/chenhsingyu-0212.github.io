@@ -2,7 +2,7 @@
 title = "Docker Practise - 2"
 date = 2023-05-16 19:41:31
 draft = false
-categories = ["Computer Science", "Cloud Computing", "Docker"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing", "Docker"]
 +++
 
 ## 實作說明

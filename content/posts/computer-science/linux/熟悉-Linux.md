@@ -2,7 +2,7 @@
 title = "熟悉 Linux"
 date = 2023-12-14 16:16:10
 draft = false
-categories = ["Computer Science", "HPC", "Linux"]
+categories = ["Computer Science", "Infrastructure", "Linux"]
 +++
 
 # 簡介 Linux

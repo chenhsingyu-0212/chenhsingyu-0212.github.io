@@ -12,27 +12,17 @@
   term: Artificial Intelligence
   items: [LLM, Game AI]
 
-- name: High Performance Computing
-  zh: 高效能運算
-  term: HPC
-  items: [HPC, Parallel Processing, Linux, Tools]
-
-- name: Cloud Computing
-  zh: 雲端運算
-  term: Cloud Computing
-  items: [Cloud Computing, Docker, K8s]
+- name: Systems & Infrastructure
+  zh: 系統管理
+  term: Infrastructure
+  items: [Infrastructure, Linux, HPC, Cloud Computing, Docker]
 
 - name: Develop
   zh: 開發
   term: Website
-  items: [Website, Git, DevOps]
+  items: [Website, Git, DevOps, Framework]
 
 - name: Programming Language
   zh: 程式語言
   term: Programming Languages
-  items: [Programming Languages, C, PHP, Python]
-
-- name: Framework
-  zh: 框架
-  term: Framework
-  items: [Framework, Vue, Java Spring Boot, Svelte]
+  items: [Programming Languages, C, PHP, Python, Shell]

@@ -2,7 +2,7 @@
 title = "AWS - NORMAL: NovaTech - Stateful web server"
 date = 2025-03-06 16:49:52
 draft = false
-categories = ["Computer Science", "Cloud Computing"]
+categories = ["Computer Science", "Infrastructure", "Cloud Computing"]
 +++
 
 {{% callout "warning" %}}
