@@ -66,7 +66,7 @@ generative-AI systems.
 
 ### Work Experience
 
-**Developer / HPC Systems** — NYCU Information Technology Service Center · *Sep. 2025 – present*
+**HPC Systems / Developer** — NYCU Information Technology Service Center · *Sep. 2025 – present*
 - Building a **PaaS inference platform** on the university's HPC cluster — **Slurm**-scheduled, **5 NVIDIA DGX nodes (H100 / H200)** over **InfiniBand**, backed by a **WEKA** parallel filesystem and managed through **NVIDIA Base Command Manager**.
 - Developing a university-wide **form-based review and approval workflow system**, covering the reporting and multi-level review process for **workplace unlawful-infringement** (workplace violence and harassment) cases.
   - Own the **backend and DevOps** side: **database schema design**, **FastAPI** services, automated **tests**, and a **GitHub Actions** CI/CD pipeline.
