@@ -1,0 +1,29 @@
+{{- /* Renders data/categories.yaml as a grid of fixed-size category cards. The
+       card title links to its `term` page; `items` become pills linking to
+       /categories/<term>/ (slug = urlized item name). A pill whose slug equals
+       the card's `term` slug is dropped (title already links there). The pills
+       area is a fixed 2-row box; overflow is clamped to "…" by main.js. */ -}}
+{{ with hugo.Data.categories }}
+<div class="cat-tree">
+  {{ range . }}
+  <div class="cat-block">
+    {{ $headSlug := "" }}{{ $head := "" }}
+    {{ with .term }}{{ $headSlug = (. | urlize) }}{{ $head = site.GetPage (printf "/categories/%s" $headSlug) }}{{ end }}
+    {{ if $head }}
+    <a class="cat-head" href="{{ $head.RelPermalink }}"><span class="cat-name">{{ .name }}</span>{{ with .zh }}<span class="cat-zh">{{ . }}</span>{{ end }}<span class="cat-go" aria-hidden="true"><svg viewBox="0 0 20 20" width="15" height="15" fill="currentColor"><ellipse cx="10" cy="13.5" rx="4.6" ry="3.7"/><ellipse cx="4.8" cy="9" rx="1.9" ry="2.2"/><ellipse cx="8.7" cy="6.4" rx="1.9" ry="2.3"/><ellipse cx="12.6" cy="6.7" rx="1.9" ry="2.3"/><ellipse cx="15.6" cy="10" rx="1.8" ry="2.1"/></svg></span></a>
+    {{ else }}
+    <div class="cat-head"><span class="cat-name">{{ .name }}</span>{{ with .zh }}<span class="cat-zh">{{ . }}</span>{{ end }}</div>
+    {{ end }}
+    {{ $rest := slice }}
+    {{ range .items }}{{ if ne (. | urlize) $headSlug }}{{ $rest = $rest | append . }}{{ end }}{{ end }}
+    <div class="cat-pills">
+      {{ range $rest }}
+        {{ $term := site.GetPage (printf "/categories/%s" (. | urlize)) }}
+        {{ if $term }}<a class="cat-pill" href="{{ $term.RelPermalink }}">{{ . }}<span class="n">{{ len $term.Pages }}</span></a>
+        {{ else }}<span class="cat-pill empty">{{ . }}</span>{{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

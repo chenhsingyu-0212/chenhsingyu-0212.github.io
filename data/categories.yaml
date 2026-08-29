@@ -1,0 +1,38 @@
+# Category structure for the /posts/ category tree.
+# Each top-level entry becomes one card block. `term` = the category the card
+# title links to (urlized → /categories/<slug>/). `items` become pills that
+# link to /categories/<term>/ (slug = urlized item name). Order = display order.
+- name: Coding
+  zh: 程式
+  term: Coding
+  items: [Easy, Medium, Hard]
+
+- name: Artificial Intelligence
+  zh: 人工智慧
+  term: Artificial Intelligence
+  items: [LLM, Game AI]
+
+- name: High Performance Computing
+  zh: 高效能運算
+  term: HPC
+  items: [HPC, Parallel Processing, Linux, Tools]
+
+- name: Cloud Computing
+  zh: 雲端運算
+  term: Cloud Computing
+  items: [Cloud Computing, Docker, K8s]
+
+- name: Develop
+  zh: 開發
+  term: Website
+  items: [Website, Git, DevOps]
+
+- name: Programming Language
+  zh: 程式語言
+  term: Programming Languages
+  items: [Programming Languages, C, PHP, Python]
+
+- name: Framework
+  zh: 框架
+  term: Framework
+  items: [Framework, Vue, Java Spring Boot, Svelte]
