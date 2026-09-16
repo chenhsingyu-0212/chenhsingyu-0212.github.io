@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ if eq .Kind "term" }}
+  {{/* Single term page → list the posts in this category/tag */}}
+  <header class="page-head">
+    <div class="eyebrow">{{ T "in_category" }}</div>
+    <h1>{{ .Title }}</h1>
+    <p class="sub">{{ len .Pages }} {{ T "posts_in" }} <b>{{ .Title }}</b></p>
+  </header>
+
+  {{/* If this term is a top-level bucket, list its sub-categories up top */}}
+  {{ $slug := path.Base .RelPermalink }}
+  {{ $bucket := "" }}
+  {{ range hugo.Data.categories }}{{ if eq (.term | urlize) $slug }}{{ $bucket = . }}{{ end }}{{ end }}
+  {{ with $bucket }}
+    {{ $subs := slice }}
+    {{ range .items }}{{ if ne (. | urlize) $slug }}{{ $subs = $subs | append . }}{{ end }}{{ end }}
+    {{ with $subs }}
+    <nav class="subcats" aria-label="subcategories">
+      <span class="subcats-label">{{ T "subcategories" }}</span>
+      {{ range . }}{{ $t := site.GetPage (printf "/categories/%s" (. | urlize)) }}{{ if $t }}<a class="cat-pill" href="{{ $t.RelPermalink }}">{{ . }}<span class="n">{{ len $t.Pages }}</span></a>{{ end }}{{ end }}
+    </nav>
+    {{ end }}
+  {{ end }}
+
+  {{ $paginator := .Paginate (sort .Pages "Date" "desc") 30 }}
+  <section class="blk" style="padding-top:30px">
+    <div class="posts">
+      {{ range $paginator.Pages }}{{ partial "post-item.html" . }}{{ end }}
+    </div>
+    {{ partial "pager.html" $paginator }}
+  </section>
+
+  <a class="backlink" href="{{ (site.GetPage "/posts").RelPermalink }}">← {{ T "posts" }}</a>
+{{ else }}
+  {{/* Taxonomy index → list all terms with counts */}}
+  <header class="page-head">
+    <div class="eyebrow">{{ site.Params.brand }}</div>
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <section class="blk" style="padding-top:24px">
+    <div class="taglist">
+      {{ range $name, $items := .Data.Terms }}
+        <a href="{{ (site.GetPage (printf "/%s/%s" $.Data.Plural $name)).RelPermalink }}">{{ $name }} <span style="opacity:.6">{{ len $items }}</span></a>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
+{{ end }}

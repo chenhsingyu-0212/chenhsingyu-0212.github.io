@@ -1,0 +1,9 @@
+{{- /* Language switch: only shown on pages that actually have a translation
+       (currently just About + Beyond). English is the primary language; every
+       other page is English-only, so no toggle appears there. */ -}}
+{{- $p := . -}}
+{{- if and (eq $p.Kind "page") $p.IsTranslated -}}
+  {{- range $p.Translations -}}
+    <a class="tgl" href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" aria-label="{{ T "switch_language" }}">{{ .Language.Label }}</a>
+  {{- end -}}
+{{- end -}}

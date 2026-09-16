@@ -1,0 +1,8 @@
+<div class="item rv">
+  <span class="yr">{{ .Date.Format "2006" }}</span>
+  <span class="bd">
+    <a href="{{ .RelPermalink }}"><b>{{ .Title }}</b></a>{{ with .Params.badge }}<span class="kind">{{ . }}</span>{{ end }}
+    <p>{{ .Params.summary | default .Summary | plainify }}</p>
+  </span>
+  <span class="go"><a href="{{ .RelPermalink }}">{{ T "read_more" }} →</a></span>
+</div>
