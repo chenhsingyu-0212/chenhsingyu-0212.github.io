@@ -32,8 +32,8 @@ translationKey = "about"
 
 ### 論文著作
 
-1. Yang, Y. Y., Wu, T. R., Guei, H., <span class="me">Chen, H. Y.</span>, & Wu, I. C. (2026). *Do LLMs Trust the Accuser or the Accusation? Measuring Belief Shifts in Werewolf.* Conference on Empirical Methods in Natural Language Processing (EMNLP 2026), Main Conference, Budapest, Hungary. — 主會議**錄取率 15.4%**（2,719 / 17,669 篇投稿）。
-2. <span class="me">Chen, H. Y.</span>, Arjonilla, J., Wu, I. C., & Wu, T. R. (2026). *WallZero: Mastering the Game of WallGo with Strategic Analysis.* International Conference on Computers and Games (CG 2026), Maastricht, the Netherlands, June 2026. [arXiv:2606.17847](https://arxiv.org/abs/2606.17847)
+1. Yang, Y. Y., Wu, T. R., Guei, H., <span class="me">Chen, H. Y.</span>, & Wu, I. C. (2026). *Do LLMs Trust the Accuser or the Accusation? Measuring Belief Shifts in Werewolf.* Conference on Empirical Methods in Natural Language Processing (EMNLP 2026), Main Conference (Poster), Budapest, Hungary. — 主會議**錄取率 15.4%**（2,719 / 17,669 篇投稿）。
+2. <span class="me">Chen, H. Y.</span>, Arjonilla, J., Wu, I. C., & Wu, T. R. (2026). *WallZero: Mastering the Game of WallGo with Strategic Analysis.* International Conference on Computers and Games (CG 2026), Oral, Maastricht, the Netherlands, June 2026. [arXiv:2606.17847](https://arxiv.org/abs/2606.17847)
 3. <span class="me">Chen, H. Y.</span>, & Huang, K. C. (2025). *Improved Opponent Modeling in DRL-Based Taiwanese Mahjong AI.* Taiwan Computer Game Association (TCGA 2025), Taiwan, May 2025. — <mark>最佳論文獎</mark>
 4. Chang, Y. E., Hung, Y. H., <span class="me">Chen, H. Y.</span>, …, & Huang, K. C. (2024). *A Sustainable Online Learning Platform for After-Class Peer Learning.* eLearn 2024, Singapore, October 7–10, 2024. Paper ID: 63981.
 

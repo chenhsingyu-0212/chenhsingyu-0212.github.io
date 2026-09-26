@@ -4,7 +4,7 @@ date = 2026-01-01
 weight = 5
 featured = true
 badge = "Research"
-summary = "AlphaZero-based game AI that masters the board game WallGo — my first-author work (CG 2026). Built on MiniZero, learns purely from self-play, and beat professional Go players by ~1.98× territory."
+summary = "AlphaZero-based game AI that masters the board game WallGo — my first-author work (CG 2026 · Oral). Built on MiniZero, learns purely from self-play, and beat professional Go players by ~1.98× territory."
 tags = ["Game AI", "AlphaZero", "MCTS", "Reinforcement Learning", "WallGo", "C++"]
 [links]
 code = "https://github.com/rlglab/wallzero"
@@ -13,7 +13,7 @@ code = "https://github.com/rlglab/wallzero"
 > First-author research — Hsing-Yu Chen, Jerome Arjonilla, I-Chen Wu, Ti-Rong Wu, *Computers and Games (CG 2026)*. Open-source at [rlglab/wallzero](https://github.com/rlglab/wallzero).
 
 **WallZero** is an **AlphaZero**-based game AI that masters **WallGo**, a two-player territory
-board game. It is my **first-author** research, accepted at **Computers and Games (CG 2026)** and
+board game. It is my **first-author** research, accepted at **Computers and Games (CG 2026)** as an **oral presentation** and
 open-sourced by the RLG Lab.
 
 ## The game — WallGo
@@ -37,4 +37,4 @@ The engine and search are implemented in **C++** for speed, with **Python** for 
 - Learns WallGo **from scratch** via self-play reinforcement learning — no human data.
 - **Defeated professional Go players** (3-dan and 9-dan), taking on average **1.98× more territory**
   than its human opponents.
-- Accepted as **first-author** work at **Computers and Games (CG 2026)**.
+- Accepted as **first-author** work at **Computers and Games (CG 2026)** (oral presentation).

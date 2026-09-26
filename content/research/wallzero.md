@@ -4,7 +4,7 @@ date = 2026-01-01
 weight = 20
 featured = true
 badge = "Publication · Game AI"
-summary = "An AlphaZero-based agent that masters WallGo — the 7×7 board game popularized by Netflix's The Devil's Plan — beating professional Go players and revealing key strategies. (CG 2026)"
+summary = "An AlphaZero-based agent that masters WallGo — the 7×7 board game popularized by Netflix's The Devil's Plan — beating professional Go players and revealing key strategies. (CG 2026 · Oral)"
 translationKey = "wallzero"
 tags = ["WallGo", "AlphaZero", "MCTS", "game AI"]
 [links]
@@ -43,4 +43,4 @@ the mix of stone movement and wall placement gives WallGo a large game-tree comp
 
 ## Publication
 
-Chen, H. Y., Arjonilla, J., Wu, I. C., & Wu, T. R. (2026). *WallZero: Mastering the Game of WallGo with Strategic Analysis.* International Conference on Computers and Games (CG 2026), Maastricht, the Netherlands, June 2026. [arXiv:2606.17847](https://arxiv.org/abs/2606.17847)
+Chen, H. Y., Arjonilla, J., Wu, I. C., & Wu, T. R. (2026). *WallZero: Mastering the Game of WallGo with Strategic Analysis.* International Conference on Computers and Games (CG 2026), Oral, Maastricht, the Netherlands, June 2026. [arXiv:2606.17847](https://arxiv.org/abs/2606.17847)
