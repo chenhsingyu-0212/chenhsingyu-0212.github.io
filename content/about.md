@@ -75,11 +75,10 @@ generative-AI systems.
   - Own the **backend and DevOps** side: **database schema design**, **FastAPI** services, automated **tests**, and a **GitHub Actions** CI/CD pipeline.
 
 **Lab Systems Administrator** — CGI Lab, NYCU · *Sep. 2025 – present*
-- Administer the lab's computing infrastructure: **30+ GPU machines (4 GPUs each — 120+ GPUs)**, an **NVIDIA DGX** system, and **3 NAS units**.
-- The GPU fleet is **heterogeneous**, spanning several NVIDIA generations (Pascal through Ada), so driver and CUDA compatibility has to be managed per machine.
-- Set up and operate the lab's **LDAP** service, giving centralised **user account management** across the fleet.
-- Run the storage side: **backups**, **permission / ACL setup**, and **TLS certificate renewal**.
-- Allocate machines and **IP addresses** to lab members, and **assemble the workstations** themselves.
+- Administer the lab's GPU computing environment — a fleet of GPU servers (**100+ GPUs**, including an **NVIDIA DGX** system) and shared storage.
+- Maintain **driver and CUDA environments** across GPU servers of different hardware generations.
+- Manage **centralised user accounts**, access permissions, **backups**, and certificate renewal.
+- Provision machines for lab members and **assemble workstations**.
 
 **Research Student** — Academia Sinica, RLG Lab · *Jul. 2025 – present*
 

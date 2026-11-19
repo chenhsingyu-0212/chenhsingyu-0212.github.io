@@ -9,7 +9,8 @@ translationKey = "beyond"
 
 ### Basics
 
-- Born 2003/02/12 · Aquarius
+- Gender: Female
+- Born 2003 · Aquarius
 - Hobbies: volleyball, art & design, calligraphy
 - Strengths: swimming, robotics, computer science (AI, HPC, software development)
 
