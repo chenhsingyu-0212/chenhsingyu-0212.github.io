@@ -40,6 +40,7 @@ generative-AI systems.
 
 #### International
 
+- **Third Place** — 2026 APAC HPC-AI Competition (HPC-AI Advisory Council; 33 finalists) — team *Attention* (NSYSU · NCHU · NYCU), core member. [Official page](https://www.hpcadvisorycouncil.com/events/2026/APAC-AI-HPC/)
 - **Silver Medal** — ICGA Computer Olympiad 2024 (Mahjong: *Dartrix*)
 - **Bronze Medal** — ICGA Computer Olympiad 2024 (Mahjong: *Rowlet*)
 - **Qualifier (National Team)** — PMI Region 9 Project Management Case Competition 2024
@@ -63,11 +64,13 @@ generative-AI systems.
 - **Reviewer** — *IEEE Transactions on Games* (2025)
 - **Reviewer** — *ICGA Journal* (2026)
 - **Subreviewer / External Reviewer** — IEEE Conference on Games (CoG 2026)
+- **Secondary Reviewer** — ACL Rolling Review (ARR), October 2026
 
 ### Work Experience
 
 **HPC Systems / Developer** — NYCU Information Technology Service Center · *Sep. 2025 – present*
-- Building a **PaaS inference platform** on the university's HPC cluster — **Slurm**-scheduled, **5 NVIDIA DGX nodes (H100 / H200)** over **InfiniBand**, backed by a **WEKA** parallel filesystem and managed through **NVIDIA Base Command Manager**.
+- Building a **PaaS inference platform** on the university's HPC cluster that lets **research labs deploy the models they need** — **Slurm**-scheduled, **5 NVIDIA DGX nodes (H100 / H200)** over **InfiniBand**, backed by a **WEKA** parallel filesystem and managed through **NVIDIA Base Command Manager**.
+- Developing and deploying **on-campus models open to the entire university**, and **maintaining and updating** them.
 - Developing a university-wide **form-based review and approval workflow system**, covering the reporting and multi-level review process for **workplace unlawful-infringement** (workplace violence and harassment) cases.
   - Own the **backend and DevOps** side: **database schema design**, **FastAPI** services, automated **tests**, and a **GitHub Actions** CI/CD pipeline.
 
@@ -99,6 +102,9 @@ generative-AI systems.
 - **Achievement:** optimized MCTS significantly improved win rates against the baseline (*Rowlet*) — **Silver Medal at ICGA 2024**, **Best Paper Award at TCGA 2025**, and **NSTC College Student Research Creativity Award** (top 2% of 9,505 projects).
 - **Problem:** traditional MCTS fails in high-stochasticity games like Mahjong due to hidden information.
 - **Methodology:** developed *Dartrix*, a Policy-Gradient (PG) agent; proposed a novel **Opponent-Modeling** technique in MCTS that replaces random rollouts with supervised-learning inference to predict opponent moves from discard history.
+
+**APAC HPC-AI Competition 2026 — Core Member** · *Aug. 2026 – Oct. 2026*
+- **Achievement:** **Third Place** (one of four third-place teams among 33 finalists; 48 registered) with team *Attention*, a joint team of NSYSU, NCHU, and NYCU. Results announced at SC26; award to be presented at SupercomputingAsia 2027, Singapore.
 
 **High-Performance Computing (HPC), Core Member** · 2024
 - **Achievement:** lowest execution time among all teams — **Champion of the 3rd NCHC Cup**.

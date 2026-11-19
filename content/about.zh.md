@@ -41,6 +41,7 @@ translationKey = "about"
 
 #### 國際
 
+- **第三名** — 2026 APAC HPC-AI Competition（HPC-AI Advisory Council；33 隊決賽）— 隊伍 *Attention*（中山・中興・陽明交大），核心成員。[官方頁面](https://www.hpcadvisorycouncil.com/events/2026/APAC-AI-HPC/)
 - **銀牌** — ICGA Computer Olympiad 2024（麻將：*Dartrix*）
 - **銅牌** — ICGA Computer Olympiad 2024（麻將：*Rowlet*）
 - **入圍．國家代表隊** — PMI Region 9 Project Management Case Competition 2024
@@ -64,11 +65,13 @@ translationKey = "about"
 - **審稿人** — *IEEE Transactions on Games*（2025）
 - **審稿人** — *ICGA Journal*（2026）
 - **協審／外部審稿** — IEEE Conference on Games（CoG 2026）
+- **第二審稿人** — ACL Rolling Review（ARR），2026 年 10 月
 
 ### 工作經歷
 
 **HPC 系統 / 開發人員** — 陽明交大資訊技術服務中心 · *2025.09 – 至今*
-- 負責在校內 HPC 叢集上建置 **PaaS 推論平台**——該叢集以 **Slurm** 排程，含 **5 台 NVIDIA DGX 節點（H100 / H200）**、**InfiniBand** 高速網路、**WEKA** 平行檔案系統，並透過 **NVIDIA Base Command Manager** 管理。
+- 負責在校內 HPC 叢集上建置 **PaaS 推論平台**，讓**各實驗室部署自己需要的模型**——該叢集以 **Slurm** 排程，含 **5 台 NVIDIA DGX 節點（H100 / H200）**、**InfiniBand** 高速網路、**WEKA** 平行檔案系統，並透過 **NVIDIA Base Command Manager** 管理。
+- 開發並部署**校內模型**，開放**全校**使用，並負責後續的**維護與更新**。
 - 開發校內的**表單審核流程系統**，涵蓋**職務不法侵害**案件的通報與多層級審核流程。
   - 負責**後端與 DevOps**：**資料庫結構設計**、以 **FastAPI** 開發後端服務、撰寫自動化測試，並建置 **GitHub Actions** CI/CD 流程。
 
@@ -100,6 +103,9 @@ translationKey = "about"
 - **成果：** 優化的 MCTS 對基準（*Rowlet*）勝率明顯提升——**ICGA 2024 銀牌**、**TCGA 2025 最佳論文**、**國科會大專學生研究創作獎**（9,505 件前 2%）。
 - **問題：** 傳統 MCTS 在麻將這類高隨機、含隱藏資訊的遊戲表現不佳。
 - **方法：** 開發 *Dartrix*（Policy Gradient 智能體）；於 MCTS 中提出新的**對手建模**技術，以監督式學習推論取代隨機 rollout，依打牌／棄牌歷史預測對手行動。
+
+**2026 APAC HPC-AI Competition — 核心成員** · *2026.08 – 2026.10*
+- **成果：** 與隊伍 *Attention*（中山、中興、陽明交大聯合隊伍）獲得**第三名**（48 隊報名、33 隊進入決賽，與另外 3 隊並列第三）。成績於 SC26 公布，將於新加坡 SupercomputingAsia 2027 頒獎。
 
 **高效能運算（HPC）核心成員** · 2024
 - **成果：** 全隊最低執行時間——**第三屆國網盃冠軍**。
