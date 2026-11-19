@@ -54,6 +54,7 @@ generative-AI systems.
 - **Champion (1st Place)** — FIRST LEGO League Taiwan 2018–2019
 - **Runner-up (2nd Place)** — 2025 TCGA Computer Game Tournament (Mahjong)
 - **Runner-up (2nd Place)** — 2024 Taipei City Data Hackathon (GenAI &amp; Microservices)
+- **3rd Place** — 2026 TAAI Computer Game Tournament (Mahjong: *Rowlet*)
 - **3rd Place (Regional)** — Web Design, 54th National Skills Competition
 - **5th Place (Regional)** — Cloud Computing, 55th National Skills Competition
 - **National Outstanding Young College Elite** (全國大專優秀青年), 2025 — sole representative from ~5,100 NTCU students; one of ~150 national recipients.
