@@ -26,9 +26,11 @@
         {{ $code  := and .code  (ne .code  "#") }}
         {{ $demo  := and .demo  (ne .demo  "#") }}
         {{ $page  := and .page  (ne .page  "#") }}
-        {{ if or $paper $code $demo $page }}
+        {{ $openreview := and .openreview (ne .openreview "#") }}
+        {{ if or $paper $code $demo $page $openreview }}
         <div class="linkrow">
           {{ if $paper }}<a href="{{ .paper }}" rel="noopener">📄 paper</a>{{ end }}
+          {{ if $openreview }}<a href="{{ .openreview }}" rel="noopener">💬 openreview</a>{{ end }}
           {{ if $code }}<a href="{{ .code }}" rel="noopener">⌨ code</a>{{ end }}
           {{ if $demo }}<a href="{{ .demo }}" rel="noopener">▶ demo</a>{{ end }}
           {{ if $page }}<a href="{{ .page }}" rel="noopener">↗ page</a>{{ end }}

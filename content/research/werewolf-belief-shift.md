@@ -8,7 +8,8 @@ summary = "A belief-shift benchmark that measures how accusations move an LLM's 
 translationKey = "werewolf-belief-shift"
 tags = ["Werewolf", "LLM", "theory of mind", "social deduction", "benchmark"]
 [links]
-paper = "https://openreview.net/forum?id=0EcuPT7mKD"
+paper = "https://arxiv.org/abs/2609.12446"
+openreview = "https://openreview.net/forum?id=0EcuPT7mKD"
 page = "https://rlg.iis.sinica.edu.tw/papers/werewolf-accusation-benchmark/"
 +++
 
@@ -45,6 +46,6 @@ directly observable.
 
 ## Publication
 
-Yang, Y. Y., Wu, T. R., Guei, H., Chen, H. Y., & Wu, I. C. (2026). *Do LLMs Trust the Accuser or the Accusation? Measuring Belief Shifts in Werewolf.* Conference on Empirical Methods in Natural Language Processing (EMNLP 2026), Main Conference, Budapest, Hungary. — Track: Resources and Evaluation · Poster presentation
+Yang, Y. Y., Wu, T. R., Guei, H., Chen, H. Y., & Wu, I. C. (2026). *Do LLMs Trust the Accuser or the Accusation? Measuring Belief Shifts in Werewolf.* Conference on Empirical Methods in Natural Language Processing (EMNLP 2026), Main Conference, Budapest, Hungary. — Track: Resources and Evaluation · Poster presentation. [arXiv:2609.12446](https://arxiv.org/abs/2609.12446)
 
 EMNLP 2026 received a record **17,669 submissions**, of which **2,719** were accepted to the Main Conference — a **15.4% acceptance rate** (Findings: 2,533 papers, 14.3%).
